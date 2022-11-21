@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="118dp"
+        android:id="@+id/viewpager"/>
+
+    <me.relex.circleindicator.CircleIndicator
+         android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/circle_indicator"
+        android:layout_marginTop="16dp"
+        app:ci_drawable="@drawable/hinhchuyen"
+        android:layout_gravity="center_horizontal"/>
+        <LinearLayout
+             android:gravity="center"
+             android:layout_marginTop="40dp"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical">
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Vượt Mọi Thử Thách"
+                 android:textStyle="bold"
+                 android:textSize="22dp"
+                 android:textColor="#038C7F"
+                 android:gravity="center"
+                 />
+             <TextView
+
+                 android:layout_marginTop="3dp"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Sneaker Của Bạn  !"
+                 android:textStyle="bold"
+                 android:textSize="22dp"
+                 android:textColor="@color/white"
+                 android:gravity="center"
+                 />
+         </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hãy mang những ước mơ của bạn lên đôi chân "
+            android:textStyle="normal"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            />
+        <TextView
+            android:layout_marginTop="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="để dẫn lối giấc mơ đó thành hiện thực "
+            android:textStyle="normal"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            />
+    </LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="50dp"
+        android:layout_width="229dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        app:cardCornerRadius="50dp"
+        android:id="@+id/khamphangay">
+        <TextView
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_width="229dp"
+            android:layout_height="48dp"
+            android:textSize="18dp"
+            android:text="KHÁM PHÁ NGAY"
+            android:textColor="@color/white"
+            android:background="#038C7F"/>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
