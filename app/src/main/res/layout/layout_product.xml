@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    android:backgroundTint="#C0C6CD"
+    app:cardElevation="10dp"
     android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        app:cardCornerRadius="100dp"
+        android:backgroundTint="#E5D2D2"
+        >
+        <TextView
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SALE 50%"
+            />
+    </androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/product"
@@ -11,6 +31,8 @@
         android:src="@drawable/img" />
 
     <ImageView
+        android:layout_gravity="right"
+
         android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
         android:layout_alignParentRight="true"
@@ -40,4 +62,4 @@
         android:textStyle="bold"
         android:text="giay the thao" />
 
-</RelativeLayout>
+</androidx.cardview.widget.CardView>
