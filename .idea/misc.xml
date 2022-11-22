@@ -6,6 +6,7 @@
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/drawable/hinhchuyen.xml" value="0.152" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/drawable/ic_muiten.xml" value="0.223" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/drawable/round_border.xml" value="0.1" />
+        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/drawable/vientaikhoan.xml" value="0.1" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/a.xml" value="0.21784420289855072" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_main.xml" value="0.21784420289855072" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_man_hinh_chao.xml" value="0.21784420289855072" />
@@ -13,10 +14,12 @@
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_man_hinh_chao2.xml" value="0.2" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_man_hinh_dang_ky.xml" value="0.264" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_man_hinh_dang_nhap.xml" value="0.152" />
+        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_man_hinh_tai_khoan.xml" value="0.264" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/fragment_accout.xml" value="0.176" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/fragment_home.xml" value="0.19067028985507245" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/item_photo.xml" value="0.1" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/item_product_fa.xml" value="0.11041666666666666" />
+        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/layout_chi_tiet_san_pham.xml" value="0.176" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25" />
       </map>
     </option>
