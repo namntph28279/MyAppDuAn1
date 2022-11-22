@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.ThanhPhanTrongTK.TieuChuanCongDong">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        app:navigationIcon="@drawable/ic_back_24"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        app:title="Tiêu chuẩn cộng đồng"
+        app:titleTextColor="@color/black"
+        android:layout_height="?attr/actionBarSize"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+          <TextView
+              android:layout_marginBottom="8dp"
+              android:textStyle="bold"
+              android:textColor="@color/black"
+              android:textSize="17dp"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="GIỚI THIỆU "/>
+          <TextView
+              android:layout_marginBottom="8dp"
+              android:textColor="@color/black"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Chúng tôi muốn xây dựng cộng đồng Shop Sneaker thân thiện và tích cực! Tiêu chuẩn này được đưa ra để hướng dẫn người bán và người mua gìn giữ một thị trường mua bán an toàn. Vui lòng đọc những việc nên và không nên làm dưới đây khi sử dụng ứng dụng Shop Sneaker. Bằng việc dùng ứng dụng này, bạn đồng ý với các Điều khoản sử dụng của chúng tôi. Chúng tôi cam kết nỗ lực gìn giữ sự an toàn cho cộng đồng mua bán này."/>
+          <TextView
+              android:layout_marginBottom="8dp"
+              android:textStyle="bold"
+              android:textColor="@color/black"
+              android:textSize="17dp"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="NHỮNG VIỆC NÊN LÀM"/>
+          <TextView
+              android:layout_marginBottom="5dp"
+              android:textStyle="bold"
+              android:textColor="@color/black"
+              android:textSize="15dp"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="1. Bán hàng thật, không quảng cáo"/>
+          <TextView
+              android:layout_marginBottom="5dp"
+              android:textColor="@color/black"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Shop Sneaker là ứng dụng hỗ trợ người mua và người bán giao dịch với nhau chứ không phải là nền tảng để quảng cáo. Bạn chỉ nên đăng những sản phẩm mà bạn muốn bán trên  Sneaker.
+
+Dưới đây là một số ví dụ về việc vi phạm quy tắc này:
+
+- Kết nối trang đăng bán sản phẩm tới một website riêng biệt khác.
+
+- Phần mô tả, hình ảnh hoặc tên gọi của sản phẩm chứa thông tin hướng dẫn người mua kết nối với người bán qua một ứng dụng hoặc phương tiện khác.
+
+- Đăng bán một sản phẩm lặp đi lặp lại trên cùng một danh mục sản phẩm hoặc tại các danh mục sản phẩm khác nhau (spam)
+
+- Đăng bán với giá sản phẩm thật thấp để thu hút người mua nhưng thực tế không bán hàng với giá như vậy và không cho người mua đặt hàng với giá như vậy
+
+Chúng tôi hiểu rằng người mua và người bán luôn có nhu cầu trao đổi thông tin với nhau. Do vậy, tính năng Trả giá đã được tích hợp trong Shop Sneaker để hỗ trợ tối đa mọi giao dịch của người dùng."/>
+
+          <TextView
+              android:layout_marginBottom="5dp"
+              android:textStyle="bold"
+              android:textColor="@color/black"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="2. Làm thế nào để sản phẩm của bạn nổi bật"/>
+          <TextView
+              android:layout_marginBottom="5dp"
+              android:textColor="@color/black"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Người mua sẽ chú ý ngay nếu sản phẩm của bạn có ảnh hấp dẫn. Để có những bức ảnh thật đẹp, bạn có thể tham khảo Mẹo bán hàng trên Shop Sneaker. Bên cạnh đó, hãy là người bán hàng chân thật, mô tả sản phẩm thật chính xác và chi tiết vì khách hàng luôn muốn biết rõ về sản phẩm mà họ mua. Nhờ đó, bạn sẽ nhận được những đánh giá tích cực từ họ!"/>
+          <TextView
+              android:layout_marginBottom="5dp"
+              android:textStyle="bold"
+              android:textColor="@color/black"
+          android:paddingLeft="15dp"
+          android:paddingRight="15dp"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="3. Tôn trọng lẫn nhau"/>
+          <TextView
+              android:layout_marginBottom="8dp"
+              android:textColor="@color/black"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Chúng tôi muốn xây dựng một cộng đồng an toàn và văn minh để mọi người cùng tận hưởng niềm vui mua sắm trên di động. Vì vậy, hãy đăng tải những nội dung lành mạnh và phù hợp với tất cả mọi người; không sử dụng ngôn ngữ thô tục, đăng các nội dung xấu hay làm phiền người khác. Trong cộng đồng Shop Sneaker, người dùng phải tôn trọng lẫn nhau và cư xử có thiện chí giữa người mua và người bán, cũng như giữa người dùng và Shop Sneaker. Dù bạn mua hay bán hàng trên Shop Sneaker, hãy tuân thủ những quy tắc dưới đây để đảm bảo mọi người cùng được mua sắm dễ dàng!"/>
+
+          <TextView
+              android:layout_marginBottom="8dp"
+              android:textStyle="bold"
+              android:textSize="17dp"
+              android:textColor="@color/black"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="NHỮNG VIỆC KHÔNG NÊN LÀM"/>
+          <TextView
+              android:layout_marginBottom="5dp"
+              android:textStyle="bold"
+              android:textSize="15dp"
+              android:textColor="@color/black"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="1. Mạo danh người khác"/>
+          <TextView
+              android:layout_marginBottom="5dp"
+              android:textColor="@color/black"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Mạo danh người khác để lừa đảo dưới bất kỳ hình thức nào bị xem là hành vi vi phạm nghiêm trọng Tiêu chuẩn cộng đồng của Shop Sneaker. Nếu bạn sử dụng hình ảnh của người khác, vui lòng tôn trọng bản quyền và dẫn nguồn khi cần thiết. Một số ví dụ về hành vi mạo danh:
+
+- Sử dụng thông tin cá nhân của người khác (thông tin liên lạc, hình ảnh, v.v...) để tạo tài khoản, đặt hàng, bán hàng trên Shop Sneaker mà người đó không biết hoặc không cho phép.
+
+- Sử dụng danh tính của người khác với mục đích giả mạo và lừa đảo.
+
+Hãy chung tay xây dựng cộng đồng Shop Sneaker lành mạnh! Nếu thấy có người dùng mạo danh bạn hay người khác, vui lòng liên hệ với chúng tôi."/>
+          <TextView
+              android:layout_marginBottom="5dp"
+              android:textStyle="bold"
+              android:textSize="15dp"
+              android:textColor="@color/black"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="2. Tên sản phẩm đăng bán không phù hợp"/>
+          <TextView
+              android:layout_marginBottom="8dp"
+              android:textColor="@color/black"
+              android:paddingLeft="15dp"
+              android:paddingRight="15dp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="- Tên sản phẩm không rõ ràng, viết tắt dễ gây hiểm nhầm, không thể hiện sản phẩm đăng bán
+
+- Tên sản phẩm chứa ký tự lạ: @, !, ^, {, [, …
+
+- Tên sản phẩm có chứa thông tin quảng cáo.
+
+- Tên sản phẩm được lặp lại rất nhiều lần, hoặc chứa hashtags, từ khóa, tên các nhãn hiệu và những thông tin không liên quan.
+
+- Tên và mô tả sản phẩm bị thay đổi toàn bộ thành một sản phẩm khác, nhằm lợi dụng đánh giá hoặc bình luận tốt của người mua dành cho sản phẩm trước đó.
+
+
+Ví dụ minh họa cho tên sản phẩm không phù hợp:
+
+a) Trong tên sản phẩm son môi của The Face Shop Sneaker xuất hiện tên của các nhãn hiệu khác như: Dior, L'Oreal, Maybeline, Channel
+
+b) Tên sản Apple iPhone 6s được ghi như sau:
+
+Apple iPhone 6s Apple iPhone 6s Apple iPhone 6s Apple iPhone 6s Apple iPhone 6s  "/>
+      </LinearLayout>
+    </ScrollView>
+</LinearLayout>
