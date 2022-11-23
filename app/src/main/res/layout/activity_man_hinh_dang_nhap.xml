@@ -8,7 +8,7 @@
     tools:context=".Activity.ManHinhDangNhapDangKy.ManHinhDangNhap">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar"
-        app:navigationIcon="@drawable/back"
+        app:navigationIcon="@drawable/ic_back_24"
         android:background="@color/white"
         android:layout_width="match_parent"
         app:titleTextColor="@color/black"
@@ -53,20 +53,20 @@
 
       <EditText
           android:layout_marginBottom="8dp"
-          android:id="@+id/inputEmail"
+          android:id="@+id/inputNamedn"
           android:layout_width="343dp"
           android:layout_height="wrap_content"
 
           android:background="@drawable/round_border"
-          android:drawableStart="@drawable/email"
+          android:drawableStart="@drawable/name"
           android:drawablePadding="16dp"
           android:ems="10"
-          android:hint="Email"
-          android:inputType="textEmailAddress"
+          android:hint="User"
+
           android:padding="16dp"
           />
       <EditText
-          android:id="@+id/inputPass"
+          android:id="@+id/inputPassdn"
           android:layout_width="343dp"
           android:layout_height="wrap_content"
           android:background="@drawable/round_border"
@@ -82,7 +82,7 @@
           android:layout_width="343dp"
           android:layout_height="48dp"
           app:cardCornerRadius="5dp"
-          android:id="@+id/Dangnhap">
+          android:id="@+id/Dangnhapdn">
           <TextView
               android:textStyle="bold"
               android:gravity="center"

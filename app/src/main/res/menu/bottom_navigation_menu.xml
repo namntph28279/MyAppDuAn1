@@ -6,18 +6,18 @@
         android:title="Trang chủ" />
     <item
         android:id="@+id/nav_search"
-        android:icon="@drawable/search"
+        android:icon="@drawable/sache"
         android:title="Tìm Kiếm" />
     <item
         android:id="@+id/nav_fa"
-        android:icon="@drawable/fa1"
+        android:icon="@drawable/fal"
         android:title="Yêu Thích" />
     <item
         android:id="@+id/nav_cart"
-        android:icon="@drawable/buy"
+        android:icon="@drawable/buying"
         android:title="Giỏ Hàng" />
     <item
         android:id="@+id/nav_account"
-        android:icon="@drawable/accout"
+        android:icon="@drawable/account"
         android:title="Tài khoản" />
 </menu>

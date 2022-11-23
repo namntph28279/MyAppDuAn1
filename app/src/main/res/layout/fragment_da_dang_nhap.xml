@@ -4,22 +4,43 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.ManHinhTaiKhoan">
+     >
+    <Toolbar
+        android:id="@+id/toolBar"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:title="TÀI KHOẢN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="48dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolBar" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
         android:background="@drawable/vien"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/toolBar" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="140dp"
         android:background="@drawable/avt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -83,7 +104,7 @@
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="38dp"
         android:gravity="center"
         android:orientation="horizontal"
 
@@ -100,6 +121,7 @@
             >
 
             <LinearLayout
+                android:id="@+id/chinhsuathongtin"
                 android:layout_width="277dp"
                 android:layout_height="25dp"
                 android:orientation="horizontal"
@@ -110,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/thongtin"/>
                 <TextView
-                  android:layout_gravity="center"
+                    android:layout_gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chỉnh sửa thông tin cá nhân"
@@ -121,6 +143,7 @@
 
 
             <LinearLayout
+                android:id="@+id/diachi"
                 android:layout_width="277dp"
                 android:layout_height="25dp"
                 android:orientation="horizontal"
@@ -163,6 +186,7 @@
             >
 
             <LinearLayout
+                android:id="@+id/dieukhoan"
                 android:layout_width="277dp"
                 android:layout_height="25dp"
                 android:orientation="horizontal"
@@ -184,6 +208,7 @@
 
 
             <LinearLayout
+                android:id="@+id/tieuchuan"
                 android:layout_width="277dp"
                 android:layout_height="25dp"
                 android:orientation="horizontal"
@@ -204,6 +229,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/chinhsach"
                 android:layout_width="277dp"
                 android:layout_height="25dp"
                 android:orientation="horizontal"
@@ -244,6 +270,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/trungtamhotro"
                 android:layout_width="277dp"
                 android:layout_height="25dp"
                 android:layout_marginBottom="10dp"
@@ -265,6 +292,7 @@
 
 
             <LinearLayout
+                android:id="@+id/doimatkhau"
                 android:layout_marginBottom="10dp"
                 android:layout_width="277dp"
                 android:layout_height="25dp"
@@ -284,6 +312,7 @@
                     android:textColor="@color/black" />
             </LinearLayout>
             <LinearLayout
+                android:id="@+id/dangxuat"
                 android:layout_width="277dp"
                 android:layout_height="25dp"
                 android:orientation="horizontal">

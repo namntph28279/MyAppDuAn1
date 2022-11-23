@@ -1,9 +1,15 @@
 package com.example.myapp.Dao;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
+import com.example.myapp.DTO.TaiKhoan;
 import com.example.myapp.Database.DbHelper;
+
+import java.util.ArrayList;
 
 public class TaiKhoanDAO {
     DbHelper mSqlite;
@@ -14,6 +20,79 @@ public class TaiKhoanDAO {
         this.context = context;
         mSqlite = new DbHelper(context);
         mSqLiteDatabase = mSqlite.getWritableDatabase();
+    }
+
+    public int themTK(TaiKhoan ls){
+
+        ContentValues mvalues = new ContentValues();
+
+        mvalues.put("tenDangNhap", ls.getTenDangNhap());
+        mvalues.put("hoTen", ls.getHoTen());
+        mvalues.put("email", ls.getEmail());
+        mvalues.put("matKhau", ls.getMatKhau());
+
+        long kq = mSqLiteDatabase.insert("taiKhoan",null,mvalues);
+
+        if(kq<0){
+            return -1;
+        }else {
+            return 1;
+        }
+    }
+
+    public ArrayList<TaiKhoan> getALL(){
+        ArrayList<TaiKhoan> mArr = new ArrayList<>();
+
+        Cursor c = mSqLiteDatabase.query("taiKhoan",null,null,null,null,null,null);
+        c.moveToFirst();
+        while (c.isAfterLast()==false){
+
+            TaiKhoan ls = new TaiKhoan();
+
+            ls.setTenDangNhap(c.getString(0));
+            ls.setHoTen(c.getString(1));
+            ls.setEmail(c.getString(2));
+            ls.setMatKhau(c.getString(3));
+            
+            c.moveToNext();
+            mArr.add(ls);
+
+        }
+
+        c.close();
+        return mArr;
+    }
+
+
+
+
+    public int update(TaiKhoan ls){
+        ContentValues mValues = new ContentValues();
+
+        mValues.put("tenDangNhap",ls.getTenDangNhap());
+        mValues.put("matKhau",ls.getMatKhau());
+
+        long kq =  mSqLiteDatabase.update("taiKhoan",mValues,"maTk=?",new String[]{String.valueOf(ls.getTenDangNhap())});
+        if(kq<0){
+            return -1;
+        }else{
+            return 1;
+        }
+    }
+
+    public int checkLogin(String id ,String passsword){
+
+        Cursor c = mSqLiteDatabase.rawQuery("SELECT * FROM taiKhoan WHERE tenDangNhap='"+id+"' and matKhau= '"+passsword+"'  ",null);
+        Log.d("Count",c.getCount()+"");
+        c.moveToFirst();
+        while ( !c.isAfterLast()){
+            int  a = c.getCount();
+            c.moveToNext();
+            c.close();
+            return a;
+        }
+
+        return -1;
     }
 
 }

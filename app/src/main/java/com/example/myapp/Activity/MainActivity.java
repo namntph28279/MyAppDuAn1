@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.example.myapp.Fragment.Fragment_Accout;
 import com.example.myapp.Fragment.Fragment_Cart;
@@ -15,7 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
-
+    private long backpressedTime;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,5 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         bottomNavigationView = findViewById(R.id.bottom_nav_home);
+    }
+    @Override
+    public void onBackPressed() {
+        if (backpressedTime + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed();
+        }
+        Toast.makeText(this, "Bấm 2 lần để thoát", Toast.LENGTH_SHORT).show();
+        backpressedTime = System.currentTimeMillis();
     }
 }

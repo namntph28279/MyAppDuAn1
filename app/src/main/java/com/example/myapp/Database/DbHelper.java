@@ -19,9 +19,8 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String crTK = " create table taiKhoan(" +
-                "tenDangNhap primary key autoincrement," +
+                "tenDangNhap text primary key  ," +
                 "hoTen text not null,"+
-                "soDienThoai text not null,"+
                 "email text not null," +
                 "matKhau text not null)";
 
