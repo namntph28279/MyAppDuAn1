@@ -19,6 +19,8 @@ public class DbHelper extends SQLiteOpenHelper {
         //Tao bang san pham
         String crSP = "CREATE TABLE GIAY (id integer primary key autoincrement, ten text, gia integer, hinh blod, size integer)";
         db.execSQL(crSP);
+        String crTK = "CREATE TABLE taiKhoan (tenDangNhap text primary key  , hoTen text, email text, matKhau text not null )";
+        db.execSQL(crTK);
     }
 
     @Override
