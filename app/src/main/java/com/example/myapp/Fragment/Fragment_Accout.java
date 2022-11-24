@@ -38,6 +38,7 @@ public class Fragment_Accout extends Fragment {
         String user = preferences.getString("USERMANE", "");
         String pass = preferences.getString("PASSWORD", "");
 
+
         Log.d("zzzz", "onCreateView: "+user + pass);
 
         FragmentManager fragmentManager= getChildFragmentManager();
@@ -48,7 +49,8 @@ public class Fragment_Accout extends Fragment {
             fragmentTransaction.replace(R.id.acc,daDangNhapFragment);
             fragmentTransaction.commit();
 
-        }else {
+        }else if(taiKhoanDAO.checkLogin(user,pass)<0){
+
             ChuaDangNhapFragment chuaDangNhapFragment= new ChuaDangNhapFragment();
             fragmentTransaction.replace(R.id.acc,chuaDangNhapFragment);
             fragmentTransaction.commit();

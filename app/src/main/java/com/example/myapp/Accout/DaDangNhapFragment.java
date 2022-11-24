@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.example.myapp.Activity.MainActivity;
 import com.example.myapp.Fragment.Fragment_Accout;
 import com.example.myapp.R;
 
@@ -95,15 +96,18 @@ LinearLayout thongtin,diachi,dieukhoan,tieuchuan,chinhsach,trungtamhotro,doimatk
                btnCo.setOnClickListener(new View.OnClickListener() {
                    @Override
                    public void onClick(View view) {
-                       FragmentManager fragmentManager= getParentFragmentManager();
-                       FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                       ChuaDangNhapFragment chuaDangNhapFragment= new ChuaDangNhapFragment();
 
-                       fragmentTransaction.replace(R.id.acc, chuaDangNhapFragment);
-                       fragmentTransaction.addToBackStack(null);
-                       fragmentTransaction.commit();
+                       SharedPreferences pref = getActivity().getSharedPreferences("USER_FILE", getContext().MODE_PRIVATE);
+                       SharedPreferences.Editor edit = pref.edit();
+
+                       edit.putString("USERMANE","");
+                       edit.putString("PASSWORD","");
+                       edit.commit();
+
+                       Intent i = new Intent(getActivity(), MainActivity.class);
+                       startActivity(i);
+
                        mdDialog.dismiss();
-
 
 
                    }

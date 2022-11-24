@@ -4,7 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent">
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:title="TÌM KIẾM"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"/>
     <androidx.cardview.widget.CardView
         android:layout_margin="16dp"
         android:layout_width="match_parent"

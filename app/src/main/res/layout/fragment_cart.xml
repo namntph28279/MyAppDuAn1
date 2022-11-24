@@ -6,7 +6,7 @@
     <Toolbar
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:title="TRANG CHỦ"/>
+        android:title="GIỎ HÀNG"/>
 
     <View
         android:layout_width="match_parent"
