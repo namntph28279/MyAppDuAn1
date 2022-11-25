@@ -24,7 +24,6 @@
           android:layout_height="wrap_content"
           android:src="@drawable/nhan"
           android:layout_marginBottom="18dp"
-
           />
 
       <TextView
@@ -100,7 +99,7 @@
           android:drawablePadding="16dp"
           android:ems="10"
           android:hint="Password"
-          android:inputType="textEmailAddress"
+          android:inputType="textPassword"
           android:padding="16dp"
           />
       <EditText
@@ -113,7 +112,7 @@
           android:drawablePadding="16dp"
 
           android:hint="Password Again"
-          android:inputType="textEmailAddress"
+          android:inputType="textPassword"
           android:padding="16dp"
           />
 
@@ -141,7 +140,7 @@
               android:gravity="center"
               android:layout_width="343dp"
               android:layout_height="48dp"
-              android:textSize="14dp"
+              android:textSize="18dp"
               android:text="Đăng ký"
               android:textColor="@color/white"
               android:background="@color/black"/>
@@ -156,7 +155,7 @@
           android:orientation="horizontal">
           <TextView
 
-              android:textSize="12dp"
+              android:textSize="15dp"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="Đã có tài khoản?"/>
@@ -165,10 +164,9 @@
               android:id="@+id/txtDangNhap"
               android:layout_width="wrap_content"
               android:layout_height="match_parent"
-              android:padding="0.5dp"
-              android:text="Đăng nhập"
+               android:text="Đăng nhập"
               android:textColor="@color/black"
-              android:textSize="12dp"
+              android:textSize="15dp"
               android:textStyle="bold" />
 
       </LinearLayout>

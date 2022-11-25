@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.ThanhPhanTrongTK.DiaChi">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        app:navigationIcon="@drawable/ic_back_24"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        app:title="ĐỊA CHỈ NHẬN HÀNG "
+        app:titleTextColor="@color/black"
+        android:layout_height="48dp"/>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolBar" />
+    <LinearLayout
+        android:gravity="center"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TÊN:"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/tennh"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SỐ ĐIỆN THOẠI:"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/sonhanhang"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TÊN TỈNH / THÀNH PHỐ:"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/tinh"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TÊN HUYỆN / QUẬN:"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20dp"/>
+        <EditText
+            android:id="@+id/huyen"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"/>
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="TÊN XÃ / PHƯỜNG"
+             android:textStyle="bold"
+             android:textColor="@color/black"
+             android:textSize="20dp"/>
+
+
+        <EditText
+            android:id="@+id/xa"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TÊN ĐƯỜNG"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="20dp"/>
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(Nếu có) :"
+                android:textColor="@color/black"
+                android:textSize="17dp"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/duong"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="15dp"
+            android:layout_width="343dp"
+            android:layout_height="48dp"
+            app:cardCornerRadius="5dp"
+            android:id="@+id/luutt">
+            <TextView
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_width="343dp"
+                android:layout_height="48dp"
+                android:textSize="16dp"
+                android:text="LƯU THÔNG TIN"
+                android:textColor="@color/white"
+                android:background="@color/black"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</LinearLayout>

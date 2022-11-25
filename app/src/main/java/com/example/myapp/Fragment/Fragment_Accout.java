@@ -49,7 +49,7 @@ public class Fragment_Accout extends Fragment {
             fragmentTransaction.replace(R.id.acc,daDangNhapFragment);
             fragmentTransaction.commit();
 
-        }else if(taiKhoanDAO.checkLogin(user,pass)<0){
+        }else {
 
             ChuaDangNhapFragment chuaDangNhapFragment= new ChuaDangNhapFragment();
             fragmentTransaction.replace(R.id.acc,chuaDangNhapFragment);
@@ -57,5 +57,10 @@ public class Fragment_Accout extends Fragment {
 
         }
            return v;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 }

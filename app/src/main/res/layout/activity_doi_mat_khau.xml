@@ -5,28 +5,37 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".Activity.ManHinhDangNhapDangKy.ActivityDoiMatKhau">
+    tools:context=".Activity.ThanhPhanTrongTK.DoiMatKhau">
 
     <androidx.appcompat.widget.Toolbar
+        app:title="ĐỔI MẬT KHẨU"
         android:id="@+id/toolBar"
-        app:navigationIcon="@drawable/back"
+        app:navigationIcon="@drawable/ic_back_24"
         android:background="@color/white"
         android:layout_width="match_parent"
         app:titleTextColor="@color/black"
-        android:layout_height="?attr/actionBarSize"/>
+        android:layout_height="48dp"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
 
-
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/toolBar" />
 
         <EditText
             android:layout_marginTop="100dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="8dp"
-            android:id="@+id/inputFullName"
+            android:id="@+id/edtpasscu"
             android:layout_width="343dp"
             android:layout_height="wrap_content"
             android:background="@drawable/round_border"
@@ -42,7 +51,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
-            android:id="@+id/inputPassword"
+            android:id="@+id/edtpassmoi"
             android:layout_width="343dp"
             android:layout_height="wrap_content"
 
@@ -51,7 +60,7 @@
             android:drawablePadding="16dp"
             android:ems="10"
             android:hint="Mat khau moi"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:padding="16dp"
             />
         <EditText
@@ -59,7 +68,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
-            android:id="@+id/inputPasswordAgain"
+            android:id="@+id/edtnhaplaipass"
             android:layout_width="343dp"
             android:layout_height="wrap_content"
             android:background="@drawable/round_border"
@@ -67,7 +76,7 @@
             android:drawablePadding="16dp"
 
             android:hint="Nhap lai mat khau moi"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:padding="16dp"
             />
 
@@ -81,15 +90,15 @@
             android:layout_height="48dp"
             app:cardCornerRadius="5dp"
             android:layout_gravity="center_horizontal"
-            android:id="@+id/Dangnhap">
+            android:id="@+id/DoiMatKhau">
             <TextView
 
                 android:textStyle="bold"
                 android:gravity="center"
                 android:layout_width="343dp"
                 android:layout_height="48dp"
-                android:textSize="14dp"
-                android:text="Doi mat khau"
+                android:textSize="18dp"
+                android:text="ĐỔI MẬT KHẨU"
                 android:textColor="@color/white"
                 android:background="@color/black"/>
         </androidx.cardview.widget.CardView>

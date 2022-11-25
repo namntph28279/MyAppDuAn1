@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.ThanhPhanTrongTK.TrungTamHoTro">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        app:navigationIcon="@drawable/ic_back_24"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        app:title="TRUNG TÂM HỖ TRỢ"
+        app:titleTextColor="@color/black"
+        android:layout_height="48dp"/>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolBar" />
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_marginTop="8dp"
+    android:text="LIÊN HỆ VỚI CHÚNG TÔI"
+    android:textStyle="bold"
+    android:textSize="19dp"
+    android:textColor="@color/black"
+    android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+      android:id="@+id/btnGuiTinNhan"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/mess" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="GỬI TIN NHẮN"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <View
+
+                android:layout_width="120dp"
+                android:layout_height="1dp"
+                android:background="@color/black" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="8dp"
+        android:id="@+id/btnGoi"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:paddingLeft="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/call1" />
+        <LinearLayout
+            android:layout_marginLeft="8dp"
+          android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GỌI :"
+                />
+            <TextView
+                android:layout_marginTop="3dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="+84 12 2345 6789"
+                />
+            <View
+
+                android:layout_width="150dp"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -6,16 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity">
 
-    <androidx.fragment.app.FragmentContainerView
+    <FrameLayout
         android:id="@+id/fragmentContainerViewHome"
-        android:name="com.example.myapp.Fragment.Fragment_Home"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_nav_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        android:layout_above="@+id/bottom_nav_home" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
 

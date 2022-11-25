@@ -10,6 +10,7 @@ import com.example.myapp.DTO.TaiKhoan;
 import com.example.myapp.Database.DbHelper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TaiKhoanDAO {
     DbHelper mSqlite;
@@ -27,8 +28,6 @@ public class TaiKhoanDAO {
         ContentValues mvalues = new ContentValues();
 
         mvalues.put("tenDangNhap", ls.getTenDangNhap());
-        mvalues.put("hoTen", ls.getHoTen());
-        mvalues.put("email", ls.getEmail());
         mvalues.put("matKhau", ls.getMatKhau());
 
         long kq = mSqLiteDatabase.insert("taiKhoan",null,mvalues);
@@ -50,8 +49,6 @@ public class TaiKhoanDAO {
             TaiKhoan ls = new TaiKhoan();
 
             ls.setTenDangNhap(c.getString(0));
-            ls.setHoTen(c.getString(1));
-            ls.setEmail(c.getString(2));
             ls.setMatKhau(c.getString(3));
             
             c.moveToNext();
@@ -69,10 +66,9 @@ public class TaiKhoanDAO {
     public int update(TaiKhoan ls){
         ContentValues mValues = new ContentValues();
 
-        mValues.put("tenDangNhap",ls.getTenDangNhap());
         mValues.put("matKhau",ls.getMatKhau());
 
-        long kq =  mSqLiteDatabase.update("taiKhoan",mValues,"maTk=?",new String[]{String.valueOf(ls.getTenDangNhap())});
+        long kq =  mSqLiteDatabase.update("taiKhoan",mValues,"tenDangNhap=?",new String[]{String.valueOf(ls.getTenDangNhap())});
         if(kq<0){
             return -1;
         }else{

@@ -13,7 +13,16 @@
         android:layout_width="match_parent"
         app:title="Tiêu chuẩn cộng đồng"
         app:titleTextColor="@color/black"
-        android:layout_height="?attr/actionBarSize"/>
+        android:layout_height="48dp"/>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolBar" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -22,6 +31,7 @@
           android:layout_height="wrap_content"
           android:orientation="vertical">
           <TextView
+              android:layout_marginTop="8dp"
               android:layout_marginBottom="8dp"
               android:textStyle="bold"
               android:textColor="@color/black"
