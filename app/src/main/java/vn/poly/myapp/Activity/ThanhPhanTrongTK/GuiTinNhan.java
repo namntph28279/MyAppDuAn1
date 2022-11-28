@@ -15,7 +15,7 @@ import android.widget.EditText;
 
 import vn.poly.myapp.DTO.Message;
 import vn.poly.myapp.Adapter.MessgeAdapter;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -13,14 +13,13 @@ import android.view.View;
 import vn.poly.myapp.Activity.MainActivity;
 import vn.poly.myapp.Adapter.AnhAdapte;
 import vn.poly.myapp.DTO.Anh;
-import com.example.myapp.R;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 import me.relex.circleindicator.CircleIndicator;
+import vn.poly.myapp.R;
 
 public class ManHinhChao2 extends AppCompatActivity {
 

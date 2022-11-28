@@ -9,7 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import vn.poly.myapp.DTO.Message;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
+
 
 import java.util.List;
 

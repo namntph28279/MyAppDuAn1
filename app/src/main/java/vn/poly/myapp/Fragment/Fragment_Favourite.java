@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.myapp.R;
+import vn.poly.myapp.R;
 
 public class Fragment_Favourite extends Fragment {
     @Override

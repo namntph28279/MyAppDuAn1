@@ -5,7 +5,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 
-import com.example.myapp.R;
+
+import vn.poly.myapp.R;
 
 public class TieuChuanCongDong extends AppCompatActivity {
 

@@ -15,32 +15,33 @@ import vn.poly.myapp.Fragment.Fragment_Cart;
 import vn.poly.myapp.Fragment.Fragment_Favourite;
 import vn.poly.myapp.Fragment.Fragment_Home;
 import vn.poly.myapp.Fragment.Fragment_Search;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
+
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private BottomNavigationView bottomNavigationView;
     private long backpressedTime;
-
     Fragment_Accout acc = new Fragment_Accout();
     Fragment_Home home = new Fragment_Home();
     Fragment_Cart buy = new Fragment_Cart();
     Fragment_Favourite fav = new Fragment_Favourite();
     Fragment_Search seac = new Fragment_Search();
-
-
     TaiKhoanDAO dao;
 
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    void initLayout() {
+        bottomNavigationView = findViewById(R.id.bottom_nav_home);
+        dao = new TaiKhoanDAO(getApplicationContext());
+    }
 
-        initView();
-
-
+    @Override
+    void initAction() {
         SharedPreferences preferences = getSharedPreferences("USER_FILES", Context.MODE_PRIVATE);
         String check = preferences.getString("check", "");
 
@@ -72,19 +73,21 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return false;
             }
-            });
+        });
     }
 
-        private void initView () {
-            bottomNavigationView = findViewById(R.id.bottom_nav_home);
-            dao = new TaiKhoanDAO(getApplicationContext());
-        }
-        @Override
-        public void onBackPressed () {
-            if (backpressedTime + 2000 > System.currentTimeMillis()) {
-                super.onBackPressed();
-            }
-            Toast.makeText(this, "Bấm 2 lần để thoát", Toast.LENGTH_SHORT).show();
-            backpressedTime = System.currentTimeMillis();
-        }
+    @Override
+    int setLayout() {
+        return R.layout.activity_main;
     }
+
+    @Override
+    public void onBackPressed () {
+        if (backpressedTime + 2000 > System.currentTimeMillis()) {
+            super.onBackPressed();
+        }
+        Toast.makeText(this, "Bấm 2 lần để thoát", Toast.LENGTH_SHORT).show();
+        backpressedTime = System.currentTimeMillis();
+    }
+
+}

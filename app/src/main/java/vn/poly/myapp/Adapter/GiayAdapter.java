@@ -14,7 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import vn.poly.myapp.DTO.Giay;
 import vn.poly.myapp.Dao.GiayDao;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
+
 
 import java.util.ArrayList;
 

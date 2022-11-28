@@ -12,7 +12,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.example.myapp.R;
+
+import vn.poly.myapp.R;
 
 public class TrungTamHoTro extends AppCompatActivity {
 

@@ -14,7 +14,8 @@ import android.widget.Toast;
 
 import vn.poly.myapp.DTO.TaiKhoan;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
+
 
 public class DoiMatKhau extends AppCompatActivity {
 

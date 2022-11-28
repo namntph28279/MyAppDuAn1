@@ -15,7 +15,8 @@ import android.widget.Toast;
 
 import vn.poly.myapp.DTO.ThongTin;
 import vn.poly.myapp.Dao.ThongTinDAO;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
+
 
 public class ChinhSuaThongTinCaNhan extends AppCompatActivity {
 

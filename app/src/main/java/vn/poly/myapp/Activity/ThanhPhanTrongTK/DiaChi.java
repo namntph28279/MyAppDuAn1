@@ -13,7 +13,8 @@ import android.widget.Toast;
 
 import vn.poly.myapp.DTO.ThongTin;
 import vn.poly.myapp.Dao.ThongTinDAO;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
+
 
 public class DiaChi extends AppCompatActivity {
         EditText ten,sdt,tinh,huyen,xa,duong;

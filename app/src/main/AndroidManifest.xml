@@ -16,39 +16,21 @@
 
         <activity
             android:name="vn.poly.myapp.Activity.ThanhPhanTrongTK.DoiMatKhau"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false" >
         </activity>
         <activity
             android:name="vn.poly.myapp.Activity.ThanhPhanTrongTK.TieuChuanCongDong"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="vn.poly.myapp.Activity.ManHinhDangNhapDangKy.ManHinhDangKy"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="vn.poly.myapp.Activity.ManHinhDangNhapDangKy.ManHinhDangNhap"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false" >
         </activity>
         <activity
             android:name="vn.poly.myapp.Activity.ManHinhChao.ManHinhChao1"
@@ -61,21 +43,12 @@
         </activity>
         <activity
             android:name="vn.poly.myapp.Activity.ManHinhChao.ManHinhChao2"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false" >
         </activity>
         <activity
             android:name="vn.poly.myapp.Activity.MainActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

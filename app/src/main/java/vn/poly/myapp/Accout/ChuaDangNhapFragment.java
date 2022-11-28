@@ -12,7 +12,8 @@ import android.view.ViewGroup;
 
 import vn.poly.myapp.Activity.ManHinhDangNhapDangKy.ManHinhDangKy;
 import vn.poly.myapp.Activity.ManHinhDangNhapDangKy.ManHinhDangNhap;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
+
 
 public class ChuaDangNhapFragment extends Fragment {
     private CardView btnLogin,btnSingup;

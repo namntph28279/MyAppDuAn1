@@ -11,7 +11,9 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
 import vn.poly.myapp.DTO.Anh;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
+
+
 
 import java.util.List;
 

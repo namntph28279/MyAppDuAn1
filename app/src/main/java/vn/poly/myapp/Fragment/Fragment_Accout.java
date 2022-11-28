@@ -16,7 +16,8 @@ import android.view.ViewGroup;
 import vn.poly.myapp.Accout.ChuaDangNhapFragment;
 import vn.poly.myapp.Accout.DaDangNhapFragment;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
+
 
 public class Fragment_Accout extends Fragment {
      TaiKhoanDAO taiKhoanDAO;

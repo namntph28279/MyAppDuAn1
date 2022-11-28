@@ -19,7 +19,8 @@ import vn.poly.myapp.DTO.TaiKhoan;
 import vn.poly.myapp.DTO.ThongTin;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.Dao.ThongTinDAO;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
+
 
 public class ManHinhDangKy extends AppCompatActivity {
     EditText ten,tenDangNhap,Email,Pass,PassLai;

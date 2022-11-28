@@ -16,7 +16,7 @@ import vn.poly.myapp.Activity.MainActivity;
 import vn.poly.myapp.Activity.ThanhPhanTrongTK.QuenMatKhau;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.Fragment.Fragment_Accout;
-import com.example.myapp.R;
+import vn.poly.myapp.R;
 
 public class ManHinhDangNhap extends AppCompatActivity {
 

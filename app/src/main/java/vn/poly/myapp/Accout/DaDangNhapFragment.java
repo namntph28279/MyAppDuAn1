@@ -25,8 +25,7 @@ import vn.poly.myapp.Activity.ThanhPhanTrongTK.TieuChuanCongDong;
 import vn.poly.myapp.Activity.ThanhPhanTrongTK.TrungTamHoTro;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.Dao.ThongTinDAO;
-
-import com.example.myapp.R;
+import vn.poly.myapp.R;
 
 
 public class DaDangNhapFragment extends Fragment {

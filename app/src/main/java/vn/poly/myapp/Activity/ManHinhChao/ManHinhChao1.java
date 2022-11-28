@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.example.myapp.R;
+
+
+import vn.poly.myapp.R;
 
 public class ManHinhChao1 extends AppCompatActivity {
 
