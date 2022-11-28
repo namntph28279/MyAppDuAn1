@@ -50,4 +50,29 @@ public class GiayDao {
         long row = db.insert("giay", null, values);
         return (row>0);
     }
+
+    public Giay selectOne(int id){
+        ArrayList<Giay> list = new ArrayList<>();
+        Giay g = new Giay();
+        String[] args = new String[] { id + "" };
+
+
+        String[] columns = new String[]{"*"};
+
+        Cursor c = db.query("myapp.db",columns, null, null,null,null,null);
+        if(c.moveToFirst()){
+
+            String ten = c.getString(1);
+            float gia = c.getFloat(2);
+            byte[] hinh = c.getBlob(3);
+            float size = c.getFloat(4);
+
+            list.add(new Giay(id, ten, gia, hinh, size));
+            c.moveToNext();
+        }
+
+        return g;
+    }
+
+
 }

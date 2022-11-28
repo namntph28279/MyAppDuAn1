@@ -15,6 +15,8 @@ public class Giay {
         this.size = size;
     }
 
+    public Giay(){}
+
     public int getId() {
         return id;
     }
