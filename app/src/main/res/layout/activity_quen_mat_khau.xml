@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Activity.ThanhPhanTrongTK.QuenMatKhau">
+    tools:context="vn.poly.myapp.Activity.ThanhPhanTrongTK.QuenMatKhau">
 
     <androidx.appcompat.widget.Toolbar
         app:title=""

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:id="@+id/activtRoot"
     android:layout_height="match_parent"
-    tools:context=".Activity.ThanhPhanTrongTK.GuiTinNhan">
+    tools:context="vn.poly.myapp.Activity.ThanhPhanTrongTK.GuiTinNhan">
 
 
     <androidx.appcompat.widget.Toolbar
