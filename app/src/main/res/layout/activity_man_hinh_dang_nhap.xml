@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="vn.poly.myapp.Activity.ManHinhDangNhapDangKy.ManHinhDangNhap">
+
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBar"
+        android:id="@+id/toolBardn"
         app:navigationIcon="@drawable/ic_back_24"
         android:background="@color/white"
         android:layout_width="match_parent"
@@ -110,6 +111,7 @@
           android:orientation="vertical"
           >
           <LinearLayout
+              android:id="@+id/dangnhapgg"
               android:layout_marginBottom="8dp"
               android:background="@drawable/round_border"
               android:drawableStart="@drawable/password"
