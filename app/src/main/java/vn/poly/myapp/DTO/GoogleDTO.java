@@ -1,6 +1,7 @@
 package vn.poly.myapp.DTO;
 
 public class GoogleDTO {
+    private String stt;
     private String email;
     private  String hoTen;
     private  String diaChi;
@@ -12,7 +13,8 @@ public class GoogleDTO {
     private  String tenXa;
     private  String tenDuong;
 
-    public GoogleDTO(String email, String hoTen, String diaChi, String soDienThoai, int gioiTinh, String tenNguoiNhanHang, String tenTinh, String tenHuyen, String tenXa, String tenDuong) {
+    public GoogleDTO(String stt, String email, String hoTen, String diaChi, String soDienThoai, int gioiTinh, String tenNguoiNhanHang, String tenTinh, String tenHuyen, String tenXa, String tenDuong) {
+        this.stt = stt;
         this.email = email;
         this.hoTen = hoTen;
         this.diaChi = diaChi;
@@ -26,6 +28,14 @@ public class GoogleDTO {
     }
 
     public GoogleDTO() {
+    }
+
+    public String getStt() {
+        return stt;
+    }
+
+    public void setStt(String stt) {
+        this.stt = stt;
     }
 
     public String getEmail() {

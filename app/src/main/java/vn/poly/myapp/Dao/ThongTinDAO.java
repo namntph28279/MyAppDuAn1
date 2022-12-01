@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import java.util.ArrayList;
+
+import vn.poly.myapp.DTO.GoogleDTO;
 import vn.poly.myapp.DTO.ThongTin;
 import vn.poly.myapp.Database.DbHelper;
 
@@ -46,6 +49,20 @@ public class ThongTinDAO {
             return 1;
         }
     }
+    public int checkLogin(String id) {
+
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin  WHERE tenDangNhap='"+id+"'", null);
+        Log.d("Countgg", c.getCount() + "");
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            int a = c.getCount();
+            c.moveToNext();
+            c.close();
+            return a;
+        }
+
+        return -1;
+    }
     public int updateTT(ThongTin ls){
         ContentValues mvalues = new ContentValues();
 
@@ -65,6 +82,36 @@ public class ThongTinDAO {
         }
     }
 
+    public ArrayList<ThongTin> getALL() {
+        ArrayList<ThongTin> mArr = new ArrayList<>();
+
+        Cursor c = sqLiteDatabase.query("thongTin", null, null, null, null, null, null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+
+            ThongTin ls = new ThongTin();
+            ls.setMaTK(c.getString(0));
+            ls.setHoTen(c.getString(1));
+            ls.setEmail(c.getString(2));
+            ls.setDiaChi(c.getString(3));
+            ls.setSoDienThoai(c.getString(4));
+            ls.setGioiTinh(c.getInt(5));
+            ls.setTenNguoiNhanHang(c.getString(6));
+            ls.setTenTinh(c.getString(7));
+            ls.setTenHuyen(c.getString(8));
+            ls.setTenXa(c.getString(9));
+            ls.setTenDuong(c.getString(10));
+            ls.setTenDangNhap(c.getString(11));
+
+            c.moveToNext();
+            Log.d("zz", "getALL: "+c.getCount());
+            mArr.add(ls);
+
+        }
+
+        c.close();
+        return mArr;
+    }
     public int updateDC(ThongTin ls){
         ContentValues mvalues = new ContentValues();
 
@@ -83,11 +130,22 @@ public class ThongTinDAO {
             return 1;
         }
     }
+    public String Stt(String id){
+        String x = "";
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin  WHERE tenDangNhap='"+id+"'",null);
+
+        c.moveToFirst();
+        while ( !c.isAfterLast()){
+            x ="";
+            x = c.getString(0);
+            c.moveToNext();
+        }
+        Log.d("Count2hai",x);
+        return x;
+    }
     public String makh(String id  ){
         String x = "";
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin tt " +
-                "inner join taiKhoan tk on tk.tenDangNhap = tt.tenDangNhap " +
-                " WHERE tk.tenDangNhap='"+id+"'  ",null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin  WHERE  tenDangNhap='"+id+"'  ",null);
         Log.d("Count2",c.getCount()+"");
         c.moveToFirst();
         while ( !c.isAfterLast()){
@@ -98,12 +156,9 @@ public class ThongTinDAO {
 
         return x;
     }
-
     public String TenChuTK(String id  ){
         String x = "";
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin tt " +
-                "inner join taiKhoan tk on tk.tenDangNhap = tt.tenDangNhap " +
-                " WHERE tk.tenDangNhap='"+id+"'  ",null);
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin  WHERE tenDangNhap='"+id+"'",null);
         Log.d("Count2",c.getCount()+"");
         c.moveToFirst();
         while ( !c.isAfterLast()){
@@ -114,126 +169,14 @@ public class ThongTinDAO {
 
         return x;
     }
-    public String Eamil(String id ){
+    public String Eamil(String id  ){
         String x = "";
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin tt " +
-                "inner join taiKhoan  tk on tk.tenDangNhap = tt.tenDangNhap  " +
-                "WHERE tk.tenDangNhap='"+id+"'",null);
-        Log.d("Count",c.getColumnName(2));
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin  WHERE tenDangNhap='"+id+"'",null);
+        Log.d("Count2",c.getCount()+"");
         c.moveToFirst();
         while ( !c.isAfterLast()){
+            x ="";
             x = c.getString(2);
-            c.moveToNext();
-        }
-
-        return x;
-    }
-    public String DiaChi(String id ){
-        String x = "";
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin tt " +
-                "inner join taiKhoan  tk on tk.tenDangNhap = tt.tenDangNhap  " +
-                "WHERE tk.tenDangNhap='"+id+"'",null);
-
-        c.moveToFirst();
-        while ( !c.isAfterLast()){
-            x = c.getString(3);
-            c.moveToNext();
-        }
-
-        return x;
-    }
-    public String SoDienThoai(String id ){
-        String x = "";
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin tt " +
-                "inner join taiKhoan  tk on tk.tenDangNhap = tt.tenDangNhap  " +
-                "WHERE tk.tenDangNhap='"+id+"'",null);
-        Log.d("Count",c.getColumnName(4));
-        c.moveToFirst();
-        while ( !c.isAfterLast()){
-            x = c.getString(4);
-            c.moveToNext();
-        }
-
-        return x;
-    }
-    public String gioiTinh(String id ){
-        String x = "";
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin tt " +
-                "inner join taiKhoan  tk on tk.tenDangNhap = tt.tenDangNhap  " +
-                "WHERE tk.tenDangNhap='"+id+"'",null);
-        Log.d("Count",c.getColumnName(5));
-        c.moveToFirst();
-        while ( !c.isAfterLast()){
-            x = c.getString(5);
-            c.moveToNext();
-        }
-
-        return x;
-    }
-    public String tenNguoiNhan(String id ){
-        String x = "";
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin tt " +
-                "inner join taiKhoan  tk on tk.tenDangNhap = tt.tenDangNhap  " +
-                "WHERE tk.tenDangNhap='"+id+"'",null);
-        Log.d("Count",c.getColumnName(6));
-        c.moveToFirst();
-        while ( !c.isAfterLast()){
-            x = c.getString(6);
-            c.moveToNext();
-        }
-
-        return x;
-    }
-    public String tenTinh(String id ){
-        String x = "";
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin tt " +
-                "inner join taiKhoan  tk on tk.tenDangNhap = tt.tenDangNhap  " +
-                "WHERE tk.tenDangNhap='"+id+"'",null);
-        Log.d("Count",c.getColumnName(7));
-        c.moveToFirst();
-        while ( !c.isAfterLast()){
-            x = c.getString(7);
-            c.moveToNext();
-        }
-
-        return x;
-    }
-    public String tenHuyen(String id ){
-        String x = "";
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin tt " +
-                "inner join taiKhoan  tk on tk.tenDangNhap = tt.tenDangNhap  " +
-                "WHERE tk.tenDangNhap='"+id+"'",null);
-        Log.d("Count",c.getColumnName(8));
-        c.moveToFirst();
-        while ( !c.isAfterLast()){
-            x = c.getString(8);
-            c.moveToNext();
-        }
-
-        return x;
-    }
-    public String tenXa(String id ){
-        String x = "";
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin tt " +
-                "inner join taiKhoan  tk on tk.tenDangNhap = tt.tenDangNhap  " +
-                "WHERE tk.tenDangNhap='"+id+"'",null);
-        Log.d("Count",c.getColumnName(9));
-        c.moveToFirst();
-        while ( !c.isAfterLast()){
-            x = c.getString(9);
-            c.moveToNext();
-        }
-
-        return x;
-    } public String tenDuong(String id ){
-        String x = "";
-        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM thongTin tt " +
-                "inner join taiKhoan  tk on tk.tenDangNhap = tt.tenDangNhap  " +
-                "WHERE tk.tenDangNhap='"+id+"'",null);
-        Log.d("Count",c.getColumnName(10));
-        c.moveToFirst();
-        while ( !c.isAfterLast()){
-            x = c.getString(10);
             c.moveToNext();
         }
 

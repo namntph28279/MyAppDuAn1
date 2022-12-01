@@ -62,7 +62,7 @@ TextView ten,email;
         gsc = GoogleSignIn.getClient(getContext(),gso);
        ten = v.findViewById(R.id.texts);
        email = v.findViewById(R.id.txtEmail);
-GoogleDAO googleDAO = new GoogleDAO(getContext());
+        GoogleDAO googleDAO = new GoogleDAO(getContext());
         SharedPreferences preferences = getActivity().getSharedPreferences("USER_FILE", Context.MODE_PRIVATE);
         String user = preferences.getString("USERMANE", "");
         String pass = preferences.getString("PASSWORD", "");

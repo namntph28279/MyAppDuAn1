@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -96,8 +98,6 @@ public class ManHinhDangKy extends AppCompatActivity {
                     return;
                 }
 
-
-
                 tk.setTenDangNhap(tenDangNhap.getText().toString());
                 tk.setMatKhau(Pass.getText().toString());
 
@@ -106,11 +106,11 @@ public class ManHinhDangKy extends AppCompatActivity {
                 tt.setTenDangNhap(tenDangNhap.getText().toString());
 
                 int kq = taiKhoanDAO.themTK(tk);
-                int kq2 = thongTinDAO.themTK(tt);
 
-                if(kq==-1 && kq2==-1){
+                if(kq==-1){
                     Toast.makeText(getApplicationContext(),"Đăng ký Thất Bại",Toast.LENGTH_SHORT).show();
                 }else{
+                    thongTinDAO.themTK(tt);
                     Toast.makeText(getApplicationContext(),"Đăng ký Thành Công",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), ManHinhDangNhap.class);
                     startActivity(intent);

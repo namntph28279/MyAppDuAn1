@@ -39,6 +39,7 @@ public class GoogleDAO {
         mvalues.put("tenXa", ls.getTenXa());
         mvalues.put("tenDuong", ls.getTenDuong());
 
+        Log.d("hai", "getALL: "+ls.getStt());
 
         long kq = mSqLiteDatabase.insert("thongTinGG", null, mvalues);
 
@@ -49,7 +50,19 @@ public class GoogleDAO {
             return 1;
         }
     }
+    public String makh(String id  ){
+        String x = "";
+        Cursor c = mSqLiteDatabase.rawQuery("SELECT * FROM thongTinGG  WHERE  email='"+id+"'  ",null);
+        Log.d("Count2",c.getCount()+"");
+        c.moveToFirst();
+        while ( !c.isAfterLast()){
+            x ="";
+            x = c.getString(0);
+            c.moveToNext();
+        }
 
+        return x;
+    }
     public ArrayList<GoogleDTO> getALL() {
         ArrayList<GoogleDTO> mArr = new ArrayList<>();
 
@@ -59,16 +72,18 @@ public class GoogleDAO {
 
             GoogleDTO ls = new GoogleDTO();
 
-            ls.setEmail(c.getString(0));
-            ls.setHoTen(c.getString(1));
-            ls.setDiaChi(c.getString(2));
-            ls.setSoDienThoai(c.getString(3));
-            ls.setGioiTinh(c.getInt(4));
-            ls.setTenNguoiNhanHang(c.getString(5));
-            ls.setTenTinh(c.getString(6));
-            ls.setTenHuyen(c.getString(7));
-            ls.setTenXa(c.getString(8));
-            ls.setTenDuong(c.getString(9));
+            ls.setStt(c.getString(0));
+            ls.setEmail(c.getString(1));
+            ls.setHoTen(c.getString(2));
+            ls.setDiaChi(c.getString(3));
+            ls.setSoDienThoai(c.getString(4));
+            ls.setGioiTinh(c.getInt(5));
+            ls.setTenNguoiNhanHang(c.getString(6));
+            ls.setTenTinh(c.getString(7));
+            ls.setTenHuyen(c.getString(8));
+            ls.setTenXa(c.getString(9));
+            ls.setTenDuong(c.getString(10));
+            Log.d("hai", "getALL: "+ls.getStt());
             c.moveToNext();
             mArr.add(ls);
 
@@ -82,13 +97,12 @@ public class GoogleDAO {
     public int updateGG(GoogleDTO ls) {
         ContentValues mvalues = new ContentValues();
 
-
         mvalues.put("hoTen", ls.getHoTen());
         mvalues.put("diaChi", ls.getDiaChi());
         mvalues.put("soDienThoai", ls.getSoDienThoai());
         mvalues.put("gioiTinh", ls.getGioiTinh());
 
-        long kq = mSqLiteDatabase.update("thongTinGG", mvalues, "email=?", new String[]{String.valueOf(ls.getEmail())});
+        long kq = mSqLiteDatabase.update("thongTinGG", mvalues, "stt=?", new String[]{String.valueOf(ls.getStt())});
         if (kq < 0) {
             return -1;
         } else {
@@ -106,7 +120,7 @@ public class GoogleDAO {
         mvalues.put("tenXa", ls.getTenXa());
         mvalues.put("tenDuong", ls.getTenDuong());
 
-        long kq =  mSqLiteDatabase.update("thongTinGG",mvalues,"email=?",new String[]{String.valueOf(ls.getEmail())});
+        long kq =  mSqLiteDatabase.update("thongTinGG",mvalues,"stt=?",new String[]{String.valueOf(ls.getStt())});
         if(kq<0){
             return -1;
         }else{
@@ -120,10 +134,24 @@ public class GoogleDAO {
         c.moveToFirst();
         while ( !c.isAfterLast()){
             x ="";
-            x = c.getString(1);
+            x = c.getString(2);
             c.moveToNext();
         }
 
+        return x;
+    }
+
+    public String Stt(String id){
+        String x = "";
+        Cursor c = mSqLiteDatabase.rawQuery("SELECT * FROM thongTinGG  WHERE email='"+id+"'",null);
+
+        c.moveToFirst();
+        while ( !c.isAfterLast()){
+            x ="";
+            x = c.getString(0);
+            c.moveToNext();
+        }
+        Log.d("Count2hai",x);
         return x;
     }
     public String emailGG(String id  ){
@@ -133,7 +161,7 @@ public class GoogleDAO {
         c.moveToFirst();
         while ( !c.isAfterLast()){
             x ="";
-            x = c.getString(0);
+            x = c.getString(1);
             c.moveToNext();
         }
 
