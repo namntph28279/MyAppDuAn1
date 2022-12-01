@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "247731101199",
+    "project_id": "myappduan1",
+    "storage_bucket": "myappduan1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247731101199:android:a58976a310e00b2197cd7a",
+        "android_client_info": {
+          "package_name": "vn.poly.myapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247731101199-3p17nuqfunhmko1lf006hkfjcjtgj80c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vn.poly.myapp",
+            "certificate_hash": "adbb5898c788356159f73d084f50ec02f940dc58"
+          }
+        },
+        {
+          "client_id": "247731101199-umm1icidf2fnbauru92jdas3t78lie3r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1gVPpqrl1JdOLkXm0S0U3mpki7TX9bH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247731101199-umm1icidf2fnbauru92jdas3t78lie3r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

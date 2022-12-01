@@ -28,6 +28,7 @@ import vn.poly.myapp.Activity.ThanhPhanTrongTK.QuenMatKhau;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.Fragment.Fragment_Accout;
 import vn.poly.myapp.R;
+import vn.poly.myapp.SecondActivity;
 
 public class ManHinhDangNhap extends AppCompatActivity {
 
@@ -96,7 +97,8 @@ public class ManHinhDangNhap extends AppCompatActivity {
         dangnhapGG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signIn();
+                Intent signInIntent = gsc.getSignInIntent();
+                startActivityForResult(signInIntent,1000);
             }
         });
 
@@ -104,11 +106,6 @@ public class ManHinhDangNhap extends AppCompatActivity {
 
     }
 
-
-    void signIn(){
-        Intent signInIntent = gsc.getSignInIntent();
-        startActivityForResult(signInIntent,1000);
-    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode,Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -134,7 +131,7 @@ public class ManHinhDangNhap extends AppCompatActivity {
     }
     void navigateToSecondActivity(){
         finish();
-        Intent intent = new Intent(ManHinhDangNhap.this, MainActivity.class);
+        Intent intent = new Intent(ManHinhDangNhap.this, SecondActivity.class);
         startActivity(intent);
     }
 
