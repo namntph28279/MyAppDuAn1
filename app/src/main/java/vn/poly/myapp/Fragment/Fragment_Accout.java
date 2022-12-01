@@ -35,7 +35,6 @@ public class Fragment_Accout extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
             View v = inflater.inflate(R.layout.fragment_accout, container, false);
-
             taiKhoanDAO = new TaiKhoanDAO(getActivity());
             googleDAO = new GoogleDAO(getActivity());
 
@@ -58,7 +57,6 @@ public class Fragment_Accout extends Fragment {
             fragmentTransaction.commit();
 
         }else {
-
             ChuaDangNhapFragment chuaDangNhapFragment= new ChuaDangNhapFragment();
             fragmentTransaction.replace(R.id.acc,chuaDangNhapFragment);
             fragmentTransaction.commit();
