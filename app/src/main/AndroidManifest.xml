@@ -16,9 +16,6 @@
         android:theme="@style/Theme.MyApp"
         tools:targetApi="31">
         <activity
-            android:name=".SecondActivity"
-            android:exported="false" />
-        <activity
             android:name=".Activity.ThanhPhanTrongTK.DoiMatKhau"
             android:exported="false"></activity>
         <activity

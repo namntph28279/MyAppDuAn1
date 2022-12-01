@@ -43,6 +43,20 @@ public class DbHelper extends SQLiteOpenHelper {
                 "foreign key(tenDangNhap) references  taiKhoan(tenDangNhap))";
 
         db.execSQL(crTTTK);
+
+        String crTTTKGG = "CREATE TABLE thongTinGG (" +
+                " email text primary key  ," +
+                " hoTen text ," +
+                " diaChi text ," +
+                " soDienThoai text," +
+                " gioiTinh integer," +
+                " TenNguoiNhanHang text ," +
+                " tenTinh text ," +
+                " tenHuyen text," +
+                " tenXa text," +
+                " tenDuong text)";
+
+        db.execSQL(crTTTKGG);
     }
 
     @Override

@@ -15,12 +15,14 @@ import android.view.ViewGroup;
 
 import vn.poly.myapp.Accout.ChuaDangNhapFragment;
 import vn.poly.myapp.Accout.DaDangNhapFragment;
+import vn.poly.myapp.Dao.GoogleDAO;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.R;
 
 
 public class Fragment_Accout extends Fragment {
      TaiKhoanDAO taiKhoanDAO;
+     GoogleDAO googleDAO;
 
 
     @Override
@@ -35,17 +37,22 @@ public class Fragment_Accout extends Fragment {
             View v = inflater.inflate(R.layout.fragment_accout, container, false);
 
             taiKhoanDAO = new TaiKhoanDAO(getActivity());
+            googleDAO = new GoogleDAO(getActivity());
+
         SharedPreferences preferences = getActivity().getSharedPreferences("USER_FILE", Context.MODE_PRIVATE);
         String user = preferences.getString("USERMANE", "");
         String pass = preferences.getString("PASSWORD", "");
 
+
+        SharedPreferences preferences2 = getActivity().getSharedPreferences("USER_FILEgg", Context.MODE_PRIVATE);
+        String user2 = preferences2.getString("email", "");
 
         Log.d("zzzz", "onCreateView: "+user + pass);
 
         FragmentManager fragmentManager= getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        if (taiKhoanDAO.checkLogin(user,pass)>0){
+        if (taiKhoanDAO.checkLogin(user,pass)>0 ||googleDAO.checkLogin(user2)>0){
             DaDangNhapFragment daDangNhapFragment= new DaDangNhapFragment();
             fragmentTransaction.replace(R.id.acc,daDangNhapFragment);
             fragmentTransaction.commit();

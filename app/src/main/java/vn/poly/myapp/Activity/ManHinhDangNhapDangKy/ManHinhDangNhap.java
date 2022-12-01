@@ -25,10 +25,11 @@ import com.google.android.gms.tasks.Task;
 
 import vn.poly.myapp.Activity.MainActivity;
 import vn.poly.myapp.Activity.ThanhPhanTrongTK.QuenMatKhau;
+import vn.poly.myapp.DTO.GoogleDTO;
+import vn.poly.myapp.Dao.GoogleDAO;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.Fragment.Fragment_Accout;
 import vn.poly.myapp.R;
-import vn.poly.myapp.SecondActivity;
 
 public class ManHinhDangNhap extends AppCompatActivity {
 
@@ -36,10 +37,10 @@ public class ManHinhDangNhap extends AppCompatActivity {
     CardView dangNhap;
     String tk,mk;
     TaiKhoanDAO taiKhoanDAO;
+    GoogleDAO googleDAO;
     Fragment_Accout fragment_accout;
     TextView dky,quen;
     LinearLayout dangnhapGG;
-
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
 
@@ -53,9 +54,8 @@ public class ManHinhDangNhap extends AppCompatActivity {
         Pass = findViewById(R.id.inputPassdn);
         dky = findViewById(R.id.txtDangKy);
         dangNhap = findViewById(R.id.Dangnhapdn);
+
         dangnhapGG  = findViewById(R.id.dangnhapgg);
-
-
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc = GoogleSignIn.getClient(this,gso);
 
@@ -66,7 +66,7 @@ public class ManHinhDangNhap extends AppCompatActivity {
 
         quen = findViewById(R.id.txtQuen);
         fragment_accout = new Fragment_Accout();
-
+        googleDAO = new GoogleDAO(getApplicationContext());
         taiKhoanDAO = new TaiKhoanDAO(getApplicationContext());
 
 
@@ -112,17 +112,36 @@ public class ManHinhDangNhap extends AppCompatActivity {
         if(requestCode == 1000){
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
+
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                navigateToSecondActivity();
 
-                SharedPreferences.Editor editor = getApplicationContext()
-                        .getSharedPreferences("my",MODE_PRIVATE)
-                        .edit();
-                editor.putString("user",account.getDisplayName());
-                editor.putString("email",account.getEmail());
-                editor.apply();
-                Log.d("zzz", "onActivityResult: "+account.getDisplayName() +account.getEmail() );
+                GoogleDTO gg = new GoogleDTO();
+                gg.setEmail(account.getEmail());
+                gg.setHoTen(account.getDisplayName());
 
+                rememberUsergg(account.getEmail());
+                Log.d("zzzz", "onActivityResult: "+gg.getEmail());
+
+                if (googleDAO.checkLogin(account.getEmail())>0){
+                    navigateToSecondActivity();
+                    Toast.makeText(this, "Dang nhap thanh cong", Toast.LENGTH_SHORT).show();
+
+                    SharedPreferences pref2 = getSharedPreferences("Google",MODE_PRIVATE);
+                    SharedPreferences.Editor edit2 = pref2.edit();
+                    edit2.putString("checkgg","1");
+                    edit2.commit();
+
+                }else {
+                    googleDAO.themTK(gg);
+                    navigateToSecondActivity();
+                    Toast.makeText(this, "dang ky Tahnh Cong", Toast.LENGTH_SHORT).show();
+
+                    SharedPreferences pref2 = getSharedPreferences("Google",MODE_PRIVATE);
+                    SharedPreferences.Editor edit2 = pref2.edit();
+                    edit2.putString("checkgg","1");
+                    edit2.commit();
+
+                }
             } catch (ApiException e) {
                 Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
             }
@@ -131,7 +150,7 @@ public class ManHinhDangNhap extends AppCompatActivity {
     }
     void navigateToSecondActivity(){
         finish();
-        Intent intent = new Intent(ManHinhDangNhap.this, SecondActivity.class);
+        Intent intent = new Intent(ManHinhDangNhap.this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -152,8 +171,6 @@ public class ManHinhDangNhap extends AppCompatActivity {
              SharedPreferences pref = getSharedPreferences("USER_FILES",MODE_PRIVATE);
              SharedPreferences.Editor edit = pref.edit();
              edit.putString("check","1");
-
-
              edit.commit();
 
 
@@ -181,5 +198,14 @@ public class ManHinhDangNhap extends AppCompatActivity {
             edit.putString("PASSWORD",p);
 
             edit.commit();
+    }
+    public void rememberUsergg(String u) {
+        SharedPreferences pref3 = getSharedPreferences("USER_FILEgg",MODE_PRIVATE);
+        SharedPreferences.Editor edit3 = pref3.edit();
+
+        edit3.putString("email",u);
+
+
+        edit3.commit();
     }
 }

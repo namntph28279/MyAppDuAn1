@@ -45,7 +45,10 @@ public class MainActivity extends BaseActivity {
         SharedPreferences preferences = getSharedPreferences("USER_FILES", Context.MODE_PRIVATE);
         String check = preferences.getString("check", "");
 
-        if (check == "1" || check == "2") {
+        SharedPreferences preferences2 = getSharedPreferences("Google", Context.MODE_PRIVATE);
+        String check2 = preferences2.getString("checkgg", "");
+
+        if (check == "1" || check == "2"||check2=="1"||check2=="2") {
             bottomNavigationView.getMenu().findItem(R.id.nav_account).setChecked(true);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, acc).commit();
         } else {
