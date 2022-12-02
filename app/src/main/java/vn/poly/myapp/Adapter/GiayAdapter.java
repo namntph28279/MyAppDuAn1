@@ -1,19 +1,26 @@
 package vn.poly.myapp.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import vn.poly.myapp.Activity.ManHinhDangNhapDangKy.ManHinhDangNhap;
 import vn.poly.myapp.DTO.Giay;
+import vn.poly.myapp.DTO.GioHang;
 import vn.poly.myapp.Dao.GiayDao;
+import vn.poly.myapp.Dao.GioHangDAO;
 import vn.poly.myapp.R;
 
 
@@ -23,6 +30,8 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
     ArrayList<Giay> list;
     Context context;
     GiayDao dao;
+
+
 
     public GiayAdapter(Context context, ArrayList<Giay> list){
         this.context = context;
@@ -42,6 +51,7 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
         return new GiayViewHolder(view);
     }
 
+    @SuppressLint("RecyclerView")
     @Override
     public void onBindViewHolder(@NonNull GiayViewHolder holder, int position) {
         holder.tv_ten.setText(list.get(position).getTen());
@@ -52,6 +62,35 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
         Bitmap bitmap = BitmapFactory.decodeByteArray(hinh, 0, hinh.length);
         holder.img_res.setImageBitmap(bitmap);
 
+        holder.img_giohang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GioHangDAO gioHangDAO = new GioHangDAO(context);
+                Toast.makeText(v.getContext(), ""+list.get(position).getTen()+list.get(position).getGia()+list.get(position).getHinh(), Toast.LENGTH_SHORT).show();
+
+                GioHang gh = new GioHang();
+                gh.setTenSp(list.get(position).getTen());
+                gh.setGia(list.get(position).getGia());
+                gh.setHinh(list.get(position).getHinh());
+
+                Log.d("abc", "onBindViewHolder: "+list.get(position).getTen());
+                Log.d("abc", "onBindViewHolder: "+list.get(position).getGia());
+
+
+                int a=  gioHangDAO.themTK(gh);
+
+                if(a==-1){
+                    Toast.makeText(context,"Add Thất Bại",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(context,"Add Thành Công",Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
+
+
+
     }
 
     @Override
@@ -61,14 +100,16 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
 
     public class GiayViewHolder extends RecyclerView.ViewHolder{
         private TextView tv_ten, tv_gia;
-        private ImageView img_res;
+        private ImageView img_res,img_giohang;
 
         public GiayViewHolder(@NonNull View itemView) {
             super(itemView);
 
+
             tv_ten = itemView.findViewById(R.id.tv_ten);
             tv_gia = itemView.findViewById(R.id.tv_moTa);
             img_res = itemView.findViewById(R.id.img_res);
+            img_giohang = itemView.findViewById(R.id.imggiohang);
         }
     }
 }

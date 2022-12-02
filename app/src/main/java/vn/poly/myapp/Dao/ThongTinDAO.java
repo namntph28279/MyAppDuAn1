@@ -8,7 +8,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-import vn.poly.myapp.DTO.GoogleDTO;
+
 import vn.poly.myapp.DTO.ThongTin;
 import vn.poly.myapp.Database.DbHelper;
 

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="THANH TOÁN"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="22dp"
+        android:layout_marginLeft="15dp"
+        />
+    <ImageView
+        android:layout_marginRight="15dp"
+        android:layout_gravity="center"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_clear"
+        android:layout_weight="1"
+        />
+</LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_margin="15dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#5F5F5F"/>
+
+    <LinearLayout
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_weight="4"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="VẬN CHUYỂN"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+            <TextView
+                android:textColor="#010BFD"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chọn phương thức vận chuyển "
+                />
+            <ImageView
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_next"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ECEDEF"/>
+    <LinearLayout
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_weight="20"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Tổng"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:textSize="20dp"
+                android:textColor="#FD011E"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="18.050.000đ "
+                />
+            <ImageView
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_navigate_next_24"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ECEDEF"/>
+    <LinearLayout
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bằng việc ấn nút ‘ĐẶT HÀNG’, tôi xác nhận rằng: "/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tôi đã đọc, hiểu rõ và đồng ý với Chính sách Bảo mật và Điều khoản và điều kiện "/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tôi theo đây đồng ý với việc sử dụng thông tin cá nhân của tôi cho mục đích quảng cáo, tiếp thị và các mục đích có tính thương mại khác cũng như việc chia sẻ, tiết lộ, chuyển giao chúng cho bất kỳ bên thứ ba nào."/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_margin="8dp"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:cardCornerRadius="5dp"
+        android:id="@+id/thanhtoan">
+       <LinearLayout
+           android:background="@color/black"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="horizontal">
+           <TextView
+               android:layout_marginLeft="15dp"
+               android:layout_weight="1"
+               android:textStyle="bold"
+               android:layout_gravity="center"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textSize="16dp"
+               android:text="ĐẶT HÀNG "
+               android:textColor="@color/white"
+              />
+           <ImageView
+               android:layout_marginRight="15dp"
+               android:layout_gravity="center"
+               android:layout_width="50dp"
+               android:layout_height="50dp"
+               android:src="@drawable/ic_dathang"/>
+       </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

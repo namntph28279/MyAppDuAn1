@@ -59,6 +59,18 @@ public class DbHelper extends SQLiteOpenHelper {
                 " tenDuong text)";
 
         db.execSQL(crTTTKGG);
+
+        String crGH = "CREATE TABLE gioHang (" +
+                " maSP integer primary key autoincrement  ," +
+                " tenSP text ," +
+                " soLuong text ," +
+                " gia text ," +
+                "kichco text," +
+                " hinh blod," +
+                " tenDangNhap text ," +
+                " email text )";
+
+        db.execSQL(crGH);
     }
 
     @Override

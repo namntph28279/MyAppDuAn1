@@ -12,6 +12,7 @@ import android.widget.Toast;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.Fragment.Fragment_Accout;
 import vn.poly.myapp.Fragment.Fragment_Cart;
+import vn.poly.myapp.Fragment.Fragment_DanhSach_Giay;
 import vn.poly.myapp.Fragment.Fragment_Favourite;
 import vn.poly.myapp.Fragment.Fragment_Home;
 import vn.poly.myapp.Fragment.Fragment_Search;
@@ -30,6 +31,8 @@ public class MainActivity extends BaseActivity {
     Fragment_Cart buy = new Fragment_Cart();
     Fragment_Favourite fav = new Fragment_Favourite();
     Fragment_Search seac = new Fragment_Search();
+    Fragment_DanhSach_Giay ds = new Fragment_DanhSach_Giay();
+
     TaiKhoanDAO dao;
 
 
@@ -52,14 +55,14 @@ public class MainActivity extends BaseActivity {
             bottomNavigationView.getMenu().findItem(R.id.nav_account).setChecked(true);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, acc).commit();
         } else {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, home).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, ds).commit();
         }
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, home).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, ds).commit();
                         return true;
                     case R.id.nav_search:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, seac).commit();

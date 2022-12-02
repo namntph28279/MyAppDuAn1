@@ -153,8 +153,9 @@ public class Fragment_DanhSach_Giay extends Fragment {
                 if(ten.equals("") || ed_gia.getText().toString().equals("") || hinhAnh == null){
                     Toast.makeText(getActivity(), "Chua nhap du lieu", Toast.LENGTH_SHORT).show();
                 }else{
-                    float gia = Float.parseFloat(ed_gia.getText().toString());
+                    String gia =  ed_gia.getText().toString();
 
+                    Log.d("hinhanh", "onClick: "+ hinhAnh);
                     if(dao.insert(ten, gia, hinhAnh, 1)){
                         Toast.makeText(getActivity(), "Them thanh cong", Toast.LENGTH_SHORT).show();
 

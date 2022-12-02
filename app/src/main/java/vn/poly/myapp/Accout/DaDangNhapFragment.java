@@ -38,18 +38,19 @@ import vn.poly.myapp.R;
 public class DaDangNhapFragment extends Fragment {
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
-LinearLayout thongtin,diachi,dieukhoan,tieuchuan,chinhsach,trungtamhotro,doimatkhau,dangxuat;
-TextView ten,email;
-
-
+    LinearLayout thongtin,diachi,dieukhoan,tieuchuan,chinhsach,trungtamhotro,doimatkhau,dangxuat;
+    TextView ten,email;
+    ThongTinDAO tt;
+    TaiKhoanDAO tk;
+    GoogleDAO gg;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        View v = inflater.inflate(R.layout.fragment_da_dang_nhap, container, false);
 
-       ThongTinDAO tt = new ThongTinDAO(getContext());
-        TaiKhoanDAO tk = new TaiKhoanDAO(getContext());
-        GoogleDAO gg = new GoogleDAO(getContext());
+       tt = new ThongTinDAO(getContext());
+       tk = new TaiKhoanDAO(getContext());
+       gg = new GoogleDAO(getContext());
        thongtin =v.findViewById(R.id.chinhsuathongtin);
        diachi = v.findViewById(R.id.diachi);
        dieukhoan = v.findViewById(R.id.dieukhoan);
@@ -58,11 +59,12 @@ TextView ten,email;
        trungtamhotro = v.findViewById(R.id.trungtamhotro);
        doimatkhau = v.findViewById(R.id.doimatkhau);
        dangxuat = v.findViewById(R.id.dangxuat);
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        gsc = GoogleSignIn.getClient(getContext(),gso);
        ten = v.findViewById(R.id.texts);
        email = v.findViewById(R.id.txtEmail);
-        GoogleDAO googleDAO = new GoogleDAO(getContext());
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+        gsc = GoogleSignIn.getClient(getContext(),gso);
+
+
         SharedPreferences preferences = getActivity().getSharedPreferences("USER_FILE", Context.MODE_PRIVATE);
         String user = preferences.getString("USERMANE", "");
         String pass = preferences.getString("PASSWORD", "");
@@ -122,18 +124,26 @@ TextView ten,email;
                startActivity(intent);
            }
        });
-       doimatkhau.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent intent = new Intent(getContext(), DoiMatKhau.class);
-               startActivity(intent);
-           }
-       });
+        if (tk.checkLogin(user,pass)>0){
+            doimatkhau.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getContext(), DoiMatKhau.class);
+                    startActivity(intent);
+                }
+            });
+        }else {
+            doimatkhau.setVisibility(View.INVISIBLE);
+        }
+
+
+
+
        dangxuat.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
 
-              if (googleDAO.checkLogin(users)>0){
+              if (gg.checkLogin(users)>0){
 
 
                   Dialog mdDialog = new Dialog(getContext());

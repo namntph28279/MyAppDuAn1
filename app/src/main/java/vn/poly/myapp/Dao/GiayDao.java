@@ -27,7 +27,7 @@ public class GiayDao {
         while (!cs.isAfterLast()){
             int id = cs.getInt(0);
             String ten = cs.getString(1);
-            float gia = cs.getFloat(2);
+            String gia = cs.getString(2);
             byte[] hinh = cs.getBlob(3);
             float size = cs.getFloat(4);
 
@@ -38,7 +38,7 @@ public class GiayDao {
         return list;
     }
 
-    public boolean insert(String ten, float gia, byte[] hinh, float size){
+    public boolean insert(String ten, String gia, byte[] hinh, float size){
         db = dbHelper.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("ten", ten);
@@ -63,7 +63,7 @@ public class GiayDao {
         if(c.moveToFirst()){
 
             String ten = c.getString(1);
-            float gia = c.getFloat(2);
+            String gia = c.getString(2);
             byte[] hinh = c.getBlob(3);
             float size = c.getFloat(4);
 
