@@ -52,26 +52,23 @@ public class GiayDao {
     }
 
     public Giay selectOne(int id){
-        ArrayList<Giay> list = new ArrayList<>();
-        Giay g = new Giay();
+        db = dbHelper.getReadableDatabase();
+        Giay giay = new Giay();
         String[] args = new String[] { id + "" };
-
-
         String[] columns = new String[]{"*"};
 
-        Cursor c = db.query("myapp.db",columns, null, null,null,null,null);
+        Cursor c = db.query("giay",columns, null, null,null,null,null);
         if(c.moveToFirst()){
 
-            String ten = c.getString(1);
-            String gia = c.getString(2);
-            byte[] hinh = c.getBlob(3);
-            float size = c.getFloat(4);
+            giay.setId( c.getInt(  0  ) );
+            giay.setTen( c.getString(1) );
+            giay.setGia(c.getString(2));
+            giay.setHinh(c.getBlob(3));
+            giay.setSize(c.getFloat(4));
 
-            list.add(new Giay(id, ten, gia, hinh, size));
-            c.moveToNext();
         }
 
-        return g;
+        return giay;
     }
 
 

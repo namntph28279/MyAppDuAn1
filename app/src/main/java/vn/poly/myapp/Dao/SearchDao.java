@@ -47,4 +47,8 @@ public class SearchDao {
         return (row>0);
     }
 
+    public void deleteAll(){
+        db.execSQL("delete from TABLE_SEARCH");
+    }
+
 }

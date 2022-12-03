@@ -19,9 +19,11 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import vn.poly.myapp.Activity.SanPhamActivity;
 import vn.poly.myapp.Adapter.GiayAdapter;
 import vn.poly.myapp.DTO.Giay;
 import vn.poly.myapp.Dao.GiayDao;
@@ -68,6 +70,7 @@ public class Fragment_DanhSach_Giay extends Fragment {
         //anh xa
         rcv_sp = view.findViewById(R.id.rcv_sp);
         fab = view.findViewById(R.id.fab);
+
         //
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +78,8 @@ public class Fragment_DanhSach_Giay extends Fragment {
                 showDialog();
             }
         });
+
+
 
 
         //hien thi len danh sach

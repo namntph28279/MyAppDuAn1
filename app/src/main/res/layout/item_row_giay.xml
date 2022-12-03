@@ -5,22 +5,23 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
 
-    <ImageView
-        android:id="@+id/imggiohang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:src="@drawable/fa" />
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_item_giay"
         android:layout_width="170dp"
         android:layout_height="200dp"
 
         android:backgroundTint="#C0C6CD"
         app:cardElevation="10dp">
 
-
+        <ImageView
+            android:id="@+id/imggiohang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/fa" />
 
 
         <ImageView
