@@ -44,6 +44,45 @@ public class DbHelper extends SQLiteOpenHelper {
 
         db.execSQL(crTTTK);
 
+        String crTTTKGG = "CREATE TABLE thongTinGG (" +
+                " stt integer primary key autoincrement  ," +
+                " email text ," +
+                " hoTen text ," +
+                " diaChi text ," +
+                " soDienThoai text," +
+                " gioiTinh integer," +
+                " TenNguoiNhanHang text ," +
+                " tenTinh text ," +
+                " tenHuyen text," +
+                " tenXa text," +
+                " tenDuong text)";
+
+        db.execSQL(crTTTKGG);
+
+        String crGH = "CREATE TABLE gioHang (" +
+                " maSP integer primary key autoincrement  ," +
+                " tenSP text ," +
+                " soLuong text ," +
+                " gia text ," +
+                "kichco text," +
+                " hinh blod," +
+                " tenDangNhap text ," +
+                " email text )";
+
+        db.execSQL(crGH);
+
+        String crYT = "CREATE TABLE yeuThich (" +
+                " maSP integer primary key autoincrement  ," +
+                " tenSP text ," +
+                " soLuong text ," +
+                " gia text ," +
+                "kichco text," +
+                " hinh blod," +
+                " tenDangNhap text ," +
+                " email text )";
+
+        db.execSQL(crYT);
+
         //Tạo bảng search
         String crSearch = "CREATE TABLE TABLE_SEARCH (id integer primary key autoincrement, search text)";
         db.execSQL(crSearch);
