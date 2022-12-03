@@ -18,6 +18,7 @@
             android:layout_gravity="center"
             android:src="@drawable/img"/>
         <LinearLayout
+
             android:layout_weight="2"
             android:orientation="vertical"
             android:layout_gravity="center"
@@ -88,6 +89,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="10"
+                        android:id="@+id/solgsp"
                         android:textColor="@color/black"/>
                 </LinearLayout>
             </LinearLayout>

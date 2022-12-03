@@ -19,6 +19,7 @@
         android:layout_height="48dp"
         android:orientation="horizontal">
         <TextView
+            android:id="@+id/soluongGH"
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,15 +68,32 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Giá"
-                android:textStyle="bold"
-                android:textSize="22dp"
-                android:gravity="center"
-                android:textColor="#FA0202"/>
+           <LinearLayout
+               android:paddingRight="55dp"
+               android:gravity="right"
+               android:layout_gravity="center"
+               android:layout_width="match_parent"
+               android:layout_weight="1"
+               android:orientation="horizontal"
+               android:layout_height="wrap_content">
+               <TextView
+                   android:id="@+id/giaGH"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:text="Giá"
+                   android:textStyle="bold"
+                   android:textSize="22dp"
+                   android:gravity="center"
+                   android:textColor="#FA0202"/>
+               <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:text="đ"
+               android:textStyle="bold"
+               android:textSize="22dp"
+               android:gravity="center"
+               android:textColor="#FA0202"/>
+           </LinearLayout>
         </LinearLayout>
         <androidx.cardview.widget.CardView
             android:layout_gravity="center"

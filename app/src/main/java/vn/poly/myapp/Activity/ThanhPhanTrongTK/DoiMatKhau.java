@@ -44,7 +44,7 @@ public class DoiMatKhau extends AppCompatActivity {
               String users = preferences.getString("USERMANE", "");
               String pass = preferences.getString("PASSWORD", "");
 
-              taiKhoanDAO.checkLogin(users,pass);
+              taiKhoanDAO.checkLogin(users);
               if(validate()>0){
 
                   TaiKhoan tk =  new TaiKhoan();

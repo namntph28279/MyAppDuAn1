@@ -75,9 +75,9 @@ public class TaiKhoanDAO {
         }
     }
 
-    public int checkLogin(String id ,String passsword){
+    public int checkLogin(String id ){
 
-        Cursor c = mSqLiteDatabase.rawQuery("SELECT * FROM taiKhoan WHERE tenDangNhap='"+id+"' and matKhau= '"+passsword+"'  ",null);
+        Cursor c = mSqLiteDatabase.rawQuery("SELECT * FROM taiKhoan WHERE tenDangNhap='"+id+"'  ",null);
         Log.d("Count",c.getCount()+"");
         c.moveToFirst();
         while ( !c.isAfterLast()){

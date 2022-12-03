@@ -68,7 +68,6 @@ public class Fragment_DanhSach_Giay extends Fragment {
         //anh xa
         rcv_sp = view.findViewById(R.id.rcv_sp);
         fab = view.findViewById(R.id.fab);
-
         //
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,10 +83,6 @@ public class Fragment_DanhSach_Giay extends Fragment {
         adapter = new GiayAdapter(getActivity(), list);
         Log.e("SSS111", " + " + list.size());
         rcv_sp.setAdapter(adapter);
-
-
-
-
     }
 
     @Override

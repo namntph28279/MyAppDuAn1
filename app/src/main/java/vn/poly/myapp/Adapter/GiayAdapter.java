@@ -3,6 +3,7 @@ package vn.poly.myapp.Adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
@@ -57,6 +58,11 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
         holder.tv_ten.setText(list.get(position).getTen());
         holder.tv_gia.setText(list.get(position).getGia()+"");
 
+        SharedPreferences preferences = context.getSharedPreferences("USER_FILE", context.MODE_PRIVATE);
+        String user = preferences.getString("USERMANE", "");
+
+        SharedPreferences preferences2 = context.getSharedPreferences("USER_FILEgg", context.MODE_PRIVATE);
+        String user2 = preferences2.getString("email", "");
 
         byte[] hinh = list.get(position).getHinh();
         Bitmap bitmap = BitmapFactory.decodeByteArray(hinh, 0, hinh.length);
@@ -69,12 +75,16 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
                 Toast.makeText(v.getContext(), ""+list.get(position).getTen()+list.get(position).getGia()+list.get(position).getHinh(), Toast.LENGTH_SHORT).show();
 
                 GioHang gh = new GioHang();
+                gh.setTenDangNhap(user);
+                gh.setEmail(user2);
                 gh.setTenSp(list.get(position).getTen());
                 gh.setGia(list.get(position).getGia());
                 gh.setHinh(list.get(position).getHinh());
+                gh.setSoLuong("1");
 
                 Log.d("abc", "onBindViewHolder: "+list.get(position).getTen());
                 Log.d("abc", "onBindViewHolder: "+list.get(position).getGia());
+                Log.d("abc", "onBindViewHolder: "+user);
 
 
                 int a=  gioHangDAO.themTK(gh);

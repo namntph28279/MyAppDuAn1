@@ -67,12 +67,12 @@ public class DaDangNhapFragment extends Fragment {
 
         SharedPreferences preferences = getActivity().getSharedPreferences("USER_FILE", Context.MODE_PRIVATE);
         String user = preferences.getString("USERMANE", "");
-        String pass = preferences.getString("PASSWORD", "");
+
 
         SharedPreferences preferences3 = getActivity().getSharedPreferences("USER_FILEgg", Context.MODE_PRIVATE);
         String users = preferences3.getString("email", "");
 
-        if (tk.checkLogin(user,pass)>0){
+        if (tk.checkLogin(user)>0){
             ten.setText(tt.TenChuTK(user));
             email.setText(tt.Eamil(user));
         }else {
@@ -124,7 +124,7 @@ public class DaDangNhapFragment extends Fragment {
                startActivity(intent);
            }
        });
-        if (tk.checkLogin(user,pass)>0){
+        if (tk.checkLogin(user)>0){
             doimatkhau.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -187,7 +187,7 @@ public class DaDangNhapFragment extends Fragment {
                   mdDialog.show();
 
 
-              }else if(tk.checkLogin(user,pass)>0){
+              }else if(tk.checkLogin(user)>0){
                   Dialog mdDialog = new Dialog(getContext());
                   mdDialog.setContentView(R.layout.layout_exit);
                   CardView btnCo, btnKo;

@@ -1,17 +1,15 @@
 package vn.poly.myapp.Activity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.Fragment.Fragment_Accout;
-import vn.poly.myapp.Fragment.Fragment_Cart;
+import vn.poly.myapp.Fragment.GioHang.Fragment_Cart;
 import vn.poly.myapp.Fragment.Fragment_DanhSach_Giay;
 import vn.poly.myapp.Fragment.Fragment_Favourite;
 import vn.poly.myapp.Fragment.Fragment_Home;

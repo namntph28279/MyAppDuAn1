@@ -51,7 +51,7 @@ public class Fragment_Accout extends Fragment {
         FragmentManager fragmentManager= getChildFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-        if (taiKhoanDAO.checkLogin(user,pass)>0 ||googleDAO.checkLogin(user2)>0){
+        if (taiKhoanDAO.checkLogin(user)>0 ||googleDAO.checkLogin(user2)>0){
             DaDangNhapFragment daDangNhapFragment= new DaDangNhapFragment();
             fragmentTransaction.replace(R.id.acc,daDangNhapFragment);
             fragmentTransaction.commit();

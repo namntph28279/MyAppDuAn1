@@ -162,7 +162,7 @@ public class ManHinhDangNhap extends AppCompatActivity {
          Toast.makeText(this, "Không được để chống tài khoản hoặc Mật khẩu", Toast.LENGTH_SHORT).show();
      }
      else{
-         if(taiKhoanDAO.checkLogin(tk,mk)>0){
+         if(taiKhoanDAO.checkLogin(tk)>0){
              Toast.makeText(this, "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
 
              Intent i = new Intent(ManHinhDangNhap.this, MainActivity.class);
