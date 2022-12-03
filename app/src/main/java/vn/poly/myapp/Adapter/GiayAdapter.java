@@ -20,8 +20,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import vn.poly.myapp.Activity.ManHinhDangNhapDangKy.ManHinhDangNhap;
 import vn.poly.myapp.DTO.Giay;
 import vn.poly.myapp.DTO.GioHang;
+import vn.poly.myapp.DTO.YeuThich;
 import vn.poly.myapp.Dao.GiayDao;
 import vn.poly.myapp.Dao.GioHangDAO;
+import vn.poly.myapp.Dao.YeuThichDAO;
 import vn.poly.myapp.R;
 
 
@@ -31,6 +33,7 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
     ArrayList<Giay> list;
     Context context;
     GiayDao dao;
+    YeuThichDAO yeuThichDAO;
 
 
 
@@ -71,28 +74,48 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
         holder.img_giohang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GioHangDAO gioHangDAO = new GioHangDAO(context);
-                Toast.makeText(v.getContext(), ""+list.get(position).getTen()+list.get(position).getGia()+list.get(position).getHinh(), Toast.LENGTH_SHORT).show();
 
-                GioHang gh = new GioHang();
-                gh.setTenDangNhap(user);
-                gh.setEmail(user2);
-                gh.setTenSp(list.get(position).getTen());
-                gh.setGia(list.get(position).getGia());
-                gh.setHinh(list.get(position).getHinh());
-                gh.setSoLuong("1");
+//                GioHangDAO gioHangDAO = new GioHangDAO(context);
+//                Toast.makeText(v.getContext(), ""+list.get(position).getTen()+list.get(position).getGia()+list.get(position).getHinh(), Toast.LENGTH_SHORT).show();
+//
+//                GioHang gh = new GioHang();
+//                gh.setTenDangNhap(user);
+//                gh.setEmail(user2);
+//                gh.setTenSp(list.get(position).getTen());
+//                gh.setGia(list.get(position).getGia());
+//                gh.setHinh(list.get(position).getHinh());
+//                gh.setSoLuong("1");
+//
+//                Log.d("abc", "onBindViewHolder: "+list.get(position).getTen());
+//                Log.d("abc", "onBindViewHolder: "+list.get(position).getGia());
+//                Log.d("abc", "onBindViewHolder: "+user);
+//
+//                int a=  gioHangDAO.themTK(gh);
+//
+//                if(a==-1){
+//                    Toast.makeText(context,"Add Thất Bại",Toast.LENGTH_SHORT).show();
+//                }else{
+//                    Toast.makeText(context,"Add Thành Công",Toast.LENGTH_SHORT).show();
+//
+//
+//                }
 
-                Log.d("abc", "onBindViewHolder: "+list.get(position).getTen());
-                Log.d("abc", "onBindViewHolder: "+list.get(position).getGia());
-                Log.d("abc", "onBindViewHolder: "+user);
+               YeuThichDAO yeuThichDAO = new YeuThichDAO(context);
+                YeuThich yt = new YeuThich();
+                yt.setEmail(user2);
+                yt.setTenDangNhap(user);
+                yt.setTenSp(list.get(position).getTen());
+                yt.setGia(list.get(position).getGia());
+                yt.setHinh(list.get(position).getHinh());
 
+                int b=  yeuThichDAO.themYT(yt);
 
-                int a=  gioHangDAO.themTK(gh);
-
-                if(a==-1){
+                if(b==-1){
                     Toast.makeText(context,"Add Thất Bại",Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(context,"Add Thành Công",Toast.LENGTH_SHORT).show();
+
+
                 }
 
 

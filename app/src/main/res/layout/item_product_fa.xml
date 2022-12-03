@@ -2,71 +2,98 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="16dp"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="10dp"
-    android:backgroundTint="#C0C6CD"
-    android:layout_height="wrap_content">
+    android:layout_margin="7dp"
+    android:layout_height="80dp"
+    app:cardCornerRadius="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:orientation="horizontal"
-        >
+        android:layout_height="match_parent"
+        android:background="#ECEDEF"
+        android:orientation="horizontal">
+
+    >
         <ImageView
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="16dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/img"
-            />
+            android:id="@+id/hinhanhYT"
+            android:layout_marginLeft="13dp"
+            android:layout_width="96.25dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:src="@drawable/img"/>
+
 
         <LinearLayout
-            android:layout_marginLeft="24dp"
-            android:layout_width="260dp"
-            android:layout_height="match_parent"
+            android:layout_weight="2"
             android:orientation="vertical"
-            >
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp">
+        >
             <TextView
-                android:layout_marginTop="8dp"
+                android:id="@+id/tenYT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Giay ultra"
-                />
-
-            <TextView
-                android:layout_marginTop="8dp"
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gia: 6.000.000d"
+                android:text="GIÀY ADIDAS 4DFWD"
+                android:textColor="@color/black"
                 />
 
             <LinearLayout
-                android:layout_marginTop="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
-                <Button
-                    android:backgroundTint="#E3DEDE"
-                    android:textColor="@color/black"
-                    android:textSize="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="32dp"
-                    android:text="Them vao gio hang"
-                    />
-                <ImageView
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="4dp"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_buy"
+                    android:text="Giá:"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/giaYT"
+                    android:layout_marginLeft="7dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.000.000d"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     />
             </LinearLayout>
+
+           <com.google.android.material.card.MaterialCardView
+             android:id="@+id/themGio"
+               app:strokeWidth="1dp"
+               android:layout_marginTop="3dp"
+               app:strokeColor="@color/black"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               app:cardCornerRadius="1dp">
+               <LinearLayout
+                android:layout_margin="3dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                   <TextView
+                       android:layout_marginLeft="5dp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Thêm vào giỏ"
+                       android:textColor="@color/black"
+                       />
+                   <ImageView
+                       android:layout_marginRight="5dp"
+                       android:layout_marginLeft="5dp"
+                       android:layout_width="20dp"
+                       android:layout_height="20dp"
+                       android:src="@drawable/ic_themhang"/>
+
+               </LinearLayout>
+
+           </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
         <ImageView
-
+            android:id="@+id/tuychonYT"
             android:layout_gravity="center_vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
