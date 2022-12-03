@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.poly.myapp">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,22 +16,25 @@
         android:theme="@style/Theme.MyApp"
         tools:targetApi="31">
         <activity
-            android:name=".DanhSachGiayActivity"
+            android:name=".Activity.SanPhamActivity"
             android:exported="false" />
         <activity
-            android:name=".ThanhPhanTrongTK.DoiMatKhau"
-            android:exported="false"></activity>
+            android:name=".Activity.DanhSachGiayActivity"
+            android:exported="false" />
         <activity
-            android:name=".ThanhPhanTrongTK.TieuChuanCongDong"
-            android:exported="false"></activity>
+            android:name=".Activity.ThanhPhanTrongTK.DoiMatKhau"
+            android:exported="false" />
         <activity
-            android:name=".ManHinhDangNhapDangKy.ManHinhDangKy"
-            android:exported="false"></activity>
+            android:name=".Activity.ThanhPhanTrongTK.TieuChuanCongDong"
+            android:exported="false" />
         <activity
-            android:name=".ManHinhDangNhapDangKy.ManHinhDangNhap"
-            android:exported="false"></activity>
+            android:name=".Activity.ManHinhDangNhapDangKy.ManHinhDangKy"
+            android:exported="false" />
         <activity
-            android:name=".ManHinhChao.ManHinhChao1"
+            android:name=".Activity.ManHinhDangNhapDangKy.ManHinhDangNhap"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ManHinhChao.ManHinhChao1"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,11 +43,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ManHinhChao.ManHinhChao2"
-            android:exported="false"></activity>
+            android:name=".Activity.ManHinhChao.ManHinhChao2"
+            android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:name=".Activity.MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

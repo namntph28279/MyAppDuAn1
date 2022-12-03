@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activity.SanPhamActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationIcon="@drawable/ic_back_24"
+        app:title="Chi tiết sản phẩm"
+        app:titleTextColor="@color/black"/>
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       >
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           >
+           <androidx.cardview.widget.CardView
+               android:layout_gravity="center"
+               android:layout_margin="20dp"
+               android:layout_width="360dp"
+               android:layout_height="160dp"
+               android:backgroundTint="#C0C6CD"
+               >
+               <ImageView
+                   android:id="@+id/img_sp"
+                   android:layout_gravity="center_horizontal|center_vertical"
+                   android:layout_width="200dp"
+                   android:layout_height="100dp"
+                   android:src="@drawable/img"
+                   />
+
+               <ImageView
+                   android:layout_marginTop="16dp"
+                   android:layout_marginRight="16dp"
+                   android:layout_width="25dp"
+                   android:layout_height="25dp"
+                   android:src="@drawable/fa"
+                   android:layout_gravity="right"
+                   />
+           </androidx.cardview.widget.CardView>
+
+           <LinearLayout
+               android:layout_marginRight="20dp"
+               android:layout_marginLeft="20dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               >
+               <TextView
+                   android:id="@+id/tv_name_sp"
+                   android:layout_marginLeft="8dp"
+                   android:textSize="16dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textStyle="bold"
+                   android:text="Giay adidas"
+                   />
+               <TextView
+                   android:textSize="16dp"
+                   android:layout_marginLeft="180dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textStyle="bold"
+                   android:text="Nam sneaker"
+                   />
+
+           </LinearLayout>
+
+           <ImageView
+
+               android:layout_marginTop="8dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:src="@drawable/line"
+               />
+
+           <LinearLayout
+               android:layout_marginTop="8dp"
+               android:layout_marginRight="20dp"
+               android:layout_marginLeft="20dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               >
+               <TextView
+                   android:layout_marginLeft="8dp"
+                   android:textSize="16dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textStyle="bold"
+                   android:text="Kich co"
+                   />
+               <ImageView
+                   android:layout_marginLeft="16dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/rule"
+                   />
+
+           </LinearLayout>
+
+           <LinearLayout
+               android:layout_marginTop="8dp"
+               android:layout_marginRight="20dp"
+               android:layout_marginLeft="20dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               >
+               <Button
+                   android:layout_width="wrap_content"
+                   android:layout_height="40dp"
+                   android:backgroundTint="#C0C6CD"
+                   android:textColor="@color/black"
+                   android:text="6 uk"
+                   />
+               <Button
+                   android:layout_marginLeft="8dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="40dp"
+                   android:backgroundTint="#C0C6CD"
+                   android:textColor="@color/black"
+                   android:text="7 uk"
+                   />
+               <Button
+                   android:layout_marginLeft="8dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="40dp"
+                   android:backgroundTint="#C0C6CD"
+                   android:textColor="@color/black"
+                   android:text="8 uk"
+                   />
+               <Button
+                   android:layout_marginLeft="8dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="40dp"
+                   android:backgroundTint="#C0C6CD"
+                   android:textColor="@color/black"
+                   android:text="9 uk"
+                   />
+
+           </LinearLayout>
+
+           <androidx.cardview.widget.CardView
+               android:layout_marginTop="16dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginRight="20dp"
+               android:backgroundTint="#C0C6CD"
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               app:cardCornerRadius="20dp"
+               app:cardElevation="10dp"
+
+               >
+               <TextView
+                   android:layout_gravity="center_vertical"
+                   android:layout_marginLeft="8dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Them vao gio hang"
+                   android:textStyle="bold"
+                   android:textSize="20dp"/>
+
+               <ImageView
+                   android:layout_gravity="center_vertical|right"
+                   android:backgroundTint="@color/black"
+                   android:layout_marginRight="8dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:src="@drawable/ic_buy"
+                   />
+           </androidx.cardview.widget.CardView>
+
+           <androidx.cardview.widget.CardView
+               android:layout_marginTop="16dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginRight="20dp"
+               android:backgroundTint="#C0C6CD"
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               app:cardCornerRadius="20dp"
+               app:cardElevation="10dp"
+
+               >
+               <TextView
+                   android:layout_gravity="center_vertical"
+                   android:layout_marginLeft="8dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Mua ngay"
+                   android:textStyle="bold"
+                   android:textSize="20dp"/>
+
+               <ImageView
+
+                   android:layout_gravity="center_vertical|right"
+                   android:backgroundTint="@color/black"
+                   android:layout_marginRight="8dp"
+                   android:layout_width="25dp"
+                   android:layout_height="30dp"
+                   android:src="@drawable/ic_muiten"
+                   />
+           </androidx.cardview.widget.CardView>
+
+           <TextView
+               android:textColor="@color/black"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Xep hang va danh gia"
+               android:textSize="15dp"
+               android:textStyle="bold"
+               android:layout_marginLeft="28dp"
+               android:layout_marginTop="8dp"
+               />
+
+           <TextView
+               android:id="@+id/tv_rating"
+               android:textColor="@color/black"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="5.0"
+               android:textSize="30dp"
+               android:textStyle="bold"
+               android:layout_marginLeft="58dp"
+               android:layout_marginTop="8dp"
+               />
+
+           <RatingBar
+
+               android:layout_marginRight="16dp"
+               android:layout_marginLeft="16dp"
+               android:layout_marginTop="8dp"
+               android:id="@+id/ratingBar"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+
+
+           <Button
+               android:id="@+id/btn_rating"
+               android:layout_marginLeft="16dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Submit"
+               android:backgroundTint="@color/black"
+               />
+
+
+       </LinearLayout>
+   </ScrollView>
+
+</LinearLayout>

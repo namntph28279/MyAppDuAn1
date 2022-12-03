@@ -16,56 +16,67 @@
         android:background="@color/black"
         />
 
-    <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp"
-        android:id="@+id/viewpager_home"/>
-
-    <me.relex.circleindicator.CircleIndicator
-        android:background="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:id="@+id/circle_indicator_home"
-        android:layout_marginTop="16dp"
-        android:layout_gravity="center_horizontal"/>
-
-    <LinearLayout
-        android:layout_margin="16dp"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         >
-
-        <TextView
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SẢN PHẨM THỊNH HÀNH"
-            />
+            android:orientation="vertical"
+            >
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/viewpager_home"/>
 
-        <TextView
-            android:layout_marginLeft="70dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Xem tất cả"
-            android:textColor="#D81313"
-            />
+            <me.relex.circleindicator.CircleIndicator
+                android:outlineAmbientShadowColor="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:id="@+id/circle_indicator_home"
+                android:layout_marginTop="2dp"
+                android:layout_gravity="center_horizontal"/>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SẢN PHẨM THỊNH HÀNH"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_showAll_home"
+                    android:layout_marginLeft="70dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Xem tất cả"
+                    android:textColor="#D81313"
+                    />
+
+            </LinearLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv_home"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_margin="16dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
-        tools:itemCount="8" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_home"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_margin="16dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="8" />
 
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

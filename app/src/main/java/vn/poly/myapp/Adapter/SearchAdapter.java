@@ -20,8 +20,8 @@ import vn.poly.myapp.Dao.GiayDao;
 import vn.poly.myapp.Dao.SearchDao;
 import vn.poly.myapp.R;
 
-public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewHolder> implements Filterable {
-    ArrayList<Search> listOld;
+public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchViewHolder>  {
+
     ArrayList<Search> list;
     Context context;
     SearchDao dao;
@@ -30,7 +30,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         this.context = context;
         this.list = list;
         dao = new SearchDao(context);
-        this.listOld = list;
+
     }
 
 
@@ -61,36 +61,4 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         }
     }
 
-    @Override
-    public Filter getFilter() {
-        return new Filter() {
-            @Override
-            protected FilterResults performFiltering(CharSequence constraint) {
-                String search = constraint.toString();
-
-                if(search.isEmpty()){
-                    list = listOld;
-                }else{
-                    ArrayList<Search> list01 = new ArrayList<>();
-                    for (Search s: listOld){
-                        if(s.getSearch().contains(search.toLowerCase())){
-                            list01.add(s);
-                        }
-                    }
-
-                    list = list01;
-                }
-
-                FilterResults filterResults = new FilterResults();
-                filterResults.values = list;
-                return filterResults;
-            }
-
-            @Override
-            protected void publishResults(CharSequence constraint, FilterResults results) {
-                list = (ArrayList<Search>) results.values;
-                notifyDataSetChanged();
-            }
-        };
-    }
 }

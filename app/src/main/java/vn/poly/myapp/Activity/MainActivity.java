@@ -53,14 +53,14 @@ public class MainActivity extends BaseActivity {
             bottomNavigationView.getMenu().findItem(R.id.nav_account).setChecked(true);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, acc).commit();
         } else {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, ds).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, home).commit();
         }
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, ds).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, home).commit();
                         return true;
                     case R.id.nav_search:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, seac).commit();

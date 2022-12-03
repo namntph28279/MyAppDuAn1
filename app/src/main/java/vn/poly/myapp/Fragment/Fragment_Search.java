@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -28,6 +29,7 @@ import vn.poly.myapp.R;
 public class Fragment_Search extends Fragment {
     private EditText ed_search;
     private ImageView img_search;
+    private TextView tv_deleteAll;
     private GiayAdapter adapter;
     private RecyclerView rcv_search, rcv_sp_search;
     GiayDao dao;
@@ -52,6 +54,7 @@ public class Fragment_Search extends Fragment {
         ed_search = view.findViewById(R.id.ed_search);
         rcv_sp_search = view.findViewById(R.id.rcv_sp_search);
         img_search = view.findViewById(R.id.img_search);
+        tv_deleteAll = view.findViewById(R.id.tv_deleteAll);
 
 
         //Xử lý ds giày
@@ -68,6 +71,15 @@ public class Fragment_Search extends Fragment {
         rcv_search.setAdapter(adapter_s);
         adapter_s.notifyDataSetChanged();
 
+        //Xoa lich su tim kiem
+        tv_deleteAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dao_s.deleteAll();
+                adapter_s.notifyDataSetChanged();
+            }
+        });
+
         //Xử lý searchview
         img_search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,8 +88,11 @@ public class Fragment_Search extends Fragment {
                 if(text.equals("")){
                     Toast.makeText(getActivity(), "No data", Toast.LENGTH_SHORT).show();
                 }else{
-                    adapter_s.getFilter().filter(text);
+
                     if (dao_s.insert(text)){
+                        adapter.getFilter().filter(text);
+                        adapter.notifyDataSetChanged();
+                        ed_search.setText("");
                         Toast.makeText(getActivity(), "ok", Toast.LENGTH_SHORT).show();
                     }
                 }

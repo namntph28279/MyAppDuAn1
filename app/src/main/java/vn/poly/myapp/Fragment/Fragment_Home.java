@@ -1,5 +1,7 @@
 package vn.poly.myapp.Fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -7,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,6 +23,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import me.relex.circleindicator.CircleIndicator;
+import vn.poly.myapp.Activity.DanhSachGiayActivity;
+import vn.poly.myapp.Activity.SanPhamActivity;
 import vn.poly.myapp.Adapter.AnhAdapte;
 import vn.poly.myapp.Adapter.GiayAdapter;
 import vn.poly.myapp.DTO.Anh;
@@ -34,6 +39,8 @@ public class Fragment_Home extends Fragment {
     private AnhAdapte anhAdapte;
     private List<Anh> listAnh;
     private Timer timer;
+    private TextView tv_showAll_home;
+    private Context context;
 
     //
     ArrayList<Giay> list;
@@ -48,6 +55,7 @@ public class Fragment_Home extends Fragment {
         viewpager_home = view.findViewById(R.id.viewpager_home);
         rcv_home = view.findViewById(R.id.rcv_home);
         circleIndicator_home = view.findViewById(R.id.circle_indicator_home);
+        tv_showAll_home = view.findViewById(R.id.tv_showAll_home);
 
 
         //
@@ -66,6 +74,15 @@ public class Fragment_Home extends Fragment {
         rcv_home.setAdapter(adapter);
 
         autoslide();
+
+        //
+        tv_showAll_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), DanhSachGiayActivity.class);
+                getActivity().startActivity(i);
+            }
+        });
     }
 
     @Nullable
@@ -76,9 +93,9 @@ public class Fragment_Home extends Fragment {
 
     private List<Anh> getListPhoto(){
         List<Anh> list = new ArrayList<>();
-        list.add(new Anh(R.drawable.logo));
-        list.add(new Anh(R.drawable.logo1));
-        list.add(new Anh(R.drawable.logo2));
+        list.add(new Anh(R.drawable.slide1));
+        list.add(new Anh(R.drawable.slide2));
+        list.add(new Anh(R.drawable.slide3));
 
         return list;
     }
