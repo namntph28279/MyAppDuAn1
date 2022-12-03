@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.SearchView;
+
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -28,10 +28,10 @@ import vn.poly.myapp.R;
 public class Fragment_Search extends Fragment {
     private EditText ed_search;
     private ImageView img_search;
-    private SearchAdapter adapter;
+    private GiayAdapter adapter;
     private RecyclerView rcv_search, rcv_sp_search;
-    SearchDao dao;
-    private ArrayList<Search> list;
+    GiayDao dao;
+    private ArrayList<Giay> list;
 
     private ArrayList<Search> list_s;
     private SearchAdapter adapter_s;
@@ -55,9 +55,9 @@ public class Fragment_Search extends Fragment {
 
 
         //Xử lý ds giày
-        dao = new SearchDao(getActivity());
+        dao = new GiayDao(getActivity());
         list = dao.getAll();
-        adapter = new SearchAdapter(getActivity(), list);
+        adapter = new GiayAdapter(getActivity(), list);
         rcv_sp_search.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -76,7 +76,7 @@ public class Fragment_Search extends Fragment {
                 if(text.equals("")){
                     Toast.makeText(getActivity(), "No data", Toast.LENGTH_SHORT).show();
                 }else{
-                    adapter.getFilter().filter(text);
+                    adapter_s.getFilter().filter(text);
                     if (dao_s.insert(text)){
                         Toast.makeText(getActivity(), "ok", Toast.LENGTH_SHORT).show();
                     }
