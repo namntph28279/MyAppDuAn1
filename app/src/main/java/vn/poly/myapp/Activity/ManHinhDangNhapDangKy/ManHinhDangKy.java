@@ -17,6 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 import vn.poly.myapp.DTO.TaiKhoan;
 import vn.poly.myapp.DTO.ThongTin;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
@@ -25,13 +28,13 @@ import vn.poly.myapp.R;
 
 
 public class ManHinhDangKy extends AppCompatActivity {
-    EditText ten,tenDangNhap,Email,Pass,PassLai;
     CardView btnDangKy;
     CheckBox checkDieuKhoan;
     TextView dangNhap;
-
+    TextInputEditText ten,tenDangNhap,Email,Pass,PassLai;
     TaiKhoanDAO taiKhoanDAO;
     ThongTinDAO thongTinDAO;
+
 
 
 

@@ -22,6 +22,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import vn.poly.myapp.Activity.MainActivity;
 import vn.poly.myapp.Activity.ThanhPhanTrongTK.QuenMatKhau;
@@ -33,7 +35,8 @@ import vn.poly.myapp.R;
 
 public class ManHinhDangNhap extends AppCompatActivity {
 
-    EditText User,Pass;
+
+    TextInputEditText  User,Pass;
     CardView dangNhap;
     String tk,mk;
     TaiKhoanDAO taiKhoanDAO;
@@ -43,6 +46,8 @@ public class ManHinhDangNhap extends AppCompatActivity {
     LinearLayout dangnhapGG;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
+    TextInputLayout checkpass,checkuser;
+    TextView thongBao;
 
 
     @Override
@@ -54,6 +59,9 @@ public class ManHinhDangNhap extends AppCompatActivity {
         Pass = findViewById(R.id.inputPassdn);
         dky = findViewById(R.id.txtDangKy);
         dangNhap = findViewById(R.id.Dangnhapdn);
+        checkpass = findViewById(R.id.checkpass);
+        checkuser = findViewById(R.id.checkuser);
+        thongBao = findViewById(R.id.tt);
 
         dangnhapGG  = findViewById(R.id.dangnhapgg);
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
@@ -90,6 +98,17 @@ public class ManHinhDangNhap extends AppCompatActivity {
         dangNhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String user = checkuser.getEditText().getText().toString().trim();
+                String pass = checkpass.getEditText().getText().toString().trim();
+                if (user.isEmpty()&&pass.isEmpty()){
+                    thongBao.setText("Vui lòng nhập đầy đủ thông tin");
+                }else if (user.isEmpty()){
+                    thongBao.setText("Vui lòng điền User");
+                }else if (pass.isEmpty()){
+                    thongBao.setText("Vui lòng điền Password");}
+                else {
+                    thongBao.setText(" ");
+                }
                 checkLogin();
             }
         });
@@ -158,11 +177,14 @@ public class ManHinhDangNhap extends AppCompatActivity {
      tk = User.getText().toString();
      mk = Pass.getText().toString();
         rememberUser(tk,mk);
-     if (tk.isEmpty()||mk.isEmpty()){
-         Toast.makeText(this, "Không được để chống tài khoản hoặc Mật khẩu", Toast.LENGTH_SHORT).show();
+
+     if (!checkUser() | !checkPass()){
+         return;
      }
+
      else{
          if(taiKhoanDAO.checkLogin(tk)>0){
+             thongBao.setText("");
              Toast.makeText(this, "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
 
              Intent i = new Intent(ManHinhDangNhap.this, MainActivity.class);
@@ -172,18 +194,38 @@ public class ManHinhDangNhap extends AppCompatActivity {
              SharedPreferences.Editor edit = pref.edit();
              edit.putString("check","1");
              edit.commit();
-
-
              finish();
 
           }
          else {
-             Toast.makeText(this, "Tên đăng nhập hoặc Mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+             thongBao.setText("Tài khoản hoặc mật khẩu không đúng");
              return;
         }
 
      }
     }
+    private boolean checkUser() {
+        String user = checkuser.getEditText().getText().toString().trim();
+        if (user.isEmpty()) {
+            checkuser.setError(" ");
+            thongBao.setText("Vui lòng điền đầy đủ thông tin ");
+            return false;
+        } else {
+            checkuser.setError(null);
+            return true;
+        }
+    }
+    private boolean checkPass() {
+        String pass = checkpass.getEditText().getText().toString().trim();
+        if (pass.isEmpty() ) {
+            checkpass.setError("  ");
+            return false;
+        } else {
+            checkpass.setError(null);
+            return true;
+        }
+    }
+
     private void quayLai() {
         setTitle("");
         Toolbar toolbar = findViewById(R.id.toolBardn);

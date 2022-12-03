@@ -23,11 +23,11 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:src="@drawable/nhan"
-          android:layout_marginBottom="18dp"
+          android:layout_marginBottom="5dp"
           />
 
       <TextView
-          android:layout_marginBottom="10dp"
+          android:layout_marginBottom="5dp"
           android:gravity="center"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
 
 
       <TextView
-          android:layout_marginBottom="23dp"
+          android:layout_marginBottom="15dp"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="Tạo một tài khoản mới "
@@ -46,75 +46,129 @@
           android:textColor="#9098B1"
           />
 
-      <EditText
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="343dp"
+          android:layout_height="63.5dp"
           android:layout_marginBottom="8dp"
-          android:id="@+id/inputFullName"
+          android:hint="Full name"
+          app:boxBackgroundColor="#FFFFFF"
+          app:boxBackgroundMode="outline"
+          app:boxStrokeColor="#A39B9B"
+          app:endIconMode="clear_text"
+          app:endIconTint="#A39B9B"
+          app:hintTextColor="#777676"
+          app:startIconDrawable="@drawable/name">
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/inputFullName"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="textWebEmailAddress|textPersonName"
+              android:paddingBottom="15dp" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
           android:layout_width="343dp"
           android:layout_height="wrap_content"
-
-          android:background="@drawable/round_border"
-          android:drawableStart="@drawable/name"
-          android:drawablePadding="16dp"
-          android:ems="10"
-          android:hint="Full Name"
-          android:inputType="textEmailAddress"
-          android:padding="16dp"
-          />
-      <EditText
           android:layout_marginBottom="8dp"
-          android:id="@+id/inputEmail"
-          android:layout_width="343dp"
-          android:layout_height="wrap_content"
 
-          android:background="@drawable/round_border"
-          android:drawableStart="@drawable/email"
-          android:drawablePadding="16dp"
-          android:ems="10"
           android:hint="Your Email"
-          android:inputType="textEmailAddress"
-          android:padding="16dp"
-          />
-      <EditText
-          android:layout_marginBottom="8dp"
-          android:id="@+id/inputTenDangNhap"
-          android:layout_width="343dp"
-          android:layout_height="wrap_content"
+          app:boxBackgroundColor="#FFFFFF"
+          app:boxBackgroundMode="outline"
+          app:boxStrokeColor="#A39B9B"
+          app:endIconMode="clear_text"
+          app:hintTextColor="#777676"
+          app:startIconDrawable="@drawable/email">
 
-          android:background="@drawable/round_border"
-          android:drawableStart="@drawable/name"
-          android:drawablePadding="16dp"
-          android:ems="10"
-          android:hint="Ten Dang Nhap"
-          android:inputType="textEmailAddress"
-          android:padding="16dp"
-          />
-      <EditText
-          android:layout_marginBottom="8dp"
-          android:id="@+id/inputPassword"
-          android:layout_width="343dp"
-          android:layout_height="wrap_content"
+          <com.google.android.material.textfield.TextInputEditText
+              app:errorEnabled="true"
+              android:id="@+id/inputEmail"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="textWebEmailAddress|textPersonName"
+              android:paddingBottom="15dp" />
+      </com.google.android.material.textfield.TextInputLayout>
 
-          android:background="@drawable/round_border"
-          android:drawableStart="@drawable/password"
-          android:drawablePadding="16dp"
-          android:ems="10"
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="343dp"
+          android:layout_height="63.5dp"
+          android:layout_marginBottom="8dp"
+
+          android:hint="Tên Đăng Nhập "
+          app:boxBackgroundColor="#FFFFFF"
+          app:boxBackgroundMode="outline"
+          app:boxStrokeColor="#A39B9B"
+          app:endIconMode="clear_text"
+          app:hintTextColor="#777676"
+          app:startIconDrawable="@drawable/name">
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/inputTenDangNhap"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="textWebEmailAddress|textPersonName"
+              android:paddingBottom="15dp" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="343dp"
+          android:layout_height="63.5dp"
+          android:layout_marginBottom="8dp"
           android:hint="Password"
-          android:inputType="textPassword"
-          android:padding="16dp"
-          />
-      <EditText
-          android:layout_marginBottom="8dp"
-          android:id="@+id/inputPasswordAgain"
-          android:layout_width="343dp"
-          android:layout_height="wrap_content"
-          android:background="@drawable/round_border"
-          android:drawableStart="@drawable/password"
-          android:drawablePadding="16dp"
+          app:boxBackgroundColor="#FFFFFF"
+          app:boxBackgroundMode="outline"
+          app:boxStrokeColor="#A39B9B"
+          app:counterEnabled="true"
+          app:counterMaxLength="10"
+          app:endIconMode="password_toggle"
+          app:endIconTint="#9A9897"
+          app:helperText="Enter trong pass"
+          app:helperTextEnabled="true"
+          app:helperTextTextColor="#F44336"
+          app:hintTextColor="#777676"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+          app:startIconDrawable="@drawable/password">
 
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/inputPassword"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="textPassword"
+              android:paddingBottom="15dp" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="343dp"
+          android:layout_height="63.5dp"
+          android:layout_marginBottom="8dp"
           android:hint="Password Again"
-          android:inputType="textPassword"
-          android:padding="16dp"
-          />
+          app:boxBackgroundColor="#FFFFFF"
+          app:boxBackgroundMode="outline"
+          app:boxStrokeColor="#A39B9B"
+          app:counterEnabled="true"
+          app:counterMaxLength="10"
+          app:endIconMode="password_toggle"
+          app:endIconTint="#9A9897"
+          app:helperText="Enter trong pass"
+          app:helperTextEnabled="true"
+          app:helperTextTextColor="#F44336"
+          app:hintTextColor="#777676"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+          app:startIconDrawable="@drawable/password">
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/inputPasswordAgain"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="textPassword"
+              android:paddingBottom="15dp" />
+      </com.google.android.material.textfield.TextInputLayout>
 
           <CheckBox
               android:id="@+id/check"
@@ -129,8 +183,8 @@
 
 
       <androidx.cardview.widget.CardView
-          android:layout_marginBottom="18dp"
-          android:layout_marginTop="15dp"
+          android:layout_marginBottom="10dp"
+
           android:layout_width="343dp"
           android:layout_height="48dp"
           app:cardCornerRadius="5dp"

@@ -7,7 +7,9 @@ import android.content.SharedPreferences;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import vn.poly.myapp.Dao.GoogleDAO;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
+import vn.poly.myapp.Dao.YeuThichDAO;
 import vn.poly.myapp.Fragment.Fragment_Accout;
 import vn.poly.myapp.Fragment.GioHang.Fragment_Cart;
 import vn.poly.myapp.Fragment.Fragment_DanhSach_Giay;
@@ -17,6 +19,7 @@ import vn.poly.myapp.Fragment.Fragment_Search;
 import vn.poly.myapp.R;
 
 
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -35,6 +38,9 @@ public class MainActivity extends BaseActivity {
 
 
 
+
+
+
     @Override
     void initLayout() {
         bottomNavigationView = findViewById(R.id.bottom_nav_home);
@@ -45,22 +51,33 @@ public class MainActivity extends BaseActivity {
     void initAction() {
         SharedPreferences preferences = getSharedPreferences("USER_FILES", Context.MODE_PRIVATE);
         String check = preferences.getString("check", "");
-
         SharedPreferences preferences2 = getSharedPreferences("Google", Context.MODE_PRIVATE);
         String check2 = preferences2.getString("checkgg", "");
+
 
         if (check == "1" || check == "2"||check2=="1"||check2=="2") {
             bottomNavigationView.getMenu().findItem(R.id.nav_account).setChecked(true);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, acc).commit();
         } else {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, ds).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, home).commit();
         }
+
+
+
+//        BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.nav_fa);
+//        badgeDrawable.setVisible(true);
+//        badgeDrawable.setNumber(8);
+//
+//        BadgeDrawable badgeDrawable2 = bottomNavigationView.getOrCreateBadge(R.id.nav_cart);
+//        badgeDrawable2.setVisible(true);
+//        badgeDrawable2.setNumber(8);
+//
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.nav_home:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, ds).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, home).commit();
                         return true;
                     case R.id.nav_search:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, seac).commit();
