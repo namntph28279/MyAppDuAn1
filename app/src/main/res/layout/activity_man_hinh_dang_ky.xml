@@ -18,8 +18,9 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:orientation="vertical"
-      android:gravity="center">
+     >
       <ImageView
+          android:layout_gravity="center"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:src="@drawable/nhan"
@@ -27,7 +28,8 @@
           />
 
       <TextView
-          android:layout_marginBottom="5dp"
+          android:layout_gravity="center"
+          android:layout_marginBottom="3dp"
           android:gravity="center"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -38,7 +40,8 @@
 
 
       <TextView
-          android:layout_marginBottom="15dp"
+          android:layout_gravity="center"
+          android:layout_marginBottom="10dp"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="Tạo một tài khoản mới "
@@ -47,10 +50,13 @@
           />
 
       <com.google.android.material.textfield.TextInputLayout
+          android:layout_gravity="center"
+        android:id="@+id/checkTen"
           android:layout_width="343dp"
           android:layout_height="63.5dp"
           android:layout_marginBottom="8dp"
           android:hint="Full name"
+          app:errorEnabled="true"
           app:boxBackgroundColor="#FFFFFF"
           app:boxBackgroundMode="outline"
           app:boxStrokeColor="#A39B9B"
@@ -68,11 +74,13 @@
       </com.google.android.material.textfield.TextInputLayout>
 
       <com.google.android.material.textfield.TextInputLayout
+          android:layout_gravity="center"
           android:layout_width="343dp"
-          android:layout_height="wrap_content"
+          android:layout_height="63.5dp"
           android:layout_marginBottom="8dp"
-
+          app:errorEnabled="true"
           android:hint="Your Email"
+          android:id="@+id/CheckEmail"
           app:boxBackgroundColor="#FFFFFF"
           app:boxBackgroundMode="outline"
           app:boxStrokeColor="#A39B9B"
@@ -91,10 +99,12 @@
 
 
       <com.google.android.material.textfield.TextInputLayout
+          android:layout_gravity="center"
           android:layout_width="343dp"
+        android:id="@+id/tenDN"
           android:layout_height="63.5dp"
           android:layout_marginBottom="8dp"
-
+          app:errorEnabled="true"
           android:hint="Tên Đăng Nhập "
           app:boxBackgroundColor="#FFFFFF"
           app:boxBackgroundMode="outline"
@@ -113,24 +123,23 @@
 
 
       <com.google.android.material.textfield.TextInputLayout
+          android:layout_gravity="center"
+          android:id="@+id/CheckPassaa"
           android:layout_width="343dp"
           android:layout_height="63.5dp"
           android:layout_marginBottom="8dp"
           android:hint="Password"
+          app:errorEnabled="true"
           app:boxBackgroundColor="#FFFFFF"
           app:boxBackgroundMode="outline"
           app:boxStrokeColor="#A39B9B"
-          app:counterEnabled="true"
-          app:counterMaxLength="10"
+
           app:endIconMode="password_toggle"
           app:endIconTint="#9A9897"
           app:helperText="Enter trong pass"
           app:helperTextEnabled="true"
           app:helperTextTextColor="#F44336"
           app:hintTextColor="#777676"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
           app:startIconDrawable="@drawable/password">
 
           <com.google.android.material.textfield.TextInputEditText
@@ -142,24 +151,19 @@
       </com.google.android.material.textfield.TextInputLayout>
 
       <com.google.android.material.textfield.TextInputLayout
+          android:layout_gravity="center"
           android:layout_width="343dp"
           android:layout_height="63.5dp"
-          android:layout_marginBottom="8dp"
           android:hint="Password Again"
           app:boxBackgroundColor="#FFFFFF"
           app:boxBackgroundMode="outline"
           app:boxStrokeColor="#A39B9B"
-          app:counterEnabled="true"
-          app:counterMaxLength="10"
+          android:id="@+id/CheckPassaaaaaaaa"
           app:endIconMode="password_toggle"
           app:endIconTint="#9A9897"
-          app:helperText="Enter trong pass"
-          app:helperTextEnabled="true"
-          app:helperTextTextColor="#F44336"
+          app:errorEnabled="true"
+          android:layout_marginBottom="10dp"
           app:hintTextColor="#777676"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
           app:startIconDrawable="@drawable/password">
 
           <com.google.android.material.textfield.TextInputEditText
@@ -167,22 +171,69 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:inputType="textPassword"
-              android:paddingBottom="15dp" />
+              android:paddingBottom="15dp"
+              />
       </com.google.android.material.textfield.TextInputLayout>
 
           <CheckBox
+              android:layout_marginBottom="5dp"
               android:id="@+id/check"
-            android:layout_marginLeft="12dp"
+              android:layout_marginLeft="10dp"
               android:layout_gravity="center"
               android:layout_width="343dp"
-              android:layout_height="48dp"
+              android:layout_height="23dp"
               android:text="Đồng ý điều khoản dịch vụ?"
               android:textColor="#9098B1"
              />
+      <LinearLayout
+          android:gravity="center"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:orientation="vertical"
+          android:layout_gravity="left"
+          android:layout_marginLeft="35dp"
+          android:layout_marginBottom="5dp">
+
+          <TextView
+              android:id="@+id/ttdk"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="left"
+              android:text=" "
+              android:textColor="#FF0000"
+              android:textSize="13sp" />
+          <LinearLayout
+              android:layout_gravity="left"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+              <TextView
+                  android:layout_gravity="left"
+                  android:id="@+id/ttdk2"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+
+                  android:text=""
+                  android:textColor="#FF0000"
+                  android:textSize="13sp" />
+              <TextView
+                  android:layout_gravity="left"
+                  android:id="@+id/ttdk3"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+
+                  android:text=""
+                  android:textColor="#FF0000"
+                  android:textSize="13sp" />
+          </LinearLayout>
+      </LinearLayout>
+
+
 
 
 
       <androidx.cardview.widget.CardView
+          android:layout_gravity="center"
           android:layout_marginBottom="10dp"
 
           android:layout_width="343dp"
@@ -202,7 +253,7 @@
 
 
       <LinearLayout
-
+          android:layout_gravity="center"
           android:gravity="center"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"

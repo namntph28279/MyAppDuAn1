@@ -174,19 +174,19 @@ public class ManHinhDangNhap extends AppCompatActivity {
     }
 
     private void checkLogin(){
+
      tk = User.getText().toString();
      mk = Pass.getText().toString();
         rememberUser(tk,mk);
 
      if (!checkUser() | !checkPass()){
-         return;
+         return ;
      }
 
      else{
          if(taiKhoanDAO.checkLogin(tk)>0){
              thongBao.setText("");
              Toast.makeText(this, "Đăng Nhập Thành Công", Toast.LENGTH_SHORT).show();
-
              Intent i = new Intent(ManHinhDangNhap.this, MainActivity.class);
              startActivity(i);
 
@@ -208,7 +208,6 @@ public class ManHinhDangNhap extends AppCompatActivity {
         String user = checkuser.getEditText().getText().toString().trim();
         if (user.isEmpty()) {
             checkuser.setError(" ");
-            thongBao.setText("Vui lòng điền đầy đủ thông tin ");
             return false;
         } else {
             checkuser.setError(null);
@@ -218,7 +217,7 @@ public class ManHinhDangNhap extends AppCompatActivity {
     private boolean checkPass() {
         String pass = checkpass.getEditText().getText().toString().trim();
         if (pass.isEmpty() ) {
-            checkpass.setError("  ");
+            checkpass.setError(" ");
             return false;
         } else {
             checkpass.setError(null);
