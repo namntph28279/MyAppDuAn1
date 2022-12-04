@@ -12,6 +12,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -196,6 +197,7 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d("zzz", "onResume: ads");
         //show len man hinh
         Bitmap bmp = BitmapFactory.decodeByteArray(g.getHinh(), 0, g.getHinh().length);
         img_sp.setImageBitmap(bmp);
