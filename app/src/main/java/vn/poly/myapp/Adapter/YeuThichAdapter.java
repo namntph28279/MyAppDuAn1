@@ -3,6 +3,7 @@ package vn.poly.myapp.Adapter;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
@@ -24,7 +26,9 @@ import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 
+import vn.poly.myapp.DTO.Giay;
 import vn.poly.myapp.DTO.GioHang;
+import vn.poly.myapp.DTO.Size;
 import vn.poly.myapp.DTO.YeuThich;
 import vn.poly.myapp.Dao.GioHangDAO;
 import vn.poly.myapp.Dao.YeuThichDAO;
@@ -78,6 +82,38 @@ public class YeuThichAdapter extends RecyclerView.Adapter<YeuThichAdapter.YeuThi
 
                 ImageView back = dialog.findViewById(R.id.ic_cleargh);
                 LinearLayout xoa = dialog.findViewById(R.id.XoaYT);
+                LinearLayout line_add = dialog.findViewById(R.id.line_add);
+
+                line_add.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+//                        SharedPreferences preferences = context.getSharedPreferences("USER_FILE",context.MODE_PRIVATE);
+//                        String user = preferences.getString("USERMANE", "");
+//
+//                        SharedPreferences preferences2 = context.getSharedPreferences("USER_FILEgg", context.MODE_PRIVATE);
+//                        String user2 = preferences2.getString("email", "");
+//
+//                        GioHangDAO gioHangDAO = new GioHangDAO(context);
+//                        GioHang gh = new GioHang();
+//                        Giay g = new Giay();
+//                        Size s = new Size();
+//                        gh.setEmail(user2);
+//                        gh.setTenDangNhap(user);
+//                        gh.setTenSp(g.getTen());
+//                        gh.setGia(g.getGia());
+//                        gh.setHinh(g.getHinh());
+//                        gh.setKichCo(s.getSize());
+//                        gh.setSoLuong("");
+//
+//                        int b=  gioHangDAO.themTK(gh);
+//
+//                        if(b==-1){
+//                            Toast.makeText(context,"Add Thất Bại",Toast.LENGTH_SHORT).show();
+//                        }else{
+//                            Toast.makeText(context,"Add Thành Công",Toast.LENGTH_SHORT).show();
+//                        }
+                    }
+                });
 
                 xoa.setOnClickListener(new View.OnClickListener() {
                     @Override

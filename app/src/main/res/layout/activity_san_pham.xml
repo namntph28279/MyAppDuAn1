@@ -40,6 +40,7 @@
                    />
 
                <ImageView
+                   android:id="@+id/img_fa_sp"
                    android:layout_marginTop="16dp"
                    android:layout_marginRight="16dp"
                    android:layout_width="25dp"
@@ -109,6 +110,9 @@
 
            </LinearLayout>
 
+
+
+
            <LinearLayout
                android:layout_marginTop="8dp"
                android:layout_marginRight="20dp"
@@ -117,71 +121,66 @@
                android:layout_height="wrap_content"
                android:orientation="horizontal"
                >
-               <Button
-                   android:layout_width="wrap_content"
-                   android:layout_height="40dp"
-                   android:backgroundTint="#C0C6CD"
-                   android:textColor="@color/black"
-                   android:text="6 uk"
-                   />
-               <Button
-                   android:layout_marginLeft="8dp"
-                   android:layout_width="wrap_content"
-                   android:layout_height="40dp"
-                   android:backgroundTint="#C0C6CD"
-                   android:textColor="@color/black"
-                   android:text="7 uk"
-                   />
-               <Button
-                   android:layout_marginLeft="8dp"
-                   android:layout_width="wrap_content"
-                   android:layout_height="40dp"
-                   android:backgroundTint="#C0C6CD"
-                   android:textColor="@color/black"
-                   android:text="8 uk"
-                   />
-               <Button
-                   android:layout_marginLeft="8dp"
-                   android:layout_width="wrap_content"
-                   android:layout_height="40dp"
-                   android:backgroundTint="#C0C6CD"
-                   android:textColor="@color/black"
-                   android:text="9 uk"
-                   />
-
+               <androidx.recyclerview.widget.RecyclerView
+                   app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                   android:orientation="horizontal"
+                   tools:itemCount="4"
+                   android:id="@+id/rv_size_sanpham"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="8dp" />
            </LinearLayout>
 
+
+
+
+           <EditText
+               android:layout_marginTop="8dp"
+               android:id="@+id/ed_soLuong"
+               android:layout_width="wrap_content"
+               android:layout_height="40dp"
+               android:layout_marginStart="20dp"
+               android:autofillHints=""
+               android:background="#C0C6CD"
+               android:hint="nhập số lượng"
+               android:inputType="number"
+               android:padding="8dp"
+               android:textAlignment="center"
+               tools:ignore="HardcodedText" />
+
            <androidx.cardview.widget.CardView
-               android:layout_marginTop="16dp"
-               android:layout_marginLeft="20dp"
-               android:layout_marginRight="20dp"
-               android:backgroundTint="#C0C6CD"
+               android:id="@+id/cardView_add_gio_hang"
                android:layout_width="match_parent"
                android:layout_height="48dp"
+               android:layout_marginLeft="20dp"
+               android:layout_marginTop="16dp"
+               android:layout_marginRight="20dp"
+               android:backgroundTint="#C0C6CD"
                app:cardCornerRadius="20dp"
                app:cardElevation="10dp"
 
                >
+
                <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
                    android:layout_gravity="center_vertical"
                    android:layout_marginLeft="8dp"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
                    android:text="Them vao gio hang"
-                   android:textStyle="bold"
-                   android:textSize="20dp"/>
+                   android:textSize="20dp"
+                   android:textStyle="bold" />
 
                <ImageView
-                   android:layout_gravity="center_vertical|right"
-                   android:backgroundTint="@color/black"
-                   android:layout_marginRight="8dp"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:src="@drawable/ic_buy"
-                   />
+                   android:layout_gravity="center_vertical|right"
+                   android:layout_marginRight="8dp"
+                   android:backgroundTint="@color/black"
+                   android:src="@drawable/ic_buy" />
            </androidx.cardview.widget.CardView>
 
            <androidx.cardview.widget.CardView
+               android:id="@+id/cardView_mua_ngay"
                android:layout_marginTop="16dp"
                android:layout_marginLeft="20dp"
                android:layout_marginRight="20dp"
@@ -246,13 +245,13 @@
 
 
            <Button
+               android:textColor="@color/black"
+               android:backgroundTint="#C0C6CD"
                android:id="@+id/btn_rating"
-               android:layout_marginLeft="16dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               android:text="Submit"
-               android:backgroundTint="@color/black"
-               />
+               android:layout_marginLeft="16dp"
+               android:text="Submit" />
 
 
        </LinearLayout>

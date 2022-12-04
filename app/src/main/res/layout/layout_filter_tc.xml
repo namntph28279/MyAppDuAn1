@@ -37,6 +37,7 @@
     android:background="@color/black"
     />
     <LinearLayout
+        android:id="@+id/line_add"
         android:padding="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -56,6 +57,9 @@ public class ThanhToan extends BottomSheetDialogFragment {
     private Spinner vanChuyen;
     private LinearLayout tongT;
     private RecyclerView rcvanh,ttTong;
+    LinearLayout btn_dat;
+    GioHangDAO gioHangDAO;
+
 
     public static ThanhToan newInstance( ){
         ThanhToan myBottonshet = new ThanhToan();
@@ -138,6 +142,16 @@ public class ThanhToan extends BottomSheetDialogFragment {
                 dialog.getWindow().setGravity(Gravity.BOTTOM);
             }
         });
+
+        btn_dat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
+                gioHangDAO.deleteAll();
+                adapter.notifyDataSetChanged();
+                bottomSheetDialog.dismiss();
+            }
+        });
         thoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -148,6 +162,8 @@ public class ThanhToan extends BottomSheetDialogFragment {
     }
 
     private void initView(View view){
+        gioHangDAO = new GioHangDAO(getContext());
+        btn_dat = view.findViewById(R.id.btnDat);
         googleDAO = new GoogleDAO(getContext());
         taiKhoanDAO = new TaiKhoanDAO(getContext());
         vanChuyenAdapter = new VanChuyenAdapter(getActivity(),R.layout.spiner_vanchuyen,getListvc());

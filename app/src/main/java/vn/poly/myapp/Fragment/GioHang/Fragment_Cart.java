@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,6 +42,7 @@ public class Fragment_Cart extends Fragment implements onClickGioHang {
     TextView sl,tongTien;
     CardView thanhToan;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class Fragment_Cart extends Fragment implements onClickGioHang {
         sl = view.findViewById(R.id.soluongGH);
         tongTien = view.findViewById(R.id.giaGH);
         thanhToan = view.findViewById(R.id.thanhtoan);
+
 
          getData();
 

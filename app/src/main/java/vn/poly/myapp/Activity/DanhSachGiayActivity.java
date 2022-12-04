@@ -34,6 +34,7 @@ import vn.poly.myapp.Accout.DaDangNhapFragment;
 import vn.poly.myapp.Adapter.GiayAdapter;
 import vn.poly.myapp.DTO.Giay;
 import vn.poly.myapp.Dao.GiayDao;
+import vn.poly.myapp.Dao.GoogleDAO;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.R;
 
@@ -48,6 +49,7 @@ public class DanhSachGiayActivity extends AppCompatActivity {
     ImageView img_img;
     Bitmap bitmap1;
     TaiKhoanDAO taiKhoanDAO;
+    GoogleDAO googleDAO;
 
 
     @Override
@@ -56,6 +58,9 @@ public class DanhSachGiayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_danh_sach_giay);
         init();
         setUpToolBar();
+
+        taiKhoanDAO = new TaiKhoanDAO(this);
+        googleDAO = new GoogleDAO(this);
 
         fab_giay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +73,11 @@ public class DanhSachGiayActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("USER_FILE", Context.MODE_PRIVATE);
         String user = preferences.getString("USERMANE", "");
 
-        if (taiKhoanDAO.checkLogin(user)>0 ){
+        SharedPreferences preferences2 = getSharedPreferences("USER_FILEgg", MODE_PRIVATE);
+        String user2 = preferences2.getString("email", "");
+
+
+        if (taiKhoanDAO.checkLogin(user)>0  || googleDAO.checkLogin(user2)>0){
            fab_giay.setVisibility(View.VISIBLE);
 
         }else{

@@ -93,34 +93,9 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
         Bitmap bitmap = BitmapFactory.decodeByteArray(hinh, 0, hinh.length);
         holder.img_res.setImageBitmap(bitmap);
 
-        holder.img_giohang.setOnClickListener(new View.OnClickListener() {
+        holder.img_yeu_thich.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-//                GioHangDAO gioHangDAO = new GioHangDAO(context);
-//                Toast.makeText(v.getContext(), ""+list.get(position).getTen()+list.get(position).getGia()+list.get(position).getHinh(), Toast.LENGTH_SHORT).show();
-//
-//                GioHang gh = new GioHang();
-//                gh.setTenDangNhap(user);
-//                gh.setEmail(user2);
-//                gh.setTenSp(list.get(position).getTen());
-//                gh.setGia(list.get(position).getGia());
-//                gh.setHinh(list.get(position).getHinh());
-//                gh.setSoLuong("1");
-//
-//                Log.d("abc", "onBindViewHolder: "+list.get(position).getTen());
-//                Log.d("abc", "onBindViewHolder: "+list.get(position).getGia());
-//                Log.d("abc", "onBindViewHolder: "+user);
-//
-//                int a=  gioHangDAO.themTK(gh);
-//
-//                if(a==-1){
-//                    Toast.makeText(context,"Add Thất Bại",Toast.LENGTH_SHORT).show();
-//                }else{
-//                    Toast.makeText(context,"Add Thành Công",Toast.LENGTH_SHORT).show();
-//
-//
-//                }
 
                YeuThichDAO yeuThichDAO = new YeuThichDAO(context);
                 YeuThich yt = new YeuThich();
@@ -136,8 +111,6 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
                     Toast.makeText(context,"Add Thất Bại",Toast.LENGTH_SHORT).show();
                 }else{
                     Toast.makeText(context,"Add Thành Công",Toast.LENGTH_SHORT).show();
-
-
                 }
 
 
@@ -155,7 +128,7 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
 
     public class GiayViewHolder extends RecyclerView.ViewHolder{
         private TextView tv_ten, tv_gia;
-        private ImageView img_res,img_giohang;
+        private ImageView img_res,img_yeu_thich;
         private CardView item_card_giay;
 
         public GiayViewHolder(@NonNull View itemView) {
@@ -165,7 +138,7 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
             tv_ten = itemView.findViewById(R.id.tv_ten);
             tv_gia = itemView.findViewById(R.id.tv_moTa);
             img_res = itemView.findViewById(R.id.img_res);
-            img_giohang = itemView.findViewById(R.id.imggiohang);
+            img_yeu_thich = itemView.findViewById(R.id.img_yeu_thich);
             item_card_giay = itemView.findViewById(R.id.card_item_giay);
         }
     }

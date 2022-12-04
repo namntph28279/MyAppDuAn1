@@ -165,5 +165,9 @@ public class GioHangDAO {
         }
     }
 
+    public void deleteAll(){
+        sqLiteDatabase.execSQL("delete from gioHang");
+    }
+
 
 }

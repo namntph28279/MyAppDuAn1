@@ -3,6 +3,7 @@ package vn.poly.myapp.Adapter;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -24,6 +25,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 
+import vn.poly.myapp.Activity.SanPhamActivity;
 import vn.poly.myapp.DTO.GioHang;
 import vn.poly.myapp.Dao.GioHangDAO;
 import vn.poly.myapp.R;
@@ -56,6 +58,7 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
        holder.tv_ten.setText(list.get(position).getTenSp());
        holder.tv_gia.setText(list.get(position).getGia());
         holder.sl.setText(list.get(position).getSoLuong());
+        holder.size_giohang.setText(list.get(position).getKichCo());
 
         Log.d("adatr", "onBindViewHolder: "+list.get(position).getTenSp());
         Log.d("adatr", "onBindViewHolder: "+list.get(position).getGia());
@@ -67,29 +70,31 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
         holder.tuyChon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dialog dialog = new Dialog(context);
-                dialog.setContentView(R.layout.layout_filter_tc_gio_hang);
-                ImageView back = dialog.findViewById(R.id.thoatTC);
-                LinearLayout xoa = dialog.findViewById(R.id.xoaGH);
+//                Dialog dialog = new Dialog(context);
+//                dialog.setContentView(R.layout.layout_filter_tc_gio_hang);
+//                ImageView back = dialog.findViewById(R.id.thoatTC);
+//                LinearLayout xoa = dialog.findViewById(R.id.xoaGH);
 
-                xoa.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.cancel();
-                       monClickGioHang.dialogXoa(list.get(position).getMaSp(),list.get(position).getTenSp());
-                    }
-                });
+                monClickGioHang.dialogXoa(list.get(position).getMaSp(),list.get(position).getTenSp());
 
-                dialog.show();
-                back.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-                dialog.getWindow().setGravity(Gravity.BOTTOM);
+//                xoa.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        dialog.cancel();
+//                        monClickGioHang.dialogXoa(list.get(position).getMaSp(),list.get(position).getTenSp());
+//                    }
+//                });
+//
+//                dialog.show();
+//                back.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        dialog.dismiss();
+//                    }
+//                });
+//                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+//                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+//                dialog.getWindow().setGravity(Gravity.BOTTOM);
 
             }
         });
@@ -102,7 +107,7 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
     }
 
     public class GioHangViewHolder extends RecyclerView.ViewHolder{
-        private TextView tv_ten, tv_gia,sl;
+        private TextView tv_ten, tv_gia,sl, size_giohang;
         private ImageView tuyChon,hinhAnh ;
 
 
@@ -113,6 +118,7 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
             tv_gia = itemView.findViewById(R.id.giaSPGH);
             hinhAnh = itemView.findViewById(R.id.hinhanhGH);
             sl = itemView.findViewById(R.id.solgsp);
+            size_giohang = itemView.findViewById(R.id.size_giohang);
 
             tuyChon = itemView.findViewById(R.id.tuychonGH);
         }
