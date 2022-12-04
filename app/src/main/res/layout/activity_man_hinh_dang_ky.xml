@@ -18,16 +18,18 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:orientation="vertical"
-      android:gravity="center">
+     >
       <ImageView
+          android:layout_gravity="center"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:src="@drawable/nhan"
-          android:layout_marginBottom="18dp"
+          android:layout_marginBottom="5dp"
           />
 
       <TextView
-          android:layout_marginBottom="10dp"
+          android:layout_gravity="center"
+          android:layout_marginBottom="3dp"
           android:gravity="center"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -38,7 +40,8 @@
 
 
       <TextView
-          android:layout_marginBottom="23dp"
+          android:layout_gravity="center"
+          android:layout_marginBottom="10dp"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:text="Tạo một tài khoản mới "
@@ -46,91 +49,193 @@
           android:textColor="#9098B1"
           />
 
-      <EditText
-          android:layout_marginBottom="8dp"
-          android:id="@+id/inputFullName"
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_gravity="center"
+        android:id="@+id/checkTen"
           android:layout_width="343dp"
-          android:layout_height="wrap_content"
-
-          android:background="@drawable/round_border"
-          android:drawableStart="@drawable/name"
-          android:drawablePadding="16dp"
-          android:ems="10"
-          android:hint="Full Name"
-          android:inputType="textEmailAddress"
-          android:padding="16dp"
-          />
-      <EditText
+          android:layout_height="63.5dp"
           android:layout_marginBottom="8dp"
-          android:id="@+id/inputEmail"
-          android:layout_width="343dp"
-          android:layout_height="wrap_content"
+          android:hint="Full name"
+          app:errorEnabled="true"
+          app:boxBackgroundColor="#FFFFFF"
+          app:boxBackgroundMode="outline"
+          app:boxStrokeColor="#A39B9B"
+          app:endIconMode="clear_text"
+          app:endIconTint="#A39B9B"
+          app:hintTextColor="#777676"
+          app:startIconDrawable="@drawable/name">
 
-          android:background="@drawable/round_border"
-          android:drawableStart="@drawable/email"
-          android:drawablePadding="16dp"
-          android:ems="10"
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/inputFullName"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="textWebEmailAddress|textPersonName"
+              android:paddingBottom="15dp" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_gravity="center"
+          android:layout_width="343dp"
+          android:layout_height="63.5dp"
+          android:layout_marginBottom="8dp"
+          app:errorEnabled="true"
           android:hint="Your Email"
-          android:inputType="textEmailAddress"
-          android:padding="16dp"
-          />
-      <EditText
-          android:layout_marginBottom="8dp"
-          android:id="@+id/inputTenDangNhap"
-          android:layout_width="343dp"
-          android:layout_height="wrap_content"
+          android:id="@+id/CheckEmail"
+          app:boxBackgroundColor="#FFFFFF"
+          app:boxBackgroundMode="outline"
+          app:boxStrokeColor="#A39B9B"
+          app:endIconMode="clear_text"
+          app:hintTextColor="#777676"
+          app:startIconDrawable="@drawable/email">
 
-          android:background="@drawable/round_border"
-          android:drawableStart="@drawable/name"
-          android:drawablePadding="16dp"
-          android:ems="10"
-          android:hint="Ten Dang Nhap"
-          android:inputType="textEmailAddress"
-          android:padding="16dp"
-          />
-      <EditText
-          android:layout_marginBottom="8dp"
-          android:id="@+id/inputPassword"
-          android:layout_width="343dp"
-          android:layout_height="wrap_content"
+          <com.google.android.material.textfield.TextInputEditText
+              app:errorEnabled="true"
+              android:id="@+id/inputEmail"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="textWebEmailAddress|textPersonName"
+              android:paddingBottom="15dp" />
+      </com.google.android.material.textfield.TextInputLayout>
 
-          android:background="@drawable/round_border"
-          android:drawableStart="@drawable/password"
-          android:drawablePadding="16dp"
-          android:ems="10"
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_gravity="center"
+          android:layout_width="343dp"
+        android:id="@+id/tenDN"
+          android:layout_height="63.5dp"
+          android:layout_marginBottom="8dp"
+          app:errorEnabled="true"
+          android:hint="Tên Đăng Nhập "
+          app:boxBackgroundColor="#FFFFFF"
+          app:boxBackgroundMode="outline"
+          app:boxStrokeColor="#A39B9B"
+          app:endIconMode="clear_text"
+          app:hintTextColor="#777676"
+          app:startIconDrawable="@drawable/name">
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/inputTenDangNhap"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="textWebEmailAddress|textPersonName"
+              android:paddingBottom="15dp" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_gravity="center"
+          android:id="@+id/CheckPassaa"
+          android:layout_width="343dp"
+          android:layout_height="63.5dp"
+          android:layout_marginBottom="8dp"
           android:hint="Password"
-          android:inputType="textPassword"
-          android:padding="16dp"
-          />
-      <EditText
-          android:layout_marginBottom="8dp"
-          android:id="@+id/inputPasswordAgain"
-          android:layout_width="343dp"
-          android:layout_height="wrap_content"
-          android:background="@drawable/round_border"
-          android:drawableStart="@drawable/password"
-          android:drawablePadding="16dp"
+          app:errorEnabled="true"
+          app:boxBackgroundColor="#FFFFFF"
+          app:boxBackgroundMode="outline"
+          app:boxStrokeColor="#A39B9B"
 
+          app:endIconMode="password_toggle"
+          app:endIconTint="#9A9897"
+          app:helperText="Enter trong pass"
+          app:helperTextEnabled="true"
+          app:helperTextTextColor="#F44336"
+          app:hintTextColor="#777676"
+          app:startIconDrawable="@drawable/password">
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/inputPassword"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="textPassword"
+              android:paddingBottom="15dp" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_gravity="center"
+          android:layout_width="343dp"
+          android:layout_height="63.5dp"
           android:hint="Password Again"
-          android:inputType="textPassword"
-          android:padding="16dp"
-          />
+          app:boxBackgroundColor="#FFFFFF"
+          app:boxBackgroundMode="outline"
+          app:boxStrokeColor="#A39B9B"
+          android:id="@+id/CheckPassaaaaaaaa"
+          app:endIconMode="password_toggle"
+          app:endIconTint="#9A9897"
+          app:errorEnabled="true"
+          android:layout_marginBottom="10dp"
+          app:hintTextColor="#777676"
+          app:startIconDrawable="@drawable/password">
+
+          <com.google.android.material.textfield.TextInputEditText
+              android:id="@+id/inputPasswordAgain"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:inputType="textPassword"
+              android:paddingBottom="15dp"
+              />
+      </com.google.android.material.textfield.TextInputLayout>
 
           <CheckBox
+              android:layout_marginBottom="5dp"
               android:id="@+id/check"
-            android:layout_marginLeft="12dp"
+              android:layout_marginLeft="10dp"
               android:layout_gravity="center"
               android:layout_width="343dp"
-              android:layout_height="48dp"
+              android:layout_height="23dp"
               android:text="Đồng ý điều khoản dịch vụ?"
               android:textColor="#9098B1"
              />
+      <LinearLayout
+          android:gravity="center"
+          android:layout_width="wrap_content"
+          android:layout_height="35dp"
+          android:orientation="vertical"
+          android:layout_gravity="left"
+          android:layout_marginLeft="35dp"
+          android:layout_marginBottom="5dp">
+
+          <TextView
+              android:id="@+id/ttdk"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:gravity="left"
+              android:text=" "
+              android:textColor="#FF0000"
+              android:textSize="13sp" />
+          <LinearLayout
+              android:layout_gravity="left"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal">
+              <TextView
+                  android:layout_gravity="left"
+                  android:id="@+id/ttdk2"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+
+                  android:text=""
+                  android:textColor="#FF0000"
+                  android:textSize="13sp" />
+              <TextView
+                  android:layout_gravity="left"
+                  android:id="@+id/ttdk3"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+
+                  android:text=""
+                  android:textColor="#FF0000"
+                  android:textSize="13sp" />
+          </LinearLayout>
+      </LinearLayout>
+
+
 
 
 
       <androidx.cardview.widget.CardView
-          android:layout_marginBottom="18dp"
-          android:layout_marginTop="15dp"
+          android:layout_gravity="center"
+          android:layout_marginBottom="10dp"
+
           android:layout_width="343dp"
           android:layout_height="48dp"
           app:cardCornerRadius="5dp"
@@ -148,7 +253,7 @@
 
 
       <LinearLayout
-
+          android:layout_gravity="center"
           android:gravity="center"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"

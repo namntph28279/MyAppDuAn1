@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="vn.poly.myapp.Activity.ThanhPhanTrongTK.DiaChi">
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBar"
+        android:id="@+id/toolBarnh"
         app:navigationIcon="@drawable/ic_back_24"
         android:background="@color/white"
         android:layout_width="match_parent"
@@ -126,6 +126,28 @@
             android:layout_height="48dp"
             android:layout_marginBottom="8dp"/>
 
+        <LinearLayout
+            android:layout_gravity="left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:textColor="#F40000"
+                android:id="@+id/thongbaonh"
+                android:text=" "
+                />
+            <TextView
+                android:text=""
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:textColor="#F40000"
+                android:id="@+id/thongbaonh2"
+                />
+        </LinearLayout>
         <androidx.cardview.widget.CardView
             android:layout_marginTop="15dp"
             android:layout_width="343dp"
