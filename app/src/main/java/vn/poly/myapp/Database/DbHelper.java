@@ -75,7 +75,7 @@ public class DbHelper extends SQLiteOpenHelper {
                 " maSP integer primary key autoincrement  ," +
                 " tenSP text ," +
                 " soLuong text ," +
-                " gia text ," +
+                " gia integer ," +
                 "kichco text," +
                 " hinh blod," +
                 " tenDangNhap text ," +
