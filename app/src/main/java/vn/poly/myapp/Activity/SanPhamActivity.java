@@ -78,6 +78,12 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
         //lay data 1 sp
         dao = new GiayDao(this);
         g = dao.selectOne(id);
+        Bitmap bmp = BitmapFactory.decodeByteArray(g.getHinh(), 0, g.getHinh().length);
+        img_sp.setImageBitmap(bmp);
+        tv_name_sp.setText(g.getTen());
+        Log.e("",g.getGia()+"");
+        Log.e("",g.getTen()+"");
+        Log.e("",g.getId()+"");
         taiKhoanDAO = new TaiKhoanDAO(this);
         googleDAO = new GoogleDAO(this);
 
@@ -199,9 +205,7 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
         super.onResume();
         Log.d("zzz", "onResume: ads");
         //show len man hinh
-        Bitmap bmp = BitmapFactory.decodeByteArray(g.getHinh(), 0, g.getHinh().length);
-        img_sp.setImageBitmap(bmp);
-        tv_name_sp.setText(g.getTen());
+
     }
 
     private void setUpToolBar() {

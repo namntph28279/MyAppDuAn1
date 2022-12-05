@@ -54,10 +54,10 @@ public class GiayDao {
     public Giay selectOne(int id){
         db = dbHelper.getReadableDatabase();
         Giay giay = new Giay();
-        String[] args = new String[] { id + "" };
-        String[] columns = new String[]{"*"};
 
-        Cursor c = db.query("giay",columns, null, null,null,null,null);
+        String sql = "SELECT * FROM GIAY where id = "+id;
+
+        Cursor c =  db.rawQuery(sql, null);
         if(c.moveToFirst()){
 
             giay.setId( c.getInt(  0  ) );

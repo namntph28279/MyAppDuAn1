@@ -91,6 +91,8 @@ public class DanhSachGiayActivity extends AppCompatActivity {
         list = dao.getAll();
         adapter = new GiayAdapter(this, list);
         rcv_ds_giay.setAdapter(adapter);
+
+
     }
 
     @Override
