@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.poly.myapp">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -16,25 +16,58 @@
         android:theme="@style/Theme.MyApp"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.SanPhamActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Activity.DanhSachGiayActivity"
-            android:exported="false" />
-        <activity
             android:name=".Activity.ThanhPhanTrongTK.DoiMatKhau"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".Activity.ThanhPhanTrongTK.TieuChuanCongDong"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".Activity.ManHinhDangNhapDangKy.ManHinhDangKy"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".Activity.ManHinhDangNhapDangKy.ManHinhDangNhap"
-            android:exported="false" />
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.ThanhPhanTrongTK.ChinhSachActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.ThanhPhanTrongTK.ChinhSuaThongTinCaNhan"
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.ThanhPhanTrongTK.DiaChi"
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.ThanhPhanTrongTK.DieuKhoanVaDieuKien"
+            android:exported="false"/>
+
+        <activity
+            android:name=".Activity.ThanhPhanTrongTK.GuiTinNhan"
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.ThanhPhanTrongTK.QuenMatKhau"
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.ThanhPhanTrongTK.TrungTamHoTro"
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.SanPhamActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.DanhSachGiayActivity"
+            android:exported="false"/>
         <activity
             android:name=".Activity.ManHinhChao.ManHinhChao1"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activity.ManHinhChao.ManHinhChao2"
+            android:exported="false"/>
+        <activity
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,12 +75,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Activity.ManHinhChao.ManHinhChao2"
-            android:exported="false" />
-        <activity
-            android:name=".Activity.MainActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
