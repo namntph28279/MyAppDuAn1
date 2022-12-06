@@ -1,4 +1,4 @@
-package vn.poly.myapp.Activity;
+package vn.poly.myapp.Activity.SanPham;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -6,7 +6,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -121,9 +120,12 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
                     if (sl.equals("")){
                         Toast.makeText(SanPhamActivity.this, "Chua nhap so luong", Toast.LENGTH_SHORT).show();
                     }else{
+
                         GioHangDAO gioHangDAO = new GioHangDAO(getBaseContext());
                         GioHang gh = new GioHang();
+
                         Size s = new Size();
+
                         gh.setEmail(user2);
                         gh.setTenDangNhap(user);
                         gh.setTenSp(g.getTen());

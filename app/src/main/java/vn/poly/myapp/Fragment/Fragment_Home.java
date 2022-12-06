@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,8 +22,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import me.relex.circleindicator.CircleIndicator;
-import vn.poly.myapp.Activity.DanhSachGiayActivity;
-import vn.poly.myapp.Activity.SanPhamActivity;
+import vn.poly.myapp.Activity.SanPham.DanhSachGiayActivity;
 import vn.poly.myapp.Adapter.AnhAdapte;
 import vn.poly.myapp.Adapter.GiayAdapter;
 import vn.poly.myapp.DTO.Anh;

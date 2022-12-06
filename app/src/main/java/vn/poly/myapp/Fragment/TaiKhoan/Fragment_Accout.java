@@ -1,4 +1,4 @@
-package vn.poly.myapp.Fragment;
+package vn.poly.myapp.Fragment.TaiKhoan;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,8 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import vn.poly.myapp.Accout.ChuaDangNhapFragment;
-import vn.poly.myapp.Accout.DaDangNhapFragment;
 import vn.poly.myapp.Dao.GoogleDAO;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.R;

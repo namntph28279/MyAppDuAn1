@@ -19,11 +19,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import vn.poly.myapp.Activity.SanPhamActivity;
 import vn.poly.myapp.Adapter.GiayAdapter;
 import vn.poly.myapp.DTO.Giay;
 import vn.poly.myapp.Dao.GiayDao;
