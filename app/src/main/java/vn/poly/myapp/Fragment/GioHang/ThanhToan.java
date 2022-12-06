@@ -1,6 +1,7 @@
 package vn.poly.myapp.Fragment.GioHang;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -30,6 +31,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import vn.poly.myapp.Activity.MainActivity;
 import vn.poly.myapp.Adapter.AnhGioHangAdapter;
 import vn.poly.myapp.Adapter.GioHangAdapter;
 import vn.poly.myapp.Adapter.TongTienChiTiet;
@@ -146,11 +148,37 @@ public class ThanhToan extends BottomSheetDialogFragment {
         btn_dat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
-                gioHangDAO.deleteAll();
-                list = gioHangDAO.getALL(user);
-                list = gioHangDAO.getALL(user2);
-                adapter.setList(list);
+                if (googleDAO.checkLogin(user2)>0){
+                    SharedPreferences pref2 = getActivity().getSharedPreferences("Google",getActivity().MODE_PRIVATE);
+                    SharedPreferences.Editor edit2 = pref2.edit();
+                    edit2.putString("checkgg","8");
+                    edit2.commit();
+                    SharedPreferences pref = getActivity().getSharedPreferences("USER_FILES",getActivity().MODE_PRIVATE);
+                    SharedPreferences.Editor edit = pref.edit();
+                    edit.putString("check","7");
+                    edit.commit();
+                    gioHangDAO.deleteAll(user2);
+                    gioHangDAO.getALLGG(user2);
+                    Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getContext(), MainActivity.class);
+                    startActivity(i);
+
+                }else if(taiKhoanDAO.checkLogin(user)>0){
+                    SharedPreferences pref2 = getActivity().getSharedPreferences("Google",getActivity().MODE_PRIVATE);
+                    SharedPreferences.Editor edit2 = pref2.edit();
+                    edit2.putString("checkgg","8");
+                    edit2.commit();
+                    SharedPreferences pref = getActivity().getSharedPreferences("USER_FILES",getActivity().MODE_PRIVATE);
+                    SharedPreferences.Editor edit = pref.edit();
+                    edit.putString("check","7");
+                    edit.commit();
+                    gioHangDAO.deleteAllTK(user);
+                    gioHangDAO.getALL(user);
+                    Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(getContext(), MainActivity.class);
+                    startActivity(i);
+                }
+
                 bottomSheetDialog.dismiss();
             }
         });

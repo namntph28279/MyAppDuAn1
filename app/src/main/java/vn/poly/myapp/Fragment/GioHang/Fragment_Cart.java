@@ -1,6 +1,7 @@
 package vn.poly.myapp.Fragment.GioHang;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,7 +45,7 @@ public class Fragment_Cart extends Fragment implements onClickGioHang {
     RecyclerView rcv;
     TextView sl,tongTien;
     CardView thanhToan;
-
+    LinearLayout gh,nh,tt;
 
     @Nullable
     @Override
@@ -56,11 +60,11 @@ public class Fragment_Cart extends Fragment implements onClickGioHang {
         sl = view.findViewById(R.id.soluongGH);
         tongTien = view.findViewById(R.id.giaGH);
         thanhToan = view.findViewById(R.id.thanhtoan);
-
+        gh = view.findViewById(R.id.ghcc);
+        nh = view.findViewById(R.id.mhgh);
+        tt = view.findViewById(R.id.thanhtoa);
 
          getData();
-
-
 
         thanhToan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +73,6 @@ public class Fragment_Cart extends Fragment implements onClickGioHang {
                 myBottonshet.show(getChildFragmentManager(),myBottonshet.getTag());
                 //khi an ngoai se khong tat
                 myBottonshet.setCancelable(false);
-
             }
         });
 
@@ -79,7 +82,6 @@ public class Fragment_Cart extends Fragment implements onClickGioHang {
     private void getData() {
         SharedPreferences preferences = getActivity().getSharedPreferences("USER_FILE", Context.MODE_PRIVATE);
         String user = preferences.getString("USERMANE", "");
-
         SharedPreferences preferences2 = getActivity().getSharedPreferences("USER_FILEgg", Context.MODE_PRIVATE);
         String user2 = preferences2.getString("email", "");
 
@@ -90,6 +92,16 @@ public class Fragment_Cart extends Fragment implements onClickGioHang {
             tongTien.setText(String.valueOf(b));
             list =  dao.getALL(user);
 
+            FragmentManager fragmentManager= getChildFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            if(a==0){
+                nh.setVisibility(View.INVISIBLE);
+                tt.setVisibility(View.INVISIBLE);
+                ChuaCoGHFragment chuaCoGHFragment= new ChuaCoGHFragment();
+                fragmentTransaction.replace(R.id.ghcc,chuaCoGHFragment);
+                fragmentTransaction.commit();
+            }
+
 
         }else if(googleDAO.checkLogin(user2)>0){
             int a = dao.checkHangGG(user2);
@@ -98,7 +110,31 @@ public class Fragment_Cart extends Fragment implements onClickGioHang {
             tongTien.setText(String.valueOf(b));
             list =  dao.getALLGG(user2);
 
+            FragmentManager fragmentManager= getChildFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            if(a==0){
+                nh.setVisibility(View.INVISIBLE);
+                tt.setVisibility(View.INVISIBLE);
+                ChuaCoGHFragment chuaCoGHFragment= new ChuaCoGHFragment();
+                fragmentTransaction.replace(R.id.ghcc,chuaCoGHFragment);
+                fragmentTransaction.commit();
+            }
+
+        }else {
+
+            FragmentManager fragmentManager= getChildFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                nh.setVisibility(View.INVISIBLE);
+                tt.setVisibility(View.INVISIBLE);
+                ChuaCoGHFragment chuaCoGHFragment= new ChuaCoGHFragment();
+                fragmentTransaction.replace(R.id.ghcc,chuaCoGHFragment);
+                fragmentTransaction.commit();
+
         }
+
+
 
         adapter = new GioHangAdapter(getActivity(),this);
         adapter.setList(list);
@@ -109,28 +145,40 @@ public class Fragment_Cart extends Fragment implements onClickGioHang {
     }
 
 
+
     @Override
     public void dialogXoa(int id , String tenGiay) {
-        AlertDialog.Builder mDialog = new AlertDialog.Builder(getContext());
+        Dialog dialog = new Dialog(getContext());
+        dialog.setContentView(R.layout.dialog_delete);
 
-        mDialog.setMessage("Bạn Có muốn Xóa Giay : "+tenGiay+" Không ?");
-        mDialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+        CardView btnCo, btnKo;
+        TextView ten;
+        btnCo = dialog.findViewById(R.id.dialogExit_coa);
+        btnKo = dialog.findViewById(R.id.dialogExit_khonga);
+        ten = dialog.findViewById(R.id.tenGiayaa);
+
+        ten.setText(tenGiay);
+
+        btnCo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
                 int kq = dao.delete(id);
-                if(kq==-1){
-                    Toast.makeText(getContext(),"Xóa Thất Bại",Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(getContext(),"Xóa Thành Công",Toast.LENGTH_SHORT).show();
+                if (kq == -1) {
+                    Toast.makeText(getContext(), "Xóa Thất Bại", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getContext(), "Xóa Thành Công", Toast.LENGTH_SHORT).show();
                 }
                 getData();
+                dialog.dismiss();
             }
         });
-        mDialog.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+        btnKo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
+                dialog.dismiss();
             }
         });
-        mDialog.show();
+
+        dialog.show();
     }
 }

@@ -21,8 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import vn.poly.myapp.Activity.SanPhamActivity;
+import vn.poly.myapp.Activity.SanPham.SanPhamActivity;
 import vn.poly.myapp.DTO.Giay;
 import vn.poly.myapp.DTO.YeuThich;
 import vn.poly.myapp.Dao.GiayDao;

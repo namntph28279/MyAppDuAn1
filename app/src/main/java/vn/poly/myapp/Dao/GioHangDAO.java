@@ -165,8 +165,12 @@ public class GioHangDAO {
         }
     }
 
-    public void deleteAll(){
-        sqLiteDatabase.execSQL("delete from gioHang");
+
+    public void deleteAll(String id){
+        sqLiteDatabase.execSQL("delete from gioHang where email = '"+id+"'");
+    }
+    public void deleteAllTK(String id){
+        sqLiteDatabase.execSQL("delete from gioHang where tenDangNhap = '"+id+"'");
     }
 
 

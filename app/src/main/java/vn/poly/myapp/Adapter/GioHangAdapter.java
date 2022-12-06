@@ -63,10 +63,6 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
         holder.tuyChon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Dialog dialog = new Dialog(context);
-//                dialog.setContentView(R.layout.layout_filter_tc_gio_hang);
-//                ImageView back = dialog.findViewById(R.id.thoatTC);
-//                LinearLayout xoa = dialog.findViewById(R.id.xoaGH);
 
                 monClickGioHang.dialogXoa(list.get(position).getMaSp(),list.get(position).getTenSp());
 

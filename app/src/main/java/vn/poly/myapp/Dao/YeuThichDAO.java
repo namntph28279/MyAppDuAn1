@@ -232,4 +232,84 @@ public class YeuThichDAO {
         c.close();
         return mArr;
     }
+    public ArrayList<YeuThich> getALLGiamtb() {
+        ArrayList<YeuThich> mArr = new ArrayList<>();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM yeuThich  ORDER BY gia DESC ", null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            YeuThich ls = new YeuThich();
+            ls.setMaSp(c.getInt(0));
+            ls.setTenSp(c.getString(1));
+            ls.setSoLuong(c.getString(2));
+            ls.setGia(c.getString(3));
+            ls.setKichCo(c.getString(4));
+            ls.setHinh(c.getBlob(5));
+            ls.setTenDangNhap(c.getString(6));
+            ls.setEmail(c.getString(7));
+
+            c.moveToNext();
+            Log.d("zz", "getALL: " + c.getCount());
+            mArr.add(ls);
+        }
+        c.close();
+        return mArr;
+    }
+    public ArrayList<YeuThich> getALLTangtb() {
+        ArrayList<YeuThich> mArr = new ArrayList<>();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM yeuThich  ORDER BY gia ASC ", null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            YeuThich ls = new YeuThich();
+            ls.setMaSp(c.getInt(0));
+            ls.setTenSp(c.getString(1));
+            ls.setSoLuong(c.getString(2));
+            ls.setGia(c.getString(3));
+            ls.setKichCo(c.getString(4));
+            ls.setHinh(c.getBlob(5));
+            ls.setTenDangNhap(c.getString(6));
+            ls.setEmail(c.getString(7));
+
+            c.moveToNext();
+            Log.d("zz", "getALL: " + c.getCount());
+            mArr.add(ls);
+        }
+        c.close();
+        return mArr;
+    }
+    public ArrayList<YeuThich> getALLtb( ) {
+        ArrayList<YeuThich> mArr = new ArrayList<>();
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM yeuThich   ", null);
+        c.moveToFirst();
+        while (c.isAfterLast() == false) {
+            YeuThich ls = new YeuThich();
+            ls.setMaSp(c.getInt(0));
+            ls.setTenSp(c.getString(1));
+            ls.setSoLuong(c.getString(2));
+            ls.setGia(c.getString(3));
+            ls.setKichCo(c.getString(4));
+            ls.setHinh(c.getBlob(5));
+            ls.setTenDangNhap(c.getString(6));
+            ls.setEmail(c.getString(7));
+
+            c.moveToNext();
+            Log.d("zz", "getALL: " + c.getCount());
+            mArr.add(ls);
+        }
+        c.close();
+        return mArr;
+    }
+    public int checkHangtb() {
+        Cursor c = sqLiteDatabase.rawQuery("SELECT * FROM yeuThich  ", null);
+        Log.d("Count", c.getCount() + "");
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            int a = c.getCount();
+            c.moveToNext();
+            c.close();
+            return a;
+        }
+
+        return 0;
+    }
+
 }

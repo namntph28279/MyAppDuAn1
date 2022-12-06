@@ -15,14 +15,13 @@ import vn.poly.myapp.Dao.TaiKhoanDAO;
 
 import vn.poly.myapp.Fragment.GioHang.Fragment_Cart;
 import vn.poly.myapp.Fragment.Fragment_DanhSach_Giay;
-import vn.poly.myapp.Fragment.Fragment_Favourite;
+import vn.poly.myapp.Fragment.YeuThich.Fragment_Favourite;
 import vn.poly.myapp.Fragment.Fragment_Home;
 import vn.poly.myapp.Fragment.Fragment_Search;
 import vn.poly.myapp.Fragment.TaiKhoan.Fragment_Accout;
 import vn.poly.myapp.R;
 
 
-import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -72,11 +71,13 @@ public class MainActivity extends BaseActivity {
         if (check == "1" || check == "2" || check2 == "1" || check2 == "2") {
             bottomNavigationView.getMenu().findItem(R.id.nav_account).setChecked(true);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, acc).commit();
+        } else if (check=="9"||check2=="9") {
+            bottomNavigationView.getMenu().findItem(R.id.nav_cart).setChecked(true);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, buy).commit();
+
         } else {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, home).commit();
-        }
-
-
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, home).commit();
+            }
 //        BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.nav_fa);
 //        badgeDrawable.setVisible(true);
 //        badgeDrawable.setNumber(8);

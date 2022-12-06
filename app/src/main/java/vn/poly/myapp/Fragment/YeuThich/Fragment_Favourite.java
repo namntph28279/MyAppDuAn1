@@ -1,4 +1,4 @@
-package vn.poly.myapp.Fragment;
+package vn.poly.myapp.Fragment.YeuThich;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -21,6 +21,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -40,13 +42,13 @@ import vn.poly.myapp.R;
 
 public class Fragment_Favourite extends Fragment implements onClickGioHang {
     ArrayList<YeuThich> list = new ArrayList<>();
-
     GoogleDAO googleDAO;
     TaiKhoanDAO taiKhoanDAO;
     YeuThichDAO yeuThichDAO;
     YeuThichAdapter adapter;
     RecyclerView rcv;
-    TextView sl;
+    TextView sl ;
+    LinearLayout mh;
     ImageView sapXep;
 
 
@@ -62,6 +64,7 @@ public class Fragment_Favourite extends Fragment implements onClickGioHang {
         sapXep = view.findViewById(R.id.tuyChonSapXepYT);
         rcv = view.findViewById(R.id.rcvYT);
         sl = view.findViewById(R.id.soluongYT);
+        mh = view.findViewById(R.id.mh);
         getData();
         sapXep.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,6 +126,10 @@ public class Fragment_Favourite extends Fragment implements onClickGioHang {
             sl.setText(String.valueOf(a));
             list = yeuThichDAO.getALLGiamGG(user2);
 
+        }else {
+            int a = yeuThichDAO.checkHangtb();
+            sl.setText(String.valueOf(a));
+            list = yeuThichDAO.getALLGiamtb();
         }
 
         adapter = new YeuThichAdapter(getActivity(), this);
@@ -149,7 +156,11 @@ public class Fragment_Favourite extends Fragment implements onClickGioHang {
             list = yeuThichDAO.getALLTangGG(user2);
 
         }
-
+        else {
+            int a = yeuThichDAO.checkHangtb();
+            sl.setText(String.valueOf(a));
+            list = yeuThichDAO.getALLTangtb();
+        }
         adapter = new YeuThichAdapter(getActivity(), this);
         adapter.setList(list);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 1);
@@ -168,32 +179,75 @@ public class Fragment_Favourite extends Fragment implements onClickGioHang {
             sl.setText(String.valueOf(a));
             list = yeuThichDAO.getALL(user);
 
+            FragmentManager fragmentManager= getChildFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+            if(a==0){
+                mh.setVisibility(View.INVISIBLE);
+                sl.setVisibility(View.INVISIBLE);
+                sapXep.setVisibility(View.INVISIBLE);
+                ChuaCoYTFragment chuaCoYTFragment= new ChuaCoYTFragment();
+                fragmentTransaction.replace(R.id.accc,chuaCoYTFragment);
+                fragmentTransaction.commit();
+            }
+
 
         }else if(googleDAO.checkLogin(user2)>0){
             int a = yeuThichDAO.checkHangGG(user2);
             sl.setText(String.valueOf(a));
             list =  yeuThichDAO.getALLGG(user2);
 
-        }
+            FragmentManager fragmentManager= getChildFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
+            if(a==0){
+                mh.setVisibility(View.INVISIBLE);
+                sl.setVisibility(View.INVISIBLE);
+                sapXep.setVisibility(View.INVISIBLE);
+                ChuaCoYTFragment chuaCoYTFragment= new ChuaCoYTFragment();
+                fragmentTransaction.replace(R.id.accc,chuaCoYTFragment);
+                fragmentTransaction.commit();
+            }
+        }else {
+            int a = yeuThichDAO.checkHangtb();
+            sl.setText(String.valueOf(a));
+            list =  yeuThichDAO.getALLtb();
+            FragmentManager fragmentManager= getChildFragmentManager();
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            if(a==0){
+                mh.setVisibility(View.INVISIBLE);
+                sl.setVisibility(View.INVISIBLE);
+                sapXep.setVisibility(View.INVISIBLE);
+                ChuaCoYTFragment chuaCoYTFragment= new ChuaCoYTFragment();
+                fragmentTransaction.replace(R.id.accc,chuaCoYTFragment);
+                fragmentTransaction.commit();
+            }
+        }
         adapter = new YeuThichAdapter(getActivity(), this);
         adapter.setList(list);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getContext(), 1);
         rcv.setLayoutManager(layoutManager);
         rcv.setAdapter(adapter);
 
-
     }
 
 
     @Override
     public void dialogXoa(int id, String tenGiay) {
-        AlertDialog.Builder mDialog = new AlertDialog.Builder(getContext());
+        Dialog dialog = new Dialog(getContext());
+        dialog.setContentView(R.layout.dialog_delete);
 
-        mDialog.setMessage("Bạn Có muốn Xóa Giay : " + tenGiay + " Không ?");
-        mDialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+        CardView btnCo, btnKo;
+        TextView ten;
+        btnCo = dialog.findViewById(R.id.dialogExit_coa);
+        btnKo = dialog.findViewById(R.id.dialogExit_khonga);
+        ten = dialog.findViewById(R.id.tenGiayaa);
+
+        ten.setText(tenGiay);
+
+        btnCo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
                 int kq = yeuThichDAO.delete(id);
                 if (kq == -1) {
                     Toast.makeText(getContext(), "Xóa Thất Bại", Toast.LENGTH_SHORT).show();
@@ -201,13 +255,16 @@ public class Fragment_Favourite extends Fragment implements onClickGioHang {
                     Toast.makeText(getContext(), "Xóa Thành Công", Toast.LENGTH_SHORT).show();
                 }
                 getData();
+                dialog.dismiss();
             }
         });
-        mDialog.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+        btnKo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
+                dialog.dismiss();
             }
         });
-        mDialog.show();
+
+        dialog.show();
     }
 }
