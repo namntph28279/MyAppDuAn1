@@ -20,13 +20,26 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.SizeViewHolder
     private final List<Size> list;
     private final Context context;
     private final ClickSizeColor clickSizeColor;
+    private final int id;
     public int itemSelected = -1;
 
-    public SizeAdapter(List<Size> list, Context context, ClickSizeColor clickSizeColor) {
+    public OnSizeItemClick getOnSizeItemClick() {
+        return onSizeItemClick;
+    }
+
+    public void setOnSizeItemClick(OnSizeItemClick onSizeItemClick) {
+        this.onSizeItemClick = onSizeItemClick;
+    }
+
+    public OnSizeItemClick onSizeItemClick;
+    public SizeAdapter(List<Size> list, Context context, ClickSizeColor clickSizeColor,int id) {
         this.list = list;
         this.context = context;
         this.clickSizeColor = clickSizeColor;
+        this.id = id;
     }
+
+
 
     @NonNull
     @Override
@@ -40,6 +53,7 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.SizeViewHolder
         if (size == null)
             return;
         holder.size.setText(size.getSize());
+
         if (itemSelected == position) {
             holder.cardView.setCardBackgroundColor(holder.cardView.getResources().getColor(R.color.teal_200));
         } else {
@@ -47,6 +61,7 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.SizeViewHolder
         }
         holder.cardView.setOnClickListener(view -> {
             holder.setSingleSelected(holder.getAdapterPosition());
+            onSizeItemClick.onClick(position);
             clickSizeColor.callBackSize(size.getSize());
         });
     }

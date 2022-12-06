@@ -148,7 +148,9 @@ public class ThanhToan extends BottomSheetDialogFragment {
             public void onClick(View v) {
                 Toast.makeText(getContext(), "Đặt hàng thành công", Toast.LENGTH_SHORT).show();
                 gioHangDAO.deleteAll();
-                adapter.notifyDataSetChanged();
+                list = gioHangDAO.getALL(user);
+                list = gioHangDAO.getALL(user2);
+                adapter.setList(list);
                 bottomSheetDialog.dismiss();
             }
         });

@@ -3,10 +3,13 @@ package vn.poly.myapp.Activity;
 import androidx.annotation.NonNull;
 
 import android.content.Context;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import vn.poly.myapp.Activity.checkInternet.NetworkChangeListener;
 import vn.poly.myapp.Dao.GoogleDAO;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.Dao.YeuThichDAO;
@@ -35,10 +38,21 @@ public class MainActivity extends BaseActivity {
     Fragment_DanhSach_Giay ds = new Fragment_DanhSach_Giay();
 
     TaiKhoanDAO dao;
+    NetworkChangeListener networkChangeListener = new NetworkChangeListener();
 
+    @Override
+    protected void onStart() {
+        IntentFilter filter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(networkChangeListener, filter);
+        super.onStart();
+    }
 
+    @Override
+    protected void onStop() {
+        unregisterReceiver(networkChangeListener);
+        super.onStop();
 
-
+    }
 
 
     @Override
@@ -55,13 +69,12 @@ public class MainActivity extends BaseActivity {
         String check2 = preferences2.getString("checkgg", "");
 
 
-        if (check == "1" || check == "2"||check2=="1"||check2=="2") {
+        if (check == "1" || check == "2" || check2 == "1" || check2 == "2") {
             bottomNavigationView.getMenu().findItem(R.id.nav_account).setChecked(true);
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, acc).commit();
         } else {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerViewHome, home).commit();
         }
-
 
 
 //        BadgeDrawable badgeDrawable = bottomNavigationView.getOrCreateBadge(R.id.nav_fa);
@@ -103,7 +116,7 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public void onBackPressed () {
+    public void onBackPressed() {
         if (backpressedTime + 2000 > System.currentTimeMillis()) {
             super.onBackPressed();
         }

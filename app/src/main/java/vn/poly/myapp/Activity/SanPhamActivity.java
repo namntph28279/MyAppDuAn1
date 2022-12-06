@@ -6,13 +6,16 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+
 import android.os.Bundle;
 import android.util.Log;
+
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +38,7 @@ import vn.poly.myapp.Dao.GioHangDAO;
 import vn.poly.myapp.Dao.GoogleDAO;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
 import vn.poly.myapp.Dao.YeuThichDAO;
+import vn.poly.myapp.Adapter.OnSizeItemClick;
 import vn.poly.myapp.R;
 
 public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor {
@@ -46,10 +50,13 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
     private TaiKhoanDAO taiKhoanDAO;
     GoogleDAO googleDAO;
     private EditText ed_soluong;
-    private CardView cardView_mua_ngay, cardView_add_gio_hang;
-
+    private CardView  cardView_add_gio_hang;
+    List<Size> list_size;
+    Intent intent;
     GiayDao dao;
     Giay g;
+    private int id;
+    int size = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +65,13 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
         setUpToolBar();
         init();
         setUpRecyclerViewSize();
+        initAction();
 
+
+
+    }
+
+    private void initAction(){
         //
         SharedPreferences preferences = getSharedPreferences("USER_FILE",MODE_PRIVATE);
         String user = preferences.getString("USERMANE", "");
@@ -71,9 +84,11 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
         //
 
         //Lay id sp
-        Intent i = getIntent();
-        Bundle b = i.getBundleExtra("data");
+        intent = getIntent();
+        Bundle b = intent.getBundleExtra("data");
         int id = b.getInt("id");
+        Log.e("IDDDD",id + "");
+        this.id = id;
 
         //lay data 1 sp
         dao = new GiayDao(this);
@@ -81,9 +96,6 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
         Bitmap bmp = BitmapFactory.decodeByteArray(g.getHinh(), 0, g.getHinh().length);
         img_sp.setImageBitmap(bmp);
         tv_name_sp.setText(g.getTen());
-        Log.e("",g.getGia()+"");
-        Log.e("",g.getTen()+"");
-        Log.e("",g.getId()+"");
         taiKhoanDAO = new TaiKhoanDAO(this);
         googleDAO = new GoogleDAO(this);
 
@@ -116,6 +128,7 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
             }
         });
 
+
         //Xu ly them vao gio hang
         cardView_add_gio_hang.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,15 +140,20 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
                     if (sl.equals("")){
                         Toast.makeText(SanPhamActivity.this, "Chua nhap so luong", Toast.LENGTH_SHORT).show();
                     }else{
+
+                        if (size < 0) {
+                            Toast.makeText(SanPhamActivity.this, "Vui long chon size truoc!!!", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
                         GioHangDAO gioHangDAO = new GioHangDAO(getBaseContext());
                         GioHang gh = new GioHang();
-                        Size s = new Size();
                         gh.setEmail(user2);
                         gh.setTenDangNhap(user);
                         gh.setTenSp(g.getTen());
                         gh.setGia(g.getGia());
                         gh.setHinh(g.getHinh());
-                        gh.setKichCo(s.getSize());
+                        gh.setKichCo(list_size.get(size).getSize());
                         gh.setSoLuong(sl);
 
                         int b=  gioHangDAO.themTK(gh);
@@ -158,18 +176,12 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
 
 
 
-
-
-
-
-
         btn_rating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tv_rating.setText(ratingBar.getRating()+"");
             }
         });
-
     }
 
     private void init(){
@@ -181,32 +193,32 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
         btn_rating = findViewById(R.id.btn_rating);
         img_sp = findViewById(R.id.img_sp);
         tv_name_sp = findViewById(R.id.tv_name_sp);
-        cardView_mua_ngay = findViewById(R.id.cardView_mua_ngay);
         cardView_add_gio_hang = findViewById(R.id.cardView_add_gio_hang);
     }
 
     private void setUpRecyclerViewSize() {
-        List<Size> list = new ArrayList<>();
+        list_size = new ArrayList<>();
 
-        list.add(new Size("1", true));
-        list.add(new Size("2", false));
-        list.add(new Size("3", false));
-        list.add(new Size("4", true));
+        list_size.add(new Size("1", true));
+        list_size.add(new Size("2", false));
+        list_size.add(new Size("3", false));
+        list_size.add(new Size("4", true));
 
 
         recyclerViewSize.setHasFixedSize(true);
         recyclerViewSize.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        SizeAdapter adapter = new SizeAdapter(list, this, this);
+        SizeAdapter adapter = new SizeAdapter(list_size, this, this, id);
         recyclerViewSize.setAdapter(adapter);
+
+        adapter.setOnSizeItemClick(new OnSizeItemClick() {
+            @Override
+            public void onClick(int pos) {
+                size = pos;
+            }
+        });
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("zzz", "onResume: ads");
-        //show len man hinh
 
-    }
 
     private void setUpToolBar() {
         Toolbar toolbar = findViewById(R.id.toolBar);

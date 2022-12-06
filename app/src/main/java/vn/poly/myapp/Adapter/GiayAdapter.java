@@ -75,6 +75,7 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
                 //
                 Bundle b = new Bundle();
                 int id = list.get(position).getId();
+                Log.e("IDDD",id + "");
                 b.putInt("id", id);
                 i.putExtra("data", b);
                 //

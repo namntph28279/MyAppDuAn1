@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/drawable/button_shape.xml" value="0.1775" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/drawable/hinhchuyen.xml" value="0.1395" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/drawable/ic_back_24.xml" value="0.133" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/drawable/ic_baseline_east_24.xml" value="0.1395" />
@@ -12,6 +13,7 @@
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1395" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.133" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/drawable/ic_no_img.xml" value="0.133" />
+        <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/drawable/ic_wifi.xml" value="0.1775" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/a.xml" value="0.1721311475409836" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/activity_chinh_sach.xml" value="0.22826086956521738" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/activity_chinh_sua_thong_tin_ca_nhan.xml" value="0.22826086956521738" />
@@ -33,11 +35,12 @@
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/activity_trung_tam_ho_tro.xml" value="0.22826086956521738" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/btn_thanh_toan.xml" value="0.22826086956521738" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/btn_tong.xml" value="0.22826086956521738" />
+        <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/check_internet_dialog.xml" value="0.22826086956521738" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/custom_dialog_them_giay.xml" value="0.22826086956521738" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/fragment_accout.xml" value="0.22826086956521738" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/fragment_cart.xml" value="0.22826086956521738" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/fragment_chua_dang_nhap.xml" value="0.22826086956521738" />
-        <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/fragment_da_dang_nhap.xml" value="0.11302083333333333" />
+        <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/fragment_da_dang_nhap.xml" value="0.264" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/fragment_favourite.xml" value="0.22826086956521738" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/fragment_search.xml" value="0.2" />
@@ -45,6 +48,7 @@
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/item_product_fa.xml" value="0.264" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/item_row_giay.xml" value="0.264" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/item_row_serach.xml" value="0.22826086956521738" />
+        <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/item_row_size.xml" value="0.22826086956521738" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/item_sanphamgiohang.xml" value="0.22826086956521738" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/item_tinnhan.xml" value="0.22826086956521738" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/layout/item_tong.xml" value="0.22826086956521738" />
@@ -62,36 +66,13 @@
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.124" />
         <entry key="..\:/PRO1121_DUAN1/MyApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.124" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_chinh_sach.xml" value="0.25" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_chinh_sua_thong_tin_ca_nhan.xml" value="0.25" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_dia_chi.xml" value="0.25" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_doi_mat_khau.xml" value="0.25" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_man_hinh_chao2.xml" value="0.152" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_man_hinh_dang_ky.xml" value="0.2" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_man_hinh_dang_nhap.xml" value="0.264" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/activity_quen_mat_khau.xml" value="0.12158054711246201" />
         <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/custom_dialog_them_giay.xml" value="0.25" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/fragment_favourite.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/fragment_home.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/fragment_search.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/item_photo.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/item_product_fa.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/item_row_giay.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/item_row_serach.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/item_row_size.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/item_sanphamgiohang.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/item_tinnhan.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/item_tong.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/item_vanchuyen.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/layout_anh.xml" value="0.11822916666666666" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/layout_chi_tiet_san_pham.xml" value="0.25" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/layout_danhsach_giay.xml" value="0.25" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/layout_exit.xml" value="0.25" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/layout_filter_sx.xml" value="0.12158054711246201" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/layout_filter_tc.xml" value="0.25" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/layout_filter_tc_gio_hang.xml" value="0.12158054711246201" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/layout_product.xml" value="0.25" />
-        <entry key="..\:/duan1/MyAppDuAn1/app/src/main/res/layout/spiner_vanchuyen.xml" value="0.25" />
       </map>
     </option>
   </component>

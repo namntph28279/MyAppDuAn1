@@ -76,7 +76,9 @@ public class Fragment_Search extends Fragment {
             @Override
             public void onClick(View v) {
                 dao_s.deleteAll();
-                adapter_s.notifyDataSetChanged();
+                list_s = dao_s.getAll();
+                adapter_s.setList(list_s);
+
             }
         });
 
@@ -92,6 +94,8 @@ public class Fragment_Search extends Fragment {
                     if (dao_s.insert(text)){
                         adapter.getFilter().filter(text);
                         adapter.notifyDataSetChanged();
+                        list_s = dao_s.getAll();
+                        adapter_s.setList(list_s);
                         ed_search.setText("");
                         Toast.makeText(getActivity(), "ok", Toast.LENGTH_SHORT).show();
                     }

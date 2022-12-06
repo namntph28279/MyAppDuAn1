@@ -33,6 +33,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
 
     }
 
+    public void setList(ArrayList<Search> list) {
+        this.list = list;
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
