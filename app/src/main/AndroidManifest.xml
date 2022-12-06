@@ -49,9 +49,7 @@
         <activity
             android:name=".Activity.ThanhPhanTrongTK.TrungTamHoTro"
             android:exported="false"/>
-        <activity
-            android:name=".Activity.SanPham.SanPhamActivity"
-            android:exported="false"/>
+        <activity android:name=".Activity.SanPhamActivity"/>
         <activity
             android:name=".Activity.SanPham.DanhSachGiayActivity"
             android:exported="false"/>

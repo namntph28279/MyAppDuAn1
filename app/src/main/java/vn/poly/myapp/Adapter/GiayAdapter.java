@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import vn.poly.myapp.Activity.SanPham.SanPhamActivity;
+
+import vn.poly.myapp.Activity.SanPhamActivity;
 import vn.poly.myapp.DTO.Giay;
 import vn.poly.myapp.DTO.YeuThich;
 import vn.poly.myapp.Dao.GiayDao;
@@ -70,7 +72,6 @@ public class GiayAdapter extends RecyclerView.Adapter<GiayAdapter.GiayViewHolder
                 //
                 Bundle b = new Bundle();
                 int id = list.get(position).getId();
-                Log.e("IDDD",id + "");
                 b.putInt("id", id);
                 i.putExtra("data", b);
                 //
