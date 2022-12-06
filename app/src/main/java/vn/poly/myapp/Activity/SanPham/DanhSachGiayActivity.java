@@ -1,4 +1,4 @@
-package vn.poly.myapp.Activity;
+package vn.poly.myapp.Activity.SanPham;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +30,6 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import vn.poly.myapp.Accout.DaDangNhapFragment;
 import vn.poly.myapp.Adapter.GiayAdapter;
 import vn.poly.myapp.DTO.Giay;
 import vn.poly.myapp.Dao.GiayDao;

@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,14 +20,10 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import vn.poly.myapp.Activity.ManHinhDangNhapDangKy.ManHinhDangNhap;
-import vn.poly.myapp.Activity.SanPhamActivity;
+import vn.poly.myapp.Activity.SanPham.SanPhamActivity;
 import vn.poly.myapp.DTO.Giay;
-import vn.poly.myapp.DTO.GioHang;
-import vn.poly.myapp.DTO.Search;
 import vn.poly.myapp.DTO.YeuThich;
 import vn.poly.myapp.Dao.GiayDao;
-import vn.poly.myapp.Dao.GioHangDAO;
 import vn.poly.myapp.Dao.YeuThichDAO;
 import vn.poly.myapp.R;
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".Activity.DanhSachGiayActivity">
+    tools:context=".Activity.SanPham.DanhSachGiayActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolBar_ds_giay"

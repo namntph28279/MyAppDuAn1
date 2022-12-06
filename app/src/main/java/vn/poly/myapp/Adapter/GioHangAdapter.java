@@ -1,31 +1,22 @@
 package vn.poly.myapp.Adapter;
 
 import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
 
-import vn.poly.myapp.Activity.SanPhamActivity;
 import vn.poly.myapp.DTO.GioHang;
 import vn.poly.myapp.Dao.GioHangDAO;
 import vn.poly.myapp.R;
@@ -58,12 +49,14 @@ public class GioHangAdapter extends RecyclerView.Adapter<GioHangAdapter.GioHangV
        holder.tv_ten.setText(list.get(position).getTenSp());
        holder.tv_gia.setText(list.get(position).getGia());
         holder.sl.setText(list.get(position).getSoLuong());
+
         holder.size_giohang.setText(list.get(position).getKichCo());
 
         Log.d("adatr", "onBindViewHolder: "+list.get(position).getTenSp());
         Log.d("adatr", "onBindViewHolder: "+list.get(position).getGia());
-        byte[] hinh = list.get(position).getHinh();
+        Log.d("adatr", "onBindViewHolder: "+list.get(position).getKichCo());
 
+        byte[] hinh = list.get(position).getHinh();
         Bitmap bitmap = BitmapFactory.decodeByteArray(hinh, 0, hinh.length);
         holder.hinhAnh.setImageBitmap(bitmap);
 

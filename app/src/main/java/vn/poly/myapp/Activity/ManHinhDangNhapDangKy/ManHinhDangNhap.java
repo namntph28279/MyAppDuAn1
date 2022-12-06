@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,7 +29,7 @@ import vn.poly.myapp.Activity.ThanhPhanTrongTK.QuenMatKhau;
 import vn.poly.myapp.DTO.GoogleDTO;
 import vn.poly.myapp.Dao.GoogleDAO;
 import vn.poly.myapp.Dao.TaiKhoanDAO;
-import vn.poly.myapp.Fragment.Fragment_Accout;
+import vn.poly.myapp.Fragment.TaiKhoan.Fragment_Accout;
 import vn.poly.myapp.R;
 
 public class ManHinhDangNhap extends AppCompatActivity {

@@ -50,10 +50,10 @@
             android:name=".Activity.ThanhPhanTrongTK.TrungTamHoTro"
             android:exported="false"/>
         <activity
-            android:name=".Activity.SanPhamActivity"
+            android:name=".Activity.SanPham.SanPhamActivity"
             android:exported="false"/>
         <activity
-            android:name=".Activity.DanhSachGiayActivity"
+            android:name=".Activity.SanPham.DanhSachGiayActivity"
             android:exported="false"/>
         <activity
             android:name=".Activity.ManHinhChao.ManHinhChao1"

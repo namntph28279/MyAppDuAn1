@@ -52,6 +52,7 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.SizeViewHolder
         Size size = list.get(position);
         if (size == null)
             return;
+
         holder.size.setText(size.getSize());
 
         if (itemSelected == position) {
@@ -59,10 +60,12 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.SizeViewHolder
         } else {
             holder.cardView.setCardBackgroundColor(holder.cardView.getResources().getColor(R.color.white));
         }
+
         holder.cardView.setOnClickListener(view -> {
             holder.setSingleSelected(holder.getAdapterPosition());
             onSizeItemClick.onClick(position);
             clickSizeColor.callBackSize(size.getSize());
+
         });
     }
 
