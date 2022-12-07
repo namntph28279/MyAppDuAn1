@@ -52,6 +52,7 @@ public class ThemGioHang extends AppCompatActivity implements ClickSizeColor {
     private CardView cardView_add_gio_hang;
     List<Size> list_size;
     int f,g;
+    YeuThich yeuThich;
     int size = -1;
 
     @Override
@@ -73,23 +74,21 @@ public class ThemGioHang extends AppCompatActivity implements ClickSizeColor {
         String user2 = preferences2.getString("email", "");
 
         SharedPreferences preferences3 = getSharedPreferences("yeuThich",MODE_PRIVATE);
-        String a = preferences3.getString("ten", "");
-        String b = preferences3.getString("gia", "");
-        String c = preferences3.getString("hinh", "");
         String e = preferences3.getString("id", "");
         String g2 = preferences3.getString("maSP", "");
-
-        byte[] d = c.getBytes();
 
         int f = Integer.parseInt(e);
         int g= Integer.parseInt(g2);
 
-        Log.d("ddddd", "initAction: "+d);
+        yeuThich = new YeuThich();
+        yeuThichDAO =  new YeuThichDAO(getApplicationContext());
+        yeuThich = yeuThichDAO.selectOne(g);
 
-        Bitmap bmp = BitmapFactory.decodeByteArray(d , 0, d.length);
+
+        Bitmap bmp = BitmapFactory.decodeByteArray(yeuThich.getHinh() , 0,yeuThich.getHinh().length);
         img_sp.setImageBitmap(bmp);
 
-        tv_name_sp.setText(a);
+        tv_name_sp.setText(yeuThich.getTenSp());
 
         taiKhoanDAO = new TaiKhoanDAO(this);
         googleDAO = new GoogleDAO(this);
@@ -104,9 +103,9 @@ public class ThemGioHang extends AppCompatActivity implements ClickSizeColor {
                     YeuThich yt = new YeuThich();
                     yt.setEmail(user2);
                     yt.setTenDangNhap(user);
-                    yt.setTenSp(a);
-                    yt.setGia(b);
-                    yt.setHinh(d);
+                    yt.setTenSp(yeuThich.getTenSp());
+                    yt.setGia(yeuThich.getGia());
+                    yt.setHinh(yeuThich.getHinh());
 
                     int b=  yeuThichDAO.themYT(yt);
 
@@ -146,9 +145,9 @@ public class ThemGioHang extends AppCompatActivity implements ClickSizeColor {
                         GioHang gh = new GioHang();
                         gh.setEmail(user2);
                         gh.setTenDangNhap(user);
-                        gh.setTenSp(a);
-                        gh.setGia(b);
-                        gh.setHinh(d);
+                        gh.setTenSp(yeuThich.getTenSp());
+                        gh.setGia(yeuThich.getGia());
+                        gh.setHinh(yeuThich.getHinh());
                         gh.setKichCo(list_size.get(size).getSize());
                         gh.setSoLuong(sl);
 

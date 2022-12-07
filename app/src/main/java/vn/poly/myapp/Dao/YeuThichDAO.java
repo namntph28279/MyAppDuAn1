@@ -9,6 +9,7 @@ import android.util.Log;
 import java.util.ArrayList;
 
 
+import vn.poly.myapp.DTO.Giay;
 import vn.poly.myapp.DTO.YeuThich;
 import vn.poly.myapp.Database.DbHelper;
 
@@ -310,6 +311,28 @@ public class YeuThichDAO {
         }
 
         return 0;
+    }
+    public YeuThich selectOne(int id){
+        sqLiteDatabase = mHelper.getReadableDatabase();
+        YeuThich ls = new YeuThich();
+
+        String sql = "SELECT * FROM yeuThich where maSP = "+id;
+
+        Cursor c =  sqLiteDatabase.rawQuery(sql, null);
+        if(c.moveToFirst()){
+
+            ls.setMaSp(c.getInt(0));
+            ls.setTenSp(c.getString(1));
+            ls.setSoLuong(c.getString(2));
+            ls.setGia(c.getString(3));
+            ls.setKichCo(c.getString(4));
+            ls.setHinh(c.getBlob(5));
+            ls.setTenDangNhap(c.getString(6));
+            ls.setEmail(c.getString(7));
+
+        }
+
+        return ls;
     }
 
 }

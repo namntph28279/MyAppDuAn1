@@ -93,9 +93,11 @@ public class SanPhamActivity extends AppCompatActivity implements ClickSizeColor
         //lay data 1 sp
         dao = new GiayDao(this);
         g = dao.selectOne(id);
+
         Bitmap bmp = BitmapFactory.decodeByteArray(g.getHinh(), 0, g.getHinh().length);
         img_sp.setImageBitmap(bmp);
         tv_name_sp.setText(g.getTen());
+
         taiKhoanDAO = new TaiKhoanDAO(this);
         googleDAO = new GoogleDAO(this);
 

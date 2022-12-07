@@ -89,10 +89,9 @@ public class YeuThichAdapter extends RecyclerView.Adapter<YeuThichAdapter.YeuThi
         holder.themGio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String r = new String(list.get(position).getHinh(), StandardCharsets.UTF_8);
-
                 String d = new String(list.get(position).getHinh());
-                Log.d("z111", "onClick: "+r);
+
+                Log.d("z111", "onClick: "+d);
                 SharedPreferences pref = context.getSharedPreferences("yeuThich",context.MODE_PRIVATE);
                 SharedPreferences.Editor edit = pref.edit();
                 edit.putString("maSP",String.valueOf(list.get(position).getMaSp()));
