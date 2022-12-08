@@ -28,7 +28,8 @@ public class DbHelper extends SQLiteOpenHelper {
 
         db.execSQL(crTK);
 
-        String crTTTK = "CREATE TABLE thongTin (maTK integer primary key autoincrement  ," +
+        String crTTTK = "CREATE TABLE thongTin (" +
+                "maTK integer primary key autoincrement  ," +
                 " hoTen text ," +
                 " email text ," +
                 " diaChi text ," +
